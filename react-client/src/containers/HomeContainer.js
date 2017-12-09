@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Recipes from "../components/Recipes";
 import { connect } from "react-redux";
+import { getRecipes } from "../actions";
 
 class HomeContainer extends Component {
+  componentWillMount() {
+    this.props.getRecipes();
+  }
   render() {
     return (
       <div>
@@ -19,7 +23,14 @@ class HomeContainer extends Component {
           </div>
         </div>
         <div>
-          <Recipes recipes={this.props.recipes} history={this.props.history} />
+          {this.props.isFetching ? (
+            "Loading..."
+          ) : (
+            <Recipes
+              recipes={this.props.recipes}
+              history={this.props.history}
+            />
+          )}
         </div>
       </div>
     );
@@ -28,8 +39,15 @@ class HomeContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    recipes: state.recipes
+    recipes: state.recipes,
+    isFetching: state.isFetching
   };
 };
 
-export default connect(mapStateToProps, null)(HomeContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    getRecipes: () => dispatch(getRecipes())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

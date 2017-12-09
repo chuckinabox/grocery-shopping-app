@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class SearchRecipes extends Component {
   render() {
+    //Split ingredients for formatting
     let listRecipes = this.props.recipes.map(recipe => {
       let ingredients = [
         <p key={recipe.ingredients[0]}>-{recipe.ingredients[0]}</p>
@@ -20,7 +21,7 @@ class SearchRecipes extends Component {
             this.props.history.push(`/recipe/${recipe.id}`);
           }}
         >
-          <p>{recipe.title}</p>
+          <h4>{recipe.title}</h4>
           <div className="col-sm-4 col-xs-6">
             <img
               src={recipe.photo_url}

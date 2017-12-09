@@ -1,25 +1,27 @@
 import * as Actions from "./actions";
 
-// const initailState = {
-//  isFetching: false,
-//  error: null,
-//  recipes: [{
-//    title: "",
-//    photo_url: "",
-//    ingredients: [],
-//    instructions: ""
-// }],
-// singleRecipe: {
-//    title: "",
-//    photo_url: "",
-//    ingredients: [],
-//    instructions: ""
-// }
-// }
+const initailState = {
+  isFetching: false,
+  errors: null,
+  recipes: [
+    {
+      title: "",
+      photo_url: "",
+      ingredients: [],
+      instructions: ""
+    }
+  ],
+  singleRecipe: {
+    title: "",
+    photo_url: "",
+    ingredients: [],
+    instructions: ""
+  }
+};
 
 const demoData = {
   isFetching: false,
-  error: null,
+  errors: null,
   recipes: [
     {
       title: "Venetian Duck Ragu",
@@ -43,7 +45,6 @@ const demoData = {
         "600g Paccheri Pasta",
         "Grated Parmesan Cheese"
       ],
-
       instructions:
         "Heat the oil in a large pan. Add the duck legs and brown on all sides for about 10 mins. Remove to a plate and set aside. Add the onions to the pan and cook for 5 mins until softened. Add the garlic and cook for a further 1 min, then stir in the cinnamon and flour and cook for a further min. Return the duck to the pan, add the wine, tomatoes, stock, herbs, sugar and seasoning. Bring to a simmer, then lower the heat, cover with a lid and cook for 2 hrs, stirring every now and then. Carefully lift the duck legs out of the sauce and place on a plate – they will be very tender so try not to lose any of the meat. Pull off and discard the fat, then shred the meat with 2 forks and discard the bones. Add the meat back to the sauce with the milk and simmer, uncovered, for a further 10-15 mins while you cook the pasta. Cook the pasta following pack instructions, then drain, reserving a cup of the pasta water, and add the pasta to the ragu. Stir to coat all the pasta in the sauce and cook for 1 min more, adding a splash of cooking liquid if it looks dry. Serve with grated Parmesan, if you like. "
     },
@@ -155,6 +156,28 @@ export function recipesList(state = demoData, action) {
       return {
         ...state,
         singleRecipe: action.data
+      };
+    case Actions.SET_RECIPES:
+      return {
+        ...state,
+        isFetching: false,
+        recipes: action.data
+      };
+    case Actions.GET_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case Actions.GET_REQUEST_SUCCESS:
+      return {
+        ...state,
+        isFetching: false
+      };
+    case Actions.GET_REQUEST_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        errors: action.errors
       };
     default:
       return state;

@@ -17,7 +17,7 @@ class OneRecipe extends Component {
       <div className="card container">
         <div className="row">
           <div className="col-sm-12">
-            <p>{this.props.recipe.title}</p>
+            <h4>{this.props.recipe.title}</h4>
           </div>
         </div>
         <div className="row">
