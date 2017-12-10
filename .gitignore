@@ -17,3 +17,6 @@
 
 # Ignore Mac's .DS_Store file
 .DS_Store
+
+# Ignore application configuration
+/config/application.yml
