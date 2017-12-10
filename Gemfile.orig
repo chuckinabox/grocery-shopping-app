@@ -30,6 +30,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'jazz_fingers'
   gem 'rspec-rails'
+<<<<<<< HEAD
+  gem 'factory_bot_rails'
+=======
+>>>>>>> rails/testing
 end
 
 group :development do

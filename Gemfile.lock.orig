@@ -196,6 +196,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+<<<<<<< HEAD
+  factory_bot_rails
+=======
+>>>>>>> rails/testing
   guard-rspec
   jazz_fingers
   listen (>= 3.0.5, < 3.2)
