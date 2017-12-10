@@ -1,0 +1,235 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.themealdb.com/api/json/v1/1/latest.php
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Microsoft-IIS/7.0
+      X-Powered-By:
+      - ASP.NET
+      - PHP/5.6.0
+      Date:
+      - Sun, 10 Dec 2017 18:11:42 GMT
+      Content-Length:
+      - '23050'
+    body:
+      encoding: UTF-8
+      string: '{"meals":[{"idMeal":"52936","strMeal":"Saltfish and Ackee","strCategory":"Seafood","strArea":"Jamaican","strInstructions":"For
+        the saltfish, soak the salt cod overnight, changing the water a couple of
+        times.\r\nDrain, then put the cod in a large pan of fresh water and bring
+        to the boil. Drain again, add fresh water and bring to the boil again.\r\nSimmer
+        for about five minutes, or until cooked through, then drain and flake the
+        fish into large pieces. Discard any skin or bones.\r\nFor the dumplings, mix
+        the flour and suet with a pinch of salt and 250ml\/9fl oz water to make a
+        dough.\r\nWrap the mixture in clingfilm and leave in the fridge to rest.\r\nOpen
+        the can of ackee, drain and rinse, then set aside.\r\nHeat a tablespoon of
+        olive oil in a pan and fry the onion until softened but not brown.\r\nAdd
+        the spices, seasoning, pepper sauce and sliced peppers and continue to fry
+        until the peppers are tender.\r\nAdd the chopped tomatoes, then the salt cod
+        and mix together. Lastly stir in the ackee very gently and leave to simmer
+        until ready to serve.\r\nWhen you\u2019re almost ready to eat, heat about
+        1cm\/\u00bdin vegetable oil in a frying pan and heat until just smoking.\r\nShape
+        the dumpling mix into plum-size balls and shallow-fry until golden-brown.
+        (CAUTION: hot oil can be dangerous. Do not leave the pan unattended.)\r\nDrain
+        the dumplings on kitchen paper and serve with the saltfish and ackee.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/vytypy1511883765.jpg","strTags":"Speciality","strYoutube":"https:\/\/www.youtube.com\/watch?v=nbfNyZbdn2I","strIngredient1":"Salt
+        Cod","strIngredient2":"Ackee","strIngredient3":"Onion","strIngredient4":"Paprika","strIngredient5":"Curry
+        Powder","strIngredient6":"Jerusalem Artichokes","strIngredient7":"Hotsauce","strIngredient8":"Red
+        Pepper","strIngredient9":"Yellow Pepper","strIngredient10":"Tomatoes","strIngredient11":"Salt","strIngredient12":"Pepper","strIngredient13":"Self-raising
+        Flour","strIngredient14":"Suet","strIngredient15":"Salt","strIngredient16":"Olive
+        Oil","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"450g","strMeasure2":"400g","strMeasure3":"1
+        chopped","strMeasure4":"1 tsp ","strMeasure5":"2 tsp","strMeasure6":"2 tsp","strMeasure7":"1
+        tsp ","strMeasure8":"1 sliced","strMeasure9":"1 sliced","strMeasure10":"200g","strMeasure11":"to
+        taste","strMeasure12":"to taste","strMeasure13":"250g","strMeasure14":"30g","strMeasure15":"pinch","strMeasure16":"for
+        frying","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"https:\/\/www.bbc.co.uk\/food\/recipes\/saltfish__ackee_with_64803","dateModified":null},{"idMeal":"52935","strMeal":"Steak
+        Diane","strCategory":"Beef","strArea":"French","strInstructions":"Heat oil
+        in a 12\" skillet over medium-high heat. Season steaks with salt and pepper,
+        and add to skillet; cook, turning once, until browned on both sides and cooked
+        to desired doneness, about 4 to 5 minutes for medium-rare. Transfer steaks
+        to a plate, and set aside.\r\nReturn skillet to high heat, and add stock;
+        cook until reduced until to 1\u20442 cup, about 10 minutes. Pour into a bowl,
+        and set aside. Return skillet to heat, and add butter; add garlic and shallots,
+        and cook, stirring, until soft, about 2 minutes. Add mushrooms, and cook,
+        stirring, until they release any liquid and it evaporates and mushrooms begin
+        to brown, about 2 minutes. Add cognac, and light with a match to flamb\u00e9e;
+        cook until flame dies down. Stir in reserved stock, cream, Dijon, Worcestershire,
+        and hot sauce, and then return steaks to skillet; cook, turning in sauce,
+        until warmed through and sauce is thickened, about 4 minutes. Transfer steak
+        to serving plates and stir parsley and chives into sauce; pour sauce over
+        steaks to serve.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/vussxq1511882648.jpg","strTags":"DateNight,Expensive,Meat,MainMeal","strYoutube":"https:\/\/www.youtube.com\/watch?v=9rWZNHkrsNg","strIngredient1":"Canola
+        Oil","strIngredient2":"Beef Fillet","strIngredient3":"Beef Stock","strIngredient4":"Butter","strIngredient5":"Garlic","strIngredient6":"Challots","strIngredient7":"Mushrooms","strIngredient8":"Brandy","strIngredient9":"Heavy
+        Cream","strIngredient10":"Dijon Mustard","strIngredient11":"Worcestershire
+        Sauce","strIngredient12":"Tabasco Sauce","strIngredient13":"Parsley","strIngredient14":"Chives","strIngredient15":"Salt","strIngredient16":"Pepper","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"2
+        tbs","strMeasure2":"4","strMeasure3":"1 1\/2 cup ","strMeasure4":"2 tbs","strMeasure5":"2
+        cloves minced","strMeasure6":"1 medium finely diced","strMeasure7":"4 oz ","strMeasure8":"\u00bc
+        cup","strMeasure9":"\u00bc cup","strMeasure10":"1 tbs","strMeasure11":"1 tbs","strMeasure12":"Dash","strMeasure13":"1
+        tbs minced","strMeasure14":"1 tbs minced","strMeasure15":"to taste","strMeasure16":"to
+        taste","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"https:\/\/www.saveur.com\/article\/Recipes\/Classic-Steak-Diane","dateModified":null},{"idMeal":"52934","strMeal":"Chicken
+        Basquaise","strCategory":"Chicken","strArea":"French","strInstructions":"Preheat
+        the oven to 180\u00b0C\/Gas mark 4. Have the chicken joints ready to cook.
+        Heat the butter and 3 tbsp olive oil in a flameproof casserole or large frying
+        pan. Brown the chicken pieces in batches on both sides, seasoning them with
+        salt and pepper as you go. Don''t crowd the pan - fry the chicken in small
+        batches, removing the pieces to kitchen paper as they are done.\r\n\r\nAdd
+        a little more olive oil to the casserole and fry the onions over a medium
+        heat for 10 minutes, stirring frequently, until softened but not browned.
+        Add the rest of the oil, then the peppers and cook for another 5 minutes.\r\n\r\nAdd
+        the chorizo, sun-dried tomatoes and garlic and cook for 2-3 minutes. Add the
+        rice, stirring to ensure it is well coated in the oil. Stir in the tomato
+        paste, paprika, bay leaves and chopped thyme. Pour in the stock and wine.
+        When the liquid starts to bubble, turn the heat down to a gentle simmer. Press
+        the rice down into the liquid if it isn''t already submerged and place the
+        chicken on top. Add the lemon wedges and olives around the chicken.\r\n\r\nCover
+        and cook in the oven for 50 minutes. The rice should be cooked but still have
+        some bite, and the chicken should have juices that run clear when pierced
+        in the thickest part with a knife. If not, cook for another 5 minutes and
+        check again.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/wruvqv1511880994.jpg","strTags":"Meat","strYoutube":"https:\/\/www.youtube.com\/watch?v=emfm6TwsVhg","strIngredient1":"Chicken","strIngredient2":"Butter","strIngredient3":"Olive
+        Oil","strIngredient4":"Red Onions","strIngredient5":"Red Pepper","strIngredient6":"Chorizo","strIngredient7":"Sun-Dried
+        Tomatoes","strIngredient8":"Garlic","strIngredient9":"Basmati Rice","strIngredient10":"Tomato
+        Puree","strIngredient11":"Paprika","strIngredient12":"Bay Leaves","strIngredient13":"Thyme","strIngredient14":"Chicken
+        Stock","strIngredient15":"Dry White Wine","strIngredient16":"Lemons","strIngredient17":"Black
+        Olives","strIngredient18":"Salt","strIngredient19":"Pepper","strIngredient20":"","strMeasure1":"1.5kg","strMeasure2":"25g","strMeasure3":"6
+        tblsp","strMeasure4":"2 sliced","strMeasure5":"3 Large","strMeasure6":"130g","strMeasure7":"8","strMeasure8":"6
+        cloves sliced","strMeasure9":"300g","strMeasure10":"drizzle","strMeasure11":"\u00bd
+        tsp","strMeasure12":"4","strMeasure13":"Handful","strMeasure14":"350ml","strMeasure15":"180g","strMeasure16":"2","strMeasure17":"100g
+        ","strMeasure18":"to serve","strMeasure19":"to serve","strMeasure20":"","strSource":"https:\/\/www.rivercottage.net\/recipes\/chicken-basquaise","dateModified":null},{"idMeal":"52933","strMeal":"Rappie
+        Pie","strCategory":"Chicken","strArea":"Canadian","strInstructions":"Preheat
+        oven to 400 degrees F (200 degrees C). Grease a 10x14x2-inch baking pan.\r\nHeat
+        margarine in a skillet over medium heat; stir in onion. Cook and stir until
+        onion has softened and turned translucent, about 5 minutes. Reduce heat to
+        low and continue to cook and stir until onion is very tender and dark brown,
+        about 40 minutes more.\r\nBring chicken broth to a boil in a large pot; stir
+        in chicken breasts, reduce heat, and simmer until chicken is no longer pink
+        at the center, about 20 minutes. Remove from heat. Remove chicken breasts
+        to a plate using a slotted spoon; reserve broth.\r\nJuice potatoes with an
+        electric juicer; place dry potato flesh into a bowl and discard juice. Stir
+        salt and pepper into potatoes; stir in enough reserved broth to make the mixture
+        the consistency of oatmeal. Set remaining broth aside.\r\nSpread half of potato
+        mixture evenly into the prepared pan. Lay cooked chicken breast evenly over
+        potatoes; scatter caramelized onion evenly over chicken. Spread remaining
+        potato mixture over onions and chicken to cover.\r\nBake in the preheated
+        oven until golden brown, about 1 hour. Reheat chicken broth; pour over individual
+        servings as desired.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/ruwpww1511817242.jpg","strTags":null,"strYoutube":"","strIngredient1":"Butter","strIngredient2":"Onions","strIngredient3":"Chicken
+        Stock","strIngredient4":"Chicken Breast","strIngredient5":"Potatoes","strIngredient6":"Salt","strIngredient7":"Black
+        Pepper","strIngredient8":"","strIngredient9":"","strIngredient10":"","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"2
+        tbs","strMeasure2":"2 chopped","strMeasure3":"4 qt ","strMeasure4":"1.5kg","strMeasure5":"4kg","strMeasure6":"2
+        tbs","strMeasure7":"1tbsp","strMeasure8":"","strMeasure9":"","strMeasure10":"","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"http:\/\/allrecipes.com\/recipe\/234025\/rappie-pie\/","dateModified":null},{"idMeal":"52932","strMeal":"Pouding
+        chomeur","strCategory":"Desert","strArea":"Canadian","strInstructions":"In
+        a large bowl, with an electric mixer, mix the butter and sugar till the mix
+        is light.\r\nAdd eggs and vanilla and mix.\r\nIn another bowl, mix flour and
+        baking powder.\r\nAlternate flour mix and milk to the butter mix.\r\nPour
+        into a 13 inch by 9 inch greased pan.\r\nMAPLE SAUCE.\r\nIn a large casserole,
+        bring to boil the syrup, brown sugar, cream and butter and constantly stir.\r\nReduce
+        heat and and gently cook 2 minutes or till sauce has reduced a little bit.\r\nPour
+        sauce gently over cake.\r\nBake at 325\u00b0f (160\u00b0c) about 35 minutes
+        or till cake is light brown and when toothpick inserted comes out clean.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/yqqqwu1511816912.jpg","strTags":null,"strYoutube":"https:\/\/www.youtube.com\/watch?v=WFvj71RZYPc","strIngredient1":"Butter","strIngredient2":"Sugar","strIngredient3":"Eggs","strIngredient4":"Vanilla
+        Extract","strIngredient5":"Flour","strIngredient6":"Baking Powder","strIngredient7":"Milk","strIngredient8":"Maple
+        Syrup","strIngredient9":"Brown Sugar","strIngredient10":"Single Cream","strIngredient11":"Butter","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"\u00bd
+        cup ","strMeasure2":"1 cup ","strMeasure3":"2","strMeasure4":"1 tsp ","strMeasure5":"2
+        cups ","strMeasure6":"1 tsp ","strMeasure7":"1 1\/4 cup","strMeasure8":"1
+        1\/2 cup ","strMeasure9":"1 1\/2 cup ","strMeasure10":"1 1\/2 cup ","strMeasure11":"1\/3
+        cup","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"http:\/\/www.geniuskitchen.com\/recipe\/pouding-chomeur-poor-mans-pudding-with-maple-syrup-sauce-218797","dateModified":null},{"idMeal":"52931","strMeal":"Sugar
+        Pie","strCategory":"Desert","strArea":"Canadian","strInstructions":"Preheat
+        oven to 350 degrees F (175 degrees C). Grease a 9-inch pie dish.\r\nPlace
+        the brown sugar and butter in a mixing bowl, and beat them together with an
+        electric mixer until creamy and very well combined, without lumps. Beat in
+        eggs, one at a time, incorporating the first egg before adding the next one.
+        Add the vanilla extract and salt; beat the flour in, a little at a time, and
+        then the milk, making a creamy batter. Pour the batter into the prepared pie
+        dish.\r\nBake in the preheated oven for 35 minutes; remove pie, and cover
+        the rim with aluminum foil to prevent burning. Return to oven, and bake until
+        the middle sets and the top forms a crusty layer, about 15 more minutes. Let
+        the pie cool to room temperature, then refrigerate for at least 1 hour before
+        serving.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/yrstur1511816601.jpg","strTags":"Pie","strYoutube":"https:\/\/www.youtube.com\/watch?v=uVQ66jiL-Dc","strIngredient1":"Brown
+        Sugar","strIngredient2":"Butter","strIngredient3":"Eggs","strIngredient4":"Vanilla
+        Extract","strIngredient5":"Salt","strIngredient6":"Plain Flour","strIngredient7":"Milk","strIngredient8":"","strIngredient9":"","strIngredient10":"","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"2
+        cups ","strMeasure2":"\u00bc cup","strMeasure3":"2","strMeasure4":"1 tsp ","strMeasure5":"1
+        tsp ","strMeasure6":"\u00bd cup ","strMeasure7":"1 1\/2 cups ","strMeasure8":"","strMeasure9":"","strMeasure10":"","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"http:\/\/allrecipes.com\/recipe\/213595\/miraculous-canadian-sugar-pie\/","dateModified":null},{"idMeal":"52930","strMeal":"Pate
+        Chinois","strCategory":"Beef","strArea":"Canadian","strInstructions":"In a
+        large pot of salted water, cook the potatoes until they are very tender. Drain.\r\nWith
+        a masher, coarsely crush the potatoes with at least 30 ml (2 tablespoons)
+        of butter. With an electric mixer, pur\u00e9e with the milk. Season with salt
+        and pepper. Set aside.\r\nWith the rack in the middle position, preheat the
+        oven to 190 \u00b0C (375 \u00b0F).\r\nIn a large skillet, brown the onion
+        in the remaining butter. Add the meat and cook until golden brown. Season
+        with salt and pepper. Remove from the heat.\r\nLightly press the meat at the
+        bottom of a 20-cm (8-inch) square baking dish. Cover with the corn and the
+        mashed potatoes. Sprinkle with paprika and parsley.\r\nBake for about 30 minutes.
+        Finish cooking under the broiler. Let cool for 10 minutes.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/yyrrxr1511816289.jpg","strTags":null,"strYoutube":"https:\/\/www.youtube.com\/watch?v=QRFqnLkEv3I","strIngredient1":"Potatoes","strIngredient2":"Butter","strIngredient3":"Milk","strIngredient4":"Minced
+        Beef","strIngredient5":"Onion","strIngredient6":"Creamed Corn","strIngredient7":"Paprika","strIngredient8":"Parsley","strIngredient9":"Salt","strIngredient10":"Pepper","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"4
+        cups ","strMeasure2":"60ml","strMeasure3":"\u00bd cup ","strMeasure4":"450g","strMeasure5":"1
+        finely chopped ","strMeasure6":"500ml","strMeasure7":"to taste","strMeasure8":"to
+        taste","strMeasure9":"Dash","strMeasure10":"Dash","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"https:\/\/www.ricardocuisine.com\/en\/recipes\/5541-pate-chinois-shepherd--s-pie-","dateModified":null},{"idMeal":"52929","strMeal":"Timbits","strCategory":"Desert","strArea":"Canadian","strInstructions":"Sift
+        together dry ingredients.\r\nMix together wet ingredients and incorporate
+        into dry. Stir until smooth.\r\nDrop by teaspoonfuls(no bigger) into hot oil
+        (365 degrees, no hotter), turning after a few moments until golden brown on
+        all sides.\r\nRemove and drain.\r\nRoll in cinnamon sugar while still warm
+        and serve.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/txsupu1511815755.jpg","strTags":"Snack,Treat","strYoutube":"https:\/\/www.youtube.com\/watch?v=fFLn1h80AGQ","strIngredient1":"Flour","strIngredient2":"Sugar","strIngredient3":"Baking
+        Powder","strIngredient4":"Salt","strIngredient5":"Egg","strIngredient6":"Milk","strIngredient7":"Oil","strIngredient8":"Oil","strIngredient9":"Icing
+        Sugar","strIngredient10":"","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"2
+        cups ","strMeasure2":"1\/3 cup","strMeasure3":"3 tsp","strMeasure4":"\u00bd
+        tsp","strMeasure5":"1 beaten","strMeasure6":"\u00be cup","strMeasure7":"3
+        tbs","strMeasure8":"for frying","strMeasure9":"garnish","strMeasure10":"","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"http:\/\/www.geniuskitchen.com\/recipe\/drop-doughnuts-133877","dateModified":null},{"idMeal":"52928","strMeal":"BeaverTails","strCategory":"Desert","strArea":"Canadian","strInstructions":"In
+        the bowl of a stand mixer, add warm water, a big pinch of sugar and yeast.
+        Allow to sit until frothy.\r\nInto the same bowl, add 1\/2 cup sugar, warm
+        milk, melted butter, eggs and salt, and whisk until combined.\r\nPlace a dough
+        hook on the mixer, add the flour with the machine on, until a smooth but slightly
+        sticky dough forms.\r\nPlace dough in a bowl, cover with plastic wrap, and
+        allow to proof for 1 1\/2 hours.\r\nCut dough into 12 pieces, and roll out
+        into long oval-like shapes about 1\/4 inch thick that resemble a beaver\u2019s
+        tail.\r\nIn a large, deep pot, heat oil to 350 degrees. Gently place beavertail
+        dough into hot oil and cook for 30 to 45 seconds on each side until golden
+        brown.\r\nDrain on paper towels, and garnish as desired. Toss in cinnamon
+        sugar, in white sugar with a squeeze of lemon, or with a generous slathering
+        of Nutella and a handful of toasted almonds. Enjoy!","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/ryppsv1511815505.jpg","strTags":"Treat,Pudding,Speciality","strYoutube":"https:\/\/www.youtube.com\/watch?v=2G07UOqU2e8","strIngredient1":"Water","strIngredient2":"Yeast","strIngredient3":"Sugar","strIngredient4":"Milk","strIngredient5":"Butter","strIngredient6":"Eggs","strIngredient7":"Salt","strIngredient8":"Flour","strIngredient9":"Oil","strIngredient10":"Lemon","strIngredient11":"Sugar","strIngredient12":"Cinnamon","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"1\/2
+        cup ","strMeasure2":"2 parts ","strMeasure3":"1\/2 cup ","strMeasure4":"1\/2
+        cup ","strMeasure5":"6 tblsp","strMeasure6":"2","strMeasure7":"1 \u00bd tsp","strMeasure8":"2-1\/2
+        cups","strMeasure9":"for frying","strMeasure10":"garnish","strMeasure11":"garnish","strMeasure12":"garnish","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"https:\/\/www.tastemade.com\/videos\/beavertails","dateModified":null},{"idMeal":"52927","strMeal":"Montreal
+        Smoked Meat","strCategory":"Beef","strArea":"Canadian","strInstructions":"To
+        make the cure, in a small bowl mix together salt, pink salt, black pepper,
+        coriander, sugar, bay leaf, and cloves. Coat entire brisket with the cure
+        and place in an extra-large resealable plastic bag. Place in the coldest part
+        of the refrigerator and cure for 4 days, flipping brisket twice a day.\r\nRemove
+        brisket from bag and wash as much cure off as possible under cold running
+        water. Place brisket in a large container and fill with water and let soak
+        for 2 hours, replacing water every 30 minutes. Remove from water and pat dry
+        with paper towels.\r\nTo make the rub, mix together black pepper, coriander,
+        paprika, garlic powder, onion powder, dill weed, mustard, celery seed, and
+        crushed red papper in a small bowl. Coat entire brisket with the rub.\r\nFire
+        up smoker or grill to 225 degrees, adding chunks of smoking wood chunks when
+        at temperature. When wood is ignited and producing smoke, place brisket in,
+        fat side up, and smoke until an instant read thermometer registers 165 degrees
+        when inserted into thickest part of the brisket, about 6 hours.\r\nTransfer
+        brisket to large roasting pan with V-rack. Place roasting pan over two burners
+        on stovetop and fill with 1-inch of water. Bring water to a boil over high
+        heat, reduce heat to medium, cover roasting pan with aluminum foil, and steam
+        brisket until an instant read thermometer registers 180 degrees when inserted
+        into thickest part of the meat, 1 to 2 hours, adding more hot water as needed.\r\nTransfer
+        brisket to cutting board and let cool slightly. Slice and serve, preferably
+        on rye with mustard.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/uttupv1511815050.jpg","strTags":"Speciality,Snack,StrongFlavor","strYoutube":"https:\/\/www.youtube.com\/watch?v=g5oCDoyxbBk","strIngredient1":"Beef
+        Brisket","strIngredient2":"Salt","strIngredient3":"Black Pepper","strIngredient4":"Coriander","strIngredient5":"Sugar","strIngredient6":"Bay
+        Leaf","strIngredient7":"Cloves","strIngredient8":"Black Pepper","strIngredient9":"Coriander","strIngredient10":"Paprika","strIngredient11":"Garlic","strIngredient12":"Onion","strIngredient13":"Dill","strIngredient14":"English
+        Mustard","strIngredient15":"Celery Salt","strIngredient16":"Red Pepper Flakes","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"1","strMeasure2":"3
+        tbs","strMeasure3":"3 tbs","strMeasure4":"1 tbs","strMeasure5":"1 tbs","strMeasure6":"1
+        tsp ","strMeasure7":"1 tsp ","strMeasure8":"3 tbs","strMeasure9":"1 tbs","strMeasure10":"1
+        tbs","strMeasure11":"1 tbs","strMeasure12":"1 tbs","strMeasure13":"1 tbs","strMeasure14":"1
+        tsp ","strMeasure15":"1 tbs","strMeasure16":"1 tsp ","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"http:\/\/www.meatwave.com\/blog\/montreal-smoked-meat-recipe","dateModified":null}]}'
+    http_version: 
+  recorded_at: Sun, 10 Dec 2017 18:11:58 GMT
+recorded_with: VCR 4.0.0
