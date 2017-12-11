@@ -3,7 +3,7 @@ class Api::LatestController < ApplicationController
   def index
     @api.fetch_latest_recipes
     if @api.has_error?
-      render json: @api.error[:code], status: @api.error[:message]
+      render json: {error: @api.error}, status: @api.error[:code]
     else
       render json: @api.results
     end

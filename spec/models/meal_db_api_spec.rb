@@ -38,4 +38,16 @@ describe MealDbApi do
       expect(api).to respond_to(:results)
     end
   end
+
+  describe '#search_recipes' do
+    around :each do |code|
+      VCR.use_cassette 'MealDbApi/search_recipes' do
+        code.run
+      end
+    end
+    it 'responds to search_recipes' do
+      expect(api).to respond_to(:search_recipes)
+    end
+
+  end
 end
