@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.themealdb.com/api/json/v1/1/search.php?s=Pea%20soup
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Microsoft-IIS/7.0
+      X-Powered-By:
+      - ASP.NET
+      - PHP/5.6.0
+      Date:
+      - Mon, 11 Dec 2017 15:22:47 GMT
+      Content-Length:
+      - '2448'
+      Via:
+      - 1.1 SC13900_82_61
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"meals":[{"idMeal":"52925","strMeal":"Split Pea Soup","strCategory":"Side","strArea":"Canadian","strInstructions":"Put
+        the gammon in a very large pan with 2 litres water and bring to the boil.
+        Remove from the heat and drain off the water \u2013 this helps to get rid
+        of some of the saltiness. Recover with 2 litres cold water and bring to the
+        boil again. Put everything but the frozen peas into the pan and bring to the
+        boil. Reduce to a simmer and cook for 1\u00bd-2\u00bd hrs, topping up the
+        water as and when you need to, to a similar level it started at. As the ham
+        cooks and softens, you can halve it if you want, so it is all submerged under
+        the liquid. When the ham is tender enough to pull into shreds, it is ready.\r\nLift
+        out the ham, peel off and discard the skin. While it is still hot (wear a
+        clean pair of rubber gloves), shred the meat. Remove bay from the soup and
+        stir in the frozen peas. Simmer for 1 min, then blend until smooth. Add a
+        splash of water if too thick, and return to the pan to heat through if it
+        has cooled, or if you are making ahead.\r\nWhen you are ready to serve, mix
+        the hot soup with most of the ham \u2013 gently reheat if made ahead. Serve
+        in bowls with the remaining ham scattered on top, and eat with crusty bread
+        and butter.","strMealThumb":"http:\/\/www.themealdb.com\/images\/media\/meals\/xxtsvx1511814083.jpg","strTags":"Soup,Warm","strYoutube":"https:\/\/www.youtube.com\/watch?v=qdhWz7qAaCU","strIngredient1":"Ham","strIngredient2":"Peas","strIngredient3":"Onions","strIngredient4":"Carrots","strIngredient5":"Bay
+        Leaves","strIngredient6":"Celery","strIngredient7":"Frozen Peas","strIngredient8":"Bread","strIngredient9":"","strIngredient10":"","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":"","strIngredient17":"","strIngredient18":"","strIngredient19":"","strIngredient20":"","strMeasure1":"1kg","strMeasure2":"200g
+        (soaked overnight)","strMeasure3":"2 chopped","strMeasure4":"2 chopped","strMeasure5":"2","strMeasure6":"1
+        chopped","strMeasure7":"300g","strMeasure8":"to serve","strMeasure9":"","strMeasure10":"","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":"","strMeasure17":"","strMeasure18":"","strMeasure19":"","strMeasure20":"","strSource":"https:\/\/www.bbcgoodfood.com\/recipes\/1022639\/split-pea-and-green-pea-smoked-ham-soup","dateModified":null}]}'
+    http_version: 
+  recorded_at: Mon, 11 Dec 2017 15:23:03 GMT
+recorded_with: VCR 4.0.0
