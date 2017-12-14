@@ -4,6 +4,7 @@ export const GET_REQUEST_FAILURE = "GET_REQUEST_FAILURE";
 export const SET_SINGLE_RECIPE = "SET_SINGLE_RECIPE";
 export const SET_RECIPES = "SET_RECIPES";
 export const SET_COOKIE = "SET_COOKIE";
+export const SET_SEARCH_RECIPES = "SET_SEARCH_RECIPES";
 
 export function getRequest() {
   return {
@@ -38,6 +39,13 @@ export function setRecipes(data) {
   };
 }
 
+export function setSearchRecipes(data) {
+  return {
+    type: SET_SEARCH_RECIPES,
+    data
+  };
+}
+
 export function setCookie(data) {
   return {
     type: SET_COOKIE,
@@ -45,7 +53,7 @@ export function setCookie(data) {
   };
 }
 
-export function setSingleRecipeFromId(id, recipes) {
+export function setSingleRecipeFromId(id, recipes, searchRecipes) {
   return dispatch => {
     let index = 0;
     for (var i = 0; i < recipes.length; i++) {
@@ -53,14 +61,24 @@ export function setSingleRecipeFromId(id, recipes) {
         index = i;
       }
     }
-    dispatch(setSingleRecipe(recipes[index]));
+    if (index) {
+      dispatch(setSingleRecipe(recipes[index]));
+    } else {
+      for (var i = 0; i < searchRecipes.length; i++) {
+        if (searchRecipes[i].id === id) {
+          index = i;
+        }
+      }
+      dispatch(setSingleRecipe(searchRecipes[index]));
+    }
   };
 }
 
 export function getRecipes() {
   return dispatch => {
     dispatch(getRequest());
-    fetch("https://gentle-dawn-10800.herokuapp.com/api/latest")
+
+    fetch("/api/latest")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -81,7 +99,8 @@ export function getRecipes() {
 export function getRecipesSearch(searchUrl) {
   return dispatch => {
     dispatch(getRequest());
-    fetch(`https://gentle-dawn-10800.herokuapp.com/api/search${searchUrl}`)
+
+    fetch(`/api/search${searchUrl}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -89,7 +108,7 @@ export function getRecipesSearch(searchUrl) {
         return response.json();
       })
       .then(json => {
-        dispatch(setRecipes(json));
+        dispatch(setSearchRecipes(json));
       })
       .catch(error => {
         dispatch(getRequestFailure(error));

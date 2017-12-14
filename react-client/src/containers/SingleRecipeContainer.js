@@ -7,7 +7,8 @@ class SingleContainer extends Component {
   componentWillMount() {
     this.props.getRecipe(
       this.props.location.pathname.slice(8),
-      this.props.recipes
+      this.props.recipes,
+      this.props.searchRecipes
     );
   }
   componentDidMount() {
@@ -21,14 +22,15 @@ class SingleContainer extends Component {
 const mapStateToProps = state => {
   return {
     singleRecipe: state.singleRecipe,
-    recipes: state.recipes
+    recipes: state.recipes,
+    searchRecipes: state.searchRecipes
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getRecipe: (recipeId, recipes) => {
-      dispatch(setSingleRecipeFromId(recipeId, recipes));
+    getRecipe: (recipeId, recipes, searchRecipes) => {
+      dispatch(setSingleRecipeFromId(recipeId, recipes, searchRecipes));
     }
   };
 };

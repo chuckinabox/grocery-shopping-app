@@ -32,7 +32,7 @@ class SearchContainer extends Component {
             "Loading..."
           ) : (
             <SearchRecipes
-              recipes={this.props.recipes}
+              recipes={this.props.searchRecipes}
               history={this.props.history}
             />
           )}
@@ -44,7 +44,7 @@ class SearchContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    recipes: state.recipes,
+    searchRecipes: state.searchRecipes,
     isFetching: state.isFetching
   };
 };

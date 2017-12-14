@@ -7,7 +7,16 @@ const initailState = {
   recipes: [
     {
       title: "",
-      id: ""
+      id: "",
+      photo_url: "",
+      ingredients: [],
+      instructions: ""
+    }
+  ],
+  searchRecipes: [
+    {
+      title: "",
+      id: "",
       photo_url: "",
       ingredients: [],
       instructions: ""
@@ -15,7 +24,7 @@ const initailState = {
   ],
   singleRecipe: {
     title: "",
-    id: ""
+    id: "",
     photo_url: "",
     ingredients: [],
     instructions: ""
@@ -251,6 +260,15 @@ const initailState = {
 //       ]
 //     }
 //   ],
+// searchRecipes: [
+//   {
+//     title: "",
+//     id: "",
+//     photo_url: "",
+//     ingredients: [],
+//     instructions: ""
+//   }
+// ],
 //   singleRecipe: {
 //     title: "Venetian Duck Ragu",
 //     id: "100",
@@ -280,7 +298,6 @@ const initailState = {
 // };
 
 export function recipesList(state = initailState, action) {
-  console.log("Redux--", action);
   switch (action.type) {
     case Actions.SET_SINGLE_RECIPE:
       return {
@@ -292,6 +309,12 @@ export function recipesList(state = initailState, action) {
         ...state,
         isFetching: false,
         recipes: action.data
+      };
+    case Actions.SET_SEARCH_RECIPES:
+      return {
+        ...state,
+        isFetching: false,
+        searchRecipes: action.data
       };
     case Actions.GET_REQUEST:
       return {
