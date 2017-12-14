@@ -59,10 +59,8 @@ export function setSingleRecipeFromId(id, recipes) {
 
 export function getRecipes() {
   return dispatch => {
-    console.log("Request Top/Random Recipes");
-
     dispatch(getRequest());
-    fetch("/api/latest")
+    fetch("https://gentle-dawn-10800.herokuapp.com/api/latest")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -82,9 +80,8 @@ export function getRecipes() {
 
 export function getRecipesSearch(searchUrl) {
   return dispatch => {
-    console.log(`Request Search ${searchUrl}`);
     dispatch(getRequest());
-    fetch(`/api/search${searchUrl}`)
+    fetch(`https://gentle-dawn-10800.herokuapp.com/api/search${searchUrl}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
