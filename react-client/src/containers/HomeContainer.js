@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import Recipes from "../components/Recipes";
 import { connect } from "react-redux";
-import { getRecipes } from "../actions";
+
+import Cookies from "js-cookie";
 
 class HomeContainer extends Component {
   componentWillMount() {
-    this.props.getRecipes();
+    if (Cookies.get("key")) {
+      console.log("GET SAVED");
+    }
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -44,10 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getRecipes: () => dispatch(getRecipes())
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+export default connect(mapStateToProps, null)(HomeContainer);

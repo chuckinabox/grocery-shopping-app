@@ -1,9 +1,12 @@
 {
   "name": "react-client",
   "version": "0.1.0",
+  "proxy": "http://localhost:3000/",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "form-serialize": "^0.7.2",
+    "js-cookie": "^2.2.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",

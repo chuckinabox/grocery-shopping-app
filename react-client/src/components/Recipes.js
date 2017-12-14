@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import Cookies from "js-cookie";
 
 class Recipes extends Component {
   render() {
     //Split ingredients for formatting
+
     let listRecipes = this.props.recipes.map(recipe => {
       let ingredients = [
         <p key={recipe.ingredients[0]}>-{recipe.ingredients[0]}</p>
@@ -29,7 +31,21 @@ class Recipes extends Component {
               className="thumbnail"
             />
           </div>
-          <div className="col-sm-12">{ingredients}</div>
+          <div className="col-sm-12">
+            {ingredients}
+            {Cookies.get("key") ? (
+              <button
+                onClick={e => {
+                  e.stopPropagation();
+                  console.log("SAVE!!");
+                }}
+              >
+                Save
+              </button>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       );
     });

@@ -10,6 +10,9 @@ class SingleContainer extends Component {
       this.props.recipes
     );
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return <OneRecipe recipe={this.props.singleRecipe} />;
   }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import NavBar from "../components/elements/NavBar";
 import ModalButton from "../components/elements/ModalButton";
+import LoginContainer from "./LoginContainer";
 
-class HeaderContainer extends Component {
+class HeaderContainerLoggedOut extends Component {
   constructor(props) {
     super(props);
     this.state = { search: "" };
@@ -53,11 +54,9 @@ class HeaderContainer extends Component {
             </form>
           </div>
           <div className="col-sm-2 col-xs-4" id="signup">
-            <ModalButton label="SignOut" color="danger">
-              <p>Are you Sure</p>
-              <p>
-                <span>Yes</span> <span>No</span>
-              </p>
+            {/* <button className="btn btn-primary">Login/Signup</button> */}
+            <ModalButton label="Login/Signup">
+              <LoginContainer history={this.props.history} />
             </ModalButton>
           </div>
         </div>
@@ -66,11 +65,7 @@ class HeaderContainer extends Component {
           <NavBar
             location={this.props.location}
             history={this.props.history}
-            routes={[
-              { name: "Home", path: "/" },
-              { name: "Going to Cook", path: "/goingtocook" },
-              { name: "Saved Recipes", path: "/savedrecipes" }
-            ]}
+            routes={[{ name: "Home", path: "/" }]}
           />
         </div>
       </div>
@@ -78,4 +73,4 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer;
+export default HeaderContainerLoggedOut;

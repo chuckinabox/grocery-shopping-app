@@ -3,6 +3,7 @@ export const GET_REQUEST_SUCCESS = "GET_REQUEST_SUCCESS";
 export const GET_REQUEST_FAILURE = "GET_REQUEST_FAILURE";
 export const SET_SINGLE_RECIPE = "SET_SINGLE_RECIPE";
 export const SET_RECIPES = "SET_RECIPES";
+export const SET_COOKIE = "SET_COOKIE";
 
 export function getRequest() {
   return {
@@ -37,6 +38,13 @@ export function setRecipes(data) {
   };
 }
 
+export function setCookie(data) {
+  return {
+    type: SET_COOKIE,
+    data
+  };
+}
+
 export function setSingleRecipeFromId(id, recipes) {
   return dispatch => {
     let index = 0;
@@ -52,18 +60,21 @@ export function setSingleRecipeFromId(id, recipes) {
 export function getRecipes() {
   return dispatch => {
     console.log("Request Top/Random Recipes");
+
     dispatch(getRequest());
-    fetch("/api/top")
+    fetch("/api/latest")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
         }
+
         return response.json();
       })
       .then(json => {
-        dispatch(setRecipes(json.data));
+        dispatch(setRecipes(json));
       })
       .catch(error => {
+        console.log(error);
         dispatch(getRequestFailure(error));
       });
   };
@@ -81,7 +92,7 @@ export function getRecipesSearch(searchUrl) {
         return response.json();
       })
       .then(json => {
-        dispatch(setRecipes(json.data));
+        dispatch(setRecipes(json));
       })
       .catch(error => {
         dispatch(getRequestFailure(error));

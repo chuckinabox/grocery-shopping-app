@@ -18,12 +18,12 @@ class SearchContainer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <p>
+              <h5>
                 <button onClick={() => this.props.history.goBack()}>
                   Go Back
                 </button>{" "}
                 Results for: {this.props.location.search.slice(3)}
-              </p>
+              </h5>
             </div>
           </div>
         </div>

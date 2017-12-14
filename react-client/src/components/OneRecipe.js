@@ -2,17 +2,27 @@ import React, { Component } from "react";
 
 class OneRecipe extends Component {
   render() {
+    //Split ingredients for formatting
     const ingredients = this.props.recipe.ingredients.map(ingred => (
       <h6 key={ingred}>-{ingred}</h6>
     ));
+    //Split instructions for formatting
     let instructions = this.props.recipe.instructions
-      .split(". ")
-      .map((instruct, index) => (
-        <h6 key={instruct}>
-          {index + 1}.{instruct}
-        </h6>
-      ));
-    instructions.pop();
+      .split(/\.(?=[A-Z])|\. (?=[A-Z])/g)
+      .map((instruct, index) => {
+        if (instruct[instruct.length - 1] === ".") {
+          return (
+            <h6 key={instruct}>
+              {index + 1}. {instruct}
+            </h6>
+          );
+        }
+        return (
+          <h6 key={instruct}>
+            {index + 1}. {instruct}.
+          </h6>
+        );
+      });
     return (
       <div className="card container">
         <div className="row">

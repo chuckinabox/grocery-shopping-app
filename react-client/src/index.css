@@ -1,22 +1,12 @@
 body {
   margin: 0;
+  margin-top: 1%;
   padding: 0;
-  font-family: sans-serif;
 }
 
 .title {
   text-align: center;
 }
-
-/*Remove for login*/
-.signup {
-  visibility: hidden;
-}
-
-nav {
-  display: none;
-}
-/*Remove for login*/
 
 .flex-parent {
   display: flex;
@@ -58,4 +48,79 @@ nav {
   border: 2px solid gray;
   border-radius: 2%;
   padding: 2px;
+}
+
+#search {
+  padding: 0;
+}
+
+#signup {
+  padding-right: 2px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10%;
+  z-index: 2;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5;
+  width: fit-content;
+  max-width: 75%;
+  height: fit-content;
+  max-height: 80%;
+  margin: auto;
+  padding: 5%;
+  display: inline;
+  overflow: auto;
+}
+
+.top-right {
+  margin: -6% -6% 0 0;
+}
+
+body {
+  color: #111111;
+  background-color: #44d399;
+}
+
+#navbar {
+  color: #111111;
+  background-color: #698fd0;
+}
+
+#navbar a:hover {
+  color: #111111;
+  background-color: #44d399;
+}
+
+button.btn.btn-primary {
+  background-color: #698fd0;
+  color: #000000;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: #3a74d7;
+  color: #000000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #111111;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #111111;
+}
+
+.navbar-default .navbar-toggle {
+  background-color: #3a74d7;
 }
