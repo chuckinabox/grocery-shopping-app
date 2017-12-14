@@ -33,7 +33,15 @@ class SearchRecipes extends Component {
         </div>
       );
     });
-    return <div className="">{listRecipes}</div>;
+    if (this.props.recipes[0].title) {
+      return <div className="">{listRecipes}</div>;
+    } else {
+      return (
+        <div className="card row">
+          <p>Sorry, no results</p>
+        </div>
+      );
+    }
   }
 }
 

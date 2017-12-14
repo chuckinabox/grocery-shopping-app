@@ -64,9 +64,9 @@ export function setSingleRecipeFromId(id, recipes, searchRecipes) {
     if (index) {
       dispatch(setSingleRecipe(recipes[index]));
     } else {
-      for (var i = 0; i < searchRecipes.length; i++) {
-        if (searchRecipes[i].id === id) {
-          index = i;
+      for (var j = 0; j < searchRecipes.length; j++) {
+        if (searchRecipes[j].id === id) {
+          index = j;
         }
       }
       dispatch(setSingleRecipe(searchRecipes[index]));
@@ -111,6 +111,17 @@ export function getRecipesSearch(searchUrl) {
         dispatch(setSearchRecipes(json));
       })
       .catch(error => {
+        dispatch(
+          setSearchRecipes([
+            {
+              title: "",
+              id: "",
+              photo_url: "",
+              ingredients: [],
+              instructions: ""
+            }
+          ])
+        );
         dispatch(getRequestFailure(error));
       });
   };
