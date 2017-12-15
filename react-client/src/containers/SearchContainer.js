@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchRecipes from "../components/SearchRecipes";
 import { connect } from "react-redux";
 import { getRecipesSearch } from "../actions";
+import Button from "../components/elements/Button";
 
 class SearchContainer extends Component {
   componentWillMount() {
@@ -19,9 +20,12 @@ class SearchContainer extends Component {
           <div className="row">
             <div className="col-sm-12">
               <h5>
-                <button onClick={() => this.props.history.goBack()}>
+                <Button
+                  color="danger"
+                  onClick={() => this.props.history.goBack()}
+                >
                   Go Back
-                </button>{" "}
+                </Button>{" "}
                 Results for: {this.props.location.search.slice(3)}
               </h5>
             </div>

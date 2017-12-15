@@ -56,12 +56,14 @@ export function setCookie(data) {
 export function setSingleRecipeFromId(id, recipes, searchRecipes) {
   return dispatch => {
     let index = 0;
+    let found = false;
     for (var i = 0; i < recipes.length; i++) {
       if (recipes[i].id === id) {
         index = i;
+        found = true;
       }
     }
-    if (index) {
+    if (found) {
       dispatch(setSingleRecipe(recipes[index]));
     } else {
       for (var j = 0; j < searchRecipes.length; j++) {
