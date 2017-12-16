@@ -8,9 +8,18 @@ class BigOvenApi
 
   def initialize
     @error = {}
-    @results = []
     @response = []
     @hydra = Typhoeus::Hydra.hydra
+  end
+
+  def search_recipes(query)
+    return define_error(403, "Missing search params") unless query
+    request = Typhoeus::Request.new("#{URL}/recipes?title_kw=#{URI.encode(query)}", HEADERS)
+    handle_errors(request)
+    request.run
+    return if has_error?
+
+    parse_search_results(JSON.parse(request.response.body))
   end
 
   def fetch_latest_recipes
@@ -30,6 +39,21 @@ class BigOvenApi
   end
 
   private
+
+  def parse_search_results(search_results)
+    @results = {resultCount: search_results["ResultCount"], results: []}
+    return if search_results["ResultCount"] == 0
+    search_results["Results"].each do |r|
+      recipe = {}
+      recipe["id"] = r["RecipeID"]
+      recipe["title"] = r["Title"]
+      recipe["category"] = r["Category"]
+      recipe["StarRating"] = r["StarRating"]
+      recipe["webURL"] = r["WebURL"]
+      recipe["photoURL"] = r["PhotoURL"]
+      @results[:results] << recipe
+    end
+  end
 
   def make_bulk_request(requests)
     requests.map do |request|
@@ -51,8 +75,8 @@ class BigOvenApi
   end
 
   def parse_recipes(recipes)
-    return [] if recipes.empty?
     @results = []
+    return if recipes.empty?
     recipes.each do |recipe|
       dish = {}
       dish["id"] = recipe["RecipeID"]
@@ -98,7 +122,7 @@ class BigOvenApi
   end
 
   def set_error(response)
-    @error[:code] = response.code
+    @error[:status] = response.code
     if response.timed_out?
       @error[:message] = "Timed out"
     elsif response.code == 0
@@ -106,6 +130,11 @@ class BigOvenApi
     else
       @error[:message] = "HTTP request failed: " + response.code.to_s
     end
+  end
+
+  def define_error(status, message)
+    @error[:status] = status
+    @error[:message] = message
   end
 
 end

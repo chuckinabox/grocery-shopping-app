@@ -43,6 +43,13 @@ describe BigOvenApi do
     end
   end
 
+  describe '#search_recipes' do
+    it 'responds to #search_recipes' do
+      expect(api).to respond_to(:search_recipes)
+    end
+  end
+
+
   describe '#has_error?' do
     it 'returns false if error is empty' do
       expect(api.has_error?).to eq false
