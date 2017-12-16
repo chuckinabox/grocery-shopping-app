@@ -26,6 +26,7 @@ gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'httparty'
 gem 'figaro'
+gem 'typhoeus'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
+  gem 'factory_bot_rails'
 end
 
 group :development do

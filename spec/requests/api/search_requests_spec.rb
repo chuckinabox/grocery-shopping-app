@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Api/SearchRequests' do
-  let(:api){ MealDbApi.new}
+  let(:api){ BigOvenApi.new}
   describe 'GET #index' do
     context 'when params are missing' do
       it 'returns 403' do

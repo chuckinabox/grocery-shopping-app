@@ -16,6 +16,6 @@ class Api::SearchController < ApplicationController
   end
 
   def set_up
-    @api = MealDbApi.new
+    @api = BigOvenApi.new
   end
 end

@@ -12,7 +12,7 @@ class Api::LatestController < ApplicationController
   private
 
   def set_up
-    @api = MealDbApi.new
+    @api = BigOvenApi.new
   end
 
 end
