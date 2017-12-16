@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :api do
       resources :latest, only: [:index]
       resources :search, only: [:index]
+      resources :recipe, only:[:show]
     end
   end
 end

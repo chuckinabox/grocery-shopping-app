@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/174616
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '9733'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=b0857641aa9d2f2d0cfe1223574020a7d8bd55b24d6ee92872814d15a9f96d8d;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 16 Dec 2017 11:22:10 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 174616,\r\n  \"Title\": \"Pea Soup\",\r\n  \"Description\":
+        \"Once again, delightful memories of childhood, this soup was a winter staple
+        at our house and this recipe has been passed down for at least 4 generations.\\rThere
+        is a lot of history to pea soup and not just in Lancashire, The traditional
+        English pea soup was made with dried peas, and its greeny-brown colour was
+        so similar to the dense smog that dominated London in the winter (until as
+        late as the 1960s), that the smog became known as a ?pea-souper?. In Bleak
+        House, Dickens referred to the fog as the ?London Particular?, and the name
+        has been used for both fog and soup ever since.\\r\",\r\n  \"Cuisine\": \"English\",\r\n
+        \ \"Category\": \"Soups, Stews and Chili\",\r\n  \"Subcategory\": \"Chowders\",\r\n
+        \ \"Microcategory\": null,\r\n  \"PrimaryIngredient\": \"Peas\",\r\n  \"StarRating\":
+        5.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/pea-soup/174616\",\r\n
+        \ \"ImageURL\": null,\r\n  \"ReviewCount\": 1,\r\n  \"MedalCount\": 0,\r\n
+        \ \"FavoriteCount\": 5,\r\n  \"Poster\": {\r\n    \"UserID\": 518748,\r\n
+        \   \"UserName\": \"Astro-Chef\",\r\n    \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/astro-chef=290ee5.jpg\",\r\n
+        \   \"IsPremium\": true,\r\n    \"IsKitchenHelper\": false,\r\n    \"PremiumExpiryDate\":
+        \"2100-01-01T00:00:00.000Z\",\r\n    \"MemberSince\": \"2009-07-30T04:14:00.000Z\",\r\n
+        \   \"IsUsingRecurly\": false,\r\n    \"FirstName\": null,\r\n    \"LastName\":
+        null\r\n  },\r\n  \"Ingredients\": [\r\n    {\r\n      \"IngredientID\": 1785150,\r\n
+        \     \"DisplayIndex\": 0,\r\n      \"IsHeading\": false,\r\n      \"Name\":
+        \"Marrowfat peas (dried)\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/marrow\\\"
+        class=\\\"glosslink\\\">Marrow</a>fat peas (dried)\",\r\n      \"Quantity\":
+        1.0,\r\n      \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"pound\",\r\n
+        \     \"MetricQuantity\": 0.45359237,\r\n      \"MetricDisplayQuantity\":
+        \"0.45\",\r\n      \"MetricUnit\": \"kg\",\r\n      \"PreparationNotes\":
+        \"dry\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1785151,\r\n      \"DisplayIndex\":
+        1,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Ham Stock\",\r\n      \"HTMLName\":
+        \"Ham <a href=\\\"http://www.bigoven.com/glossary/stock\\\" class=\\\"glosslink\\\">Stock</a>\",\r\n
+        \     \"Quantity\": 8.0,\r\n      \"DisplayQuantity\": \"8\",\r\n      \"Unit\":
+        \"cups\",\r\n      \"MetricQuantity\": 1893.0,\r\n      \"MetricDisplayQuantity\":
+        \"1893\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\":
+        \"if at all possible homemade\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 1785152,\r\n      \"DisplayIndex\":
+        2,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"celery\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/celery\\\" class=\\\"glosslink\\\">celery</a>\",\r\n
+        \     \"Quantity\": 2.0,\r\n      \"DisplayQuantity\": \"2\",\r\n      \"Unit\":
+        \"ribs\",\r\n      \"MetricQuantity\": 2.0,\r\n      \"MetricDisplayQuantity\":
+        \"2\",\r\n      \"MetricUnit\": \"ribs\",\r\n      \"PreparationNotes\": \"finely
+        chopped\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Celery\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 3,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1785153,\r\n      \"DisplayIndex\":
+        3,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"carrot\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/carrot\\\" class=\\\"glosslink\\\">carrot</a>\",\r\n
+        \     \"Quantity\": 2.0,\r\n      \"DisplayQuantity\": \"2\",\r\n      \"Unit\":
+        \"medium\",\r\n      \"MetricQuantity\": 2.0,\r\n      \"MetricDisplayQuantity\":
+        \"2\",\r\n      \"MetricUnit\": \"medium\",\r\n      \"PreparationNotes\":
+        \"finely chopped\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Carrot\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 24,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1785154,\r\n      \"DisplayIndex\":
+        4,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Onion\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/onion\\\" class=\\\"glosslink\\\">Onion</a>\",\r\n
+        \     \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \"1\",\r\n      \"Unit\":
+        \"large\",\r\n      \"MetricQuantity\": 1.0,\r\n      \"MetricDisplayQuantity\":
+        \"1\",\r\n      \"MetricUnit\": \"large\",\r\n      \"PreparationNotes\":
+        \"finely chopped\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Onion\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 12,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1785155,\r\n      \"DisplayIndex\":
+        5,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Sea salt\",\r\n      \"HTMLName\":
+        \"Sea <a href=\\\"http://www.bigoven.com/glossary/salt\\\" class=\\\"glosslink\\\">salt</a>\",\r\n
+        \     \"Quantity\": 0.5,\r\n      \"DisplayQuantity\": \"1/2\",\r\n      \"Unit\":
+        \"teaspoon\",\r\n      \"MetricQuantity\": 2.46446079160853,\r\n      \"MetricDisplayQuantity\":
+        \"2\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Salt\",\r\n        \"Department\":
+        \"Spices\",\r\n        \"MasterIngredientID\": 6,\r\n        \"UsuallyOnHand\":
+        true\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1785156,\r\n      \"DisplayIndex\": 6,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Fresh Thyme leaves\",\r\n      \"HTMLName\": \"Fresh <a
+        href=\\\"http://www.bigoven.com/glossary/thyme\\\" class=\\\"glosslink\\\">Thyme</a>
+        leaves\",\r\n      \"Quantity\": 3.0,\r\n      \"DisplayQuantity\": \"3\",\r\n
+        \     \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 15.0,\r\n      \"MetricDisplayQuantity\":
+        \"15\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"(1
+        teaspoon dried)\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Thyme\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 40,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1785157,\r\n      \"DisplayIndex\":
+        7,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Cracked black pepper\",\r\n
+        \     \"HTMLName\": \"Cracked <a href=\\\"http://www.bigoven.com/glossary/black%20pepper\\\"
+        class=\\\"glosslink\\\">black pepper</a>\",\r\n      \"Quantity\": 0.5,\r\n
+        \     \"DisplayQuantity\": \"1/2\",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\":
+        2.46446079160853,\r\n      \"MetricDisplayQuantity\": \"2\",\r\n      \"MetricUnit\":
+        \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1785158,\r\n      \"DisplayIndex\": 8,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Fresh parsley\",\r\n      \"HTMLName\": \"Fresh <a href=\\\"http://www.bigoven.com/glossary/parsley\\\"
+        class=\\\"glosslink\\\">parsley</a>\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \"1/2\",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\": 118.0,\r\n
+        \     \"MetricDisplayQuantity\": \"118\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"chopped\",\r\n      \"IngredientInfo\": {\r\n
+        \       \"Name\": \"Fresh parsley\",\r\n        \"Department\": \"Produce\",\r\n
+        \       \"MasterIngredientID\": 356,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1785159,\r\n      \"DisplayIndex\": 9,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Ham Hock\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/ham\\\"
+        class=\\\"glosslink\\\">Ham</a> Hock\",\r\n      \"Quantity\": 2.0,\r\n      \"DisplayQuantity\":
+        \"2\",\r\n      \"Unit\": \"cups\",\r\n      \"MetricQuantity\": 473.0,\r\n
+        \     \"MetricDisplayQuantity\": \"473\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"diced\",\r\n      \"IngredientInfo\": {\r\n
+        \       \"Name\": \"Ham\",\r\n        \"Department\": \"Meats\",\r\n        \"MasterIngredientID\":
+        82,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    }\r\n  ],\r\n  \"Instructions\": \"Soak the peas as directed on
+        the packet (or see notes) then in a large soup pan add the peas, water celery,
+        carrots, onion, thyme, salt, and pepper. Bring to a boil and boil for 3 minutes
+        now reduce the heat to slow simmer cover the pan and cook 45 to 60 minutes
+        until the peas are tender.\\r\\nAdd the parsley and simmer uncovered for about
+        45 minutes until thick now you can puree the peas in a blender or pass through
+        a sieve or just leave as is if you like a chunky soup. Fine-tune the seasoning,
+        add the diced ham, and serve with a swirl of cream or a sprinkling of chopped
+        parsley on top.\\r\\n\",\r\n  \"YieldNumber\": 10.0,\r\n  \"YieldUnit\": \"Servings\",\r\n
+        \ \"TotalMinutes\": 120,\r\n  \"ActiveMinutes\": 0,\r\n  \"NutritionInfo\":
+        {\r\n    \"SingularYieldUnit\": \"Paid API plan required for nutrition.\",\r\n
+        \   \"TotalCalories\": 0.0,\r\n    \"TotalFat\": 0.0,\r\n    \"CaloriesFromFat\":
+        0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\": 0.0,\r\n    \"SatFatPct\":
+        0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\": 0.0,\r\n    \"TransFat\":
+        0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\": 0.0,\r\n    \"Sodium\":
+        0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\": 0.0,\r\n    \"PotassiumPct\":
+        0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\": 0.0,\r\n    \"DietaryFiber\":
+        0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\": 0.0,\r\n    \"Protein\":
+        0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\": null,\r\n  \"CreationDate\":
+        \"2009-09-18T02:54:57.337Z\",\r\n  \"LastModified\": \"2017-09-09T07:55:56.670Z\",\r\n
+        \ \"IsBookmark\": false,\r\n  \"BookmarkURL\": null,\r\n  \"BookmarkSiteLogo\":
+        \"\",\r\n  \"BookmarkImageURL\": null,\r\n  \"IsRecipeScan\": null,\r\n  \"MenuCount\":
+        0,\r\n  \"NotesCount\": 0,\r\n  \"AdTags\": null,\r\n  \"IngredientsTextBlock\":
+        null,\r\n  \"AllCategoriesText\": \"winter|traditional|soups, chowders, broths,
+        consomm?s|lancashire dishes|soups chowders and broths|soup|main dish|brunch|peas|english|white-meat-free|tree-nut-free|nut-free|gluten-free|contains-red-meat|shellfish-free|dairy-free\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": null,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": null,\r\n  \"ImageSquares\": [],\r\n  \"PhotoUrl\":
+        \"https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg\",\r\n  \"VerifiedByClass\":
+        null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/174616
+  recorded_at: Sat, 16 Dec 2017 11:22:11 GMT
+recorded_with: VCR 4.0.0

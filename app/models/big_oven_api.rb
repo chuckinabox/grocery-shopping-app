@@ -12,6 +12,14 @@ class BigOvenApi
     @hydra = Typhoeus::Hydra.hydra
   end
 
+  def fetch_recipe_by_id(id)
+    request = Typhoeus::Request.new("#{URL}/recipe/#{id}", HEADERS)
+    handle_errors(request)
+    request.run
+    return if has_error?
+    parse_recipes(JSON.parse(request.response.body))
+  end
+
   def search_recipes(query)
     return define_error(403, "Missing search params") unless query
     request = Typhoeus::Request.new("#{URL}/recipes?title_kw=#{URI.encode(query)}", HEADERS)
@@ -74,31 +82,36 @@ class BigOvenApi
     end
   end
 
+  def create_full_recipe_hash(recipe)
+    dish = {}
+    dish["id"] = recipe["RecipeID"]
+    dish["title"] = recipe["Title"]
+    dish["description"] = recipe["Description"]
+    dish["rating"] = recipe["StarRating"]
+    dish["photoURL"] = recipe["ImageURL"]
+    dish["webURL"] = recipe["WebURL"]
+    dish["instructionsURL"] = recipe["Instructions"]
+    dish["reviewCount"] = recipe["ReviewCount"]
+    dish["category"] = recipe["Category"]
+    dish["prepTime"] = recipe["TotalMinutes"]
+    dish["sourceURL"] = recipe["BookmarkURL"]
+    dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
+      { ingredientID: ingredient["IngredientID"],
+        name: ingredient["Name"],
+        quantity: ingredient["Quantity"],
+        unit: ingredient["Unit"],
+        asString: "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
+        }
+    end
+    dish
+  end
+
   def parse_recipes(recipes)
     @results = []
     return if recipes.empty?
+    recipes = [recipes] if recipes.class == Hash
     recipes.each do |recipe|
-      dish = {}
-      dish["id"] = recipe["RecipeID"]
-      dish["title"] = recipe["Title"]
-      dish["description"] = recipe["Description"]
-      dish["rating"] = recipe["StarRating"]
-      dish["photoURL"] = recipe["ImageURL"]
-      dish["webURL"] = recipe["WebURL"]
-      dish["instructionsURL"] = recipe["Instructions"]
-      dish["reviewCount"] = recipe["ReviewCount"]
-      dish["category"] = recipe["Category"]
-      dish["prepTime"] = recipe["TotalMinutes"]
-      dish["sourceURL"] = recipe["BookmarkURL"]
-      dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
-        { ingredientID: ingredient["IngredientID"],
-          name: ingredient["Name"],
-          quantity: ingredient["Quantity"],
-          unit: ingredient["Unit"],
-          asString: "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
-          }
-      end
-      @results << dish
+      @results << create_full_recipe_hash(recipe)
     end
   end
 
