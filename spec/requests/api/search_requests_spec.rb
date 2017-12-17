@@ -13,9 +13,16 @@ describe 'Api/SearchRequests' do
         get api_search_index_path, params: {q: 'Pea soup'}
         expect(response).to have_http_status :ok
       end
-      it 'returns recipe' do
+      it 'returns recipes' do
         get api_search_index_path, params: {q: 'Pea soup'}
         expect(JSON.parse(response.body)['results'][0]['title']).to eq 'Pea Soup'
+      end
+      it 'includes metadata about the search' do
+        get api_search_index_path, params: {q: 'Pea soup'}
+        body = JSON.parse(response.body)
+        expect(body['rpp']).not_to be_nil
+        expect(body['pg']).not_to be_nil
+        expect(body['resultCount']).not_to be_nil
       end
     end
     context 'when params are missing' do

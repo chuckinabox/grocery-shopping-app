@@ -12,7 +12,7 @@ class Api::SearchController < ApplicationController
   private
 
   def whitelisted_search_params
-    params.permit(:q, :format)[:q]
+    params.permit(:q, :format, :pg, :rpp)
   end
 
   def set_up

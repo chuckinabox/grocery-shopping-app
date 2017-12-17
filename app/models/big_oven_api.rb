@@ -21,8 +21,11 @@ class BigOvenApi
   end
 
   def search_recipes(query)
-    return define_error(403, "Missing search params") unless query
-    request = Typhoeus::Request.new("#{URL}/recipes?title_kw=#{URI.encode(query)}", HEADERS)
+    return define_error(403, "Missing search params") unless query[:q]
+    @results = {rpp: query["rpp"] || 10,
+                pg: query["pg"] || 1
+                }
+    request = Typhoeus::Request.new("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results["rpp"]}&pg=#{@results["pg"]}", HEADERS)
     handle_errors(request)
     request.run
     return if has_error?
@@ -49,7 +52,8 @@ class BigOvenApi
   private
 
   def parse_search_results(search_results)
-    @results = {resultCount: search_results["ResultCount"], results: []}
+    @results[:resultCount] = search_results["ResultCount"]
+    @results[:results] = []
     return if search_results["ResultCount"] == 0
     search_results["Results"].each do |r|
       recipe = {}
@@ -90,18 +94,13 @@ class BigOvenApi
     dish["rating"] = recipe["StarRating"]
     dish["photoURL"] = recipe["ImageURL"]
     dish["webURL"] = recipe["WebURL"]
-    dish["instructionsURL"] = recipe["Instructions"]
+    dish["instructions"] = recipe["Instructions"].gsub(/\r\n/, "")
     dish["reviewCount"] = recipe["ReviewCount"]
     dish["category"] = recipe["Category"]
     dish["prepTime"] = recipe["TotalMinutes"]
     dish["sourceURL"] = recipe["BookmarkURL"]
     dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
-      { ingredientID: ingredient["IngredientID"],
-        name: ingredient["Name"],
-        quantity: ingredient["Quantity"],
-        unit: ingredient["Unit"],
-        asString: "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
-        }
+      "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
     end
     dish
   end
