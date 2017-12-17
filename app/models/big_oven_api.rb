@@ -13,11 +13,9 @@ class BigOvenApi
   end
 
   def fetch_recipe_by_id(id)
-    request = Typhoeus::Request.new("#{URL}/recipe/#{id}", HEADERS)
-    handle_errors(request)
-    request.run
+    make_single_request("#{URL}/recipe/#{id}")
     return if has_error?
-    parse_recipes(JSON.parse(request.response.body))
+    parse_recipes(JSON.parse(@request.response.body))
   end
 
   def search_recipes(query)
@@ -25,12 +23,10 @@ class BigOvenApi
     @results = {rpp: query["rpp"] || 10,
                 pg: query["pg"] || 1
                 }
-    request = Typhoeus::Request.new("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results["rpp"]}&pg=#{@results["pg"]}", HEADERS)
-    handle_errors(request)
-    request.run
+    make_single_request("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results["rpp"]}&pg=#{@results["pg"]}")
     return if has_error?
 
-    parse_search_results(JSON.parse(request.response.body))
+    parse_search_results(JSON.parse(@request.response.body))
   end
 
   def fetch_latest_recipes
@@ -105,6 +101,12 @@ class BigOvenApi
     dish
   end
 
+  def make_single_request(url)
+    @request = Typhoeus::Request.new("#{url}", HEADERS)
+    handle_errors
+    @request.run
+  end
+
   def parse_recipes(recipes)
     @results = []
     return if recipes.empty?
@@ -115,15 +117,13 @@ class BigOvenApi
   end
 
   def get_recipe_ids
-    request = Typhoeus::Request.new("#{URL}/recipes/raves?rpp=5", HEADERS)
-    handle_errors(request)
-    request.run
+    make_single_request("#{URL}/recipes/raves?rpp=5")
     return if has_error?
     JSON.parse(@response.body).map{ |recipe| recipe["RecipeInfo"]["RecipeID"]}
   end
 
-  def handle_errors(request)
-    request.on_complete do |response|
+  def handle_errors
+    @request.on_complete do |response|
       if response.success?
         @error = {}
         @response = response
