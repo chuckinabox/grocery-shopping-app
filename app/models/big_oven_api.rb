@@ -58,7 +58,7 @@ class BigOvenApi
       recipe["category"] = r["Category"]
       recipe["StarRating"] = r["StarRating"]
       recipe["webURL"] = r["WebURL"]
-      recipe["photoURL"] = r["PhotoURL"]
+      recipe["photoURL"] = r["PhotoUrl"]
       @results[:results] << recipe
     end
   end
