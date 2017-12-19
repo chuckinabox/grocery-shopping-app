@@ -47,7 +47,7 @@ class HeaderContainerLoggedOut extends Component {
                 />
                 <span className="input-group-btn">
                   <button className="btn btn-default" type="submit">
-                    Go!
+                    Search
                   </button>
                 </span>
               </div>

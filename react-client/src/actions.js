@@ -1,10 +1,14 @@
+//API REQUESTS/Fetches
 export const GET_REQUEST = "GET_REQUEST";
 export const GET_REQUEST_SUCCESS = "GET_REQUEST_SUCCESS";
 export const GET_REQUEST_FAILURE = "GET_REQUEST_FAILURE";
-export const SET_SINGLE_RECIPE = "SET_SINGLE_RECIPE";
-export const SET_RECIPES = "SET_RECIPES";
+//Setters
 export const SET_COOKIE = "SET_COOKIE";
+export const SET_RECIPES = "SET_RECIPES";
+export const SET_SINGLE_RECIPE = "SET_SINGLE_RECIPE";
 export const SET_SEARCH_RECIPES = "SET_SEARCH_RECIPES";
+export const SET_SAVED_RECIPES = "SET_SAVED_RECIPES";
+export const SET_GOING_TO_COOK_RECIPES = "SET_GOING_TO_COOK_RECIPES";
 
 export function getRequest() {
   return {
@@ -25,9 +29,9 @@ export function getRequestFailure(errors) {
   };
 }
 
-export function setSingleRecipe(data) {
+export function setCookie(data) {
   return {
-    type: SET_SINGLE_RECIPE,
+    type: SET_COOKIE,
     data
   };
 }
@@ -39,6 +43,13 @@ export function setRecipes(data) {
   };
 }
 
+export function setSingleRecipe(data) {
+  return {
+    type: SET_SINGLE_RECIPE,
+    data
+  };
+}
+
 export function setSearchRecipes(data) {
   return {
     type: SET_SEARCH_RECIPES,
@@ -46,9 +57,16 @@ export function setSearchRecipes(data) {
   };
 }
 
-export function setCookie(data) {
+export function setSavedRecipes(data) {
   return {
-    type: SET_COOKIE,
+    type: SET_SAVED_RECIPES,
+    data
+  };
+}
+
+export function setGoingToCookRecipes(data) {
+  return {
+    type: SET_GOING_TO_COOK_RECIPES,
     data
   };
 }
@@ -58,7 +76,7 @@ export function setSingleRecipeFromId(id, recipes, searchRecipes) {
     let index = 0;
     let found = false;
     for (var i = 0; i < recipes.length; i++) {
-      if (recipes[i].id === id) {
+      if (recipes[i].id.toString() === id.toString()) {
         index = i;
         found = true;
       }
@@ -69,10 +87,35 @@ export function setSingleRecipeFromId(id, recipes, searchRecipes) {
       for (var j = 0; j < searchRecipes.length; j++) {
         if (searchRecipes[j].id === id) {
           index = j;
+          found = true;
         }
       }
-      dispatch(setSingleRecipe(searchRecipes[index]));
+      if (found) {
+        dispatch(setSingleRecipe(searchRecipes[index]));
+      } else {
+        dispatch(getRecipeFromId(id));
+      }
     }
+  };
+}
+
+export function getRecipeFromId(id) {
+  return dispatch => {
+    fetch(`/api/recipe/${id}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Error with api");
+        }
+
+        return response.json();
+      })
+      .then(json => {
+        dispatch(setSingleRecipe(json[0]));
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch(getRequestFailure(error));
+      });
   };
 }
 
@@ -113,16 +156,14 @@ export function getRecipesSearch(searchUrl) {
         dispatch(setSearchRecipes(json));
       })
       .catch(error => {
+        console.log("DSDSDS");
         dispatch(
-          setSearchRecipes([
-            {
-              title: "",
-              id: "",
-              photo_url: "",
-              ingredients: [],
-              instructions: ""
-            }
-          ])
+          setSearchRecipes({
+            rpp: "10",
+            pg: "1",
+            resultCount: 0,
+            results: []
+          })
         );
         dispatch(getRequestFailure(error));
       });

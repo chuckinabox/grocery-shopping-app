@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSingleRecipeFromId } from "../actions";
 import OneRecipe from "../components/OneRecipe";
+import Button from "../components/elements/Button";
 
 class SingleContainer extends Component {
   componentWillMount() {
@@ -15,7 +16,22 @@ class SingleContainer extends Component {
     window.scrollTo(0, 0);
   }
   render() {
-    return <OneRecipe recipe={this.props.singleRecipe} />;
+    if (this.props.isFetching) {
+      return <p>"Loading"</p>;
+    } else {
+      return (
+        <div className="container">
+          <Button color="danger" onClick={() => this.props.history.goBack()}>
+            Go Back
+          </Button>
+          <br />
+          <OneRecipe
+            recipe={this.props.singleRecipe}
+            history={this.props.history}
+          />
+        </div>
+      );
+    }
   }
 }
 
@@ -23,7 +39,8 @@ const mapStateToProps = state => {
   return {
     singleRecipe: state.singleRecipe,
     recipes: state.recipes,
-    searchRecipes: state.searchRecipes
+    searchRecipes: state.searchRecipes,
+    isFetching: state.isFetching
   };
 };
 

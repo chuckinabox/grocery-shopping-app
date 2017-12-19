@@ -6,15 +6,21 @@ class Recipes extends Component {
     //Split ingredients for formatting
 
     let listRecipes = this.props.recipes.map(recipe => {
-      let ingredients = [
-        <p key={recipe.ingredients[0]}>-{recipe.ingredients[0]}</p>
-      ];
-      for (var i = 1; i < 5 && i < recipe.ingredients.length; i++) {
-        ingredients.push(
-          <p key={recipe.ingredients[i]}>-{recipe.ingredients[i]}</p>
-        );
+      let description;
+      if (recipe.description) {
+        description = <p>{recipe.description}</p>;
+      } else {
+        description = [
+          <p key={recipe.ingredients[0]}>-{recipe.ingredients[0]}</p>
+        ];
+        for (var i = 1; i < 5 && i < recipe.ingredients.length; i++) {
+          description.push(
+            <p key={recipe.ingredients[i]}>-{recipe.ingredients[i]}</p>
+          );
+        }
+        description.push(<p key={"..." + recipe.title}>...</p>);
       }
-      ingredients.push(<p key={"..." + recipe.title}>...</p>);
+
       return (
         <div
           className="card flex-item"
@@ -24,15 +30,16 @@ class Recipes extends Component {
           }}
         >
           <h5>{recipe.title}</h5>
+          <small>Rating: {recipe.rating ? recipe.rating.toFixed(1) : ""}</small>
           <div className="col-sm-12">
             <img
-              src={recipe.photo_url}
+              src={recipe.photoURL}
               alt={recipe.title}
               className="thumbnail"
             />
           </div>
           <div className="col-sm-12">
-            {ingredients}
+            {description}
             {Cookies.get("key") ? (
               <button
                 onClick={e => {
