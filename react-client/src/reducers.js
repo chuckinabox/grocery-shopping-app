@@ -2,6 +2,7 @@ import * as Actions from "./actions";
 
 // const initailState = {
 //   isFetching: false,
+//   shouldSearch: true,
 //   errors: null,
 //   cookie: "",
 //   recipes: [
@@ -29,6 +30,7 @@ import * as Actions from "./actions";
 
 const demoData = {
   isFetching: false,
+  shouldSearch: true,
   errors: null,
   cookie: "",
   recipes: [
@@ -457,6 +459,11 @@ export function recipesList(state = demoData, action) {
         ...state,
 
         cookie: action.data
+      };
+    case Actions.SET_SHOULD_SEARCH:
+      return {
+        ...state,
+        shouldSearch: action.data
       };
     default:
       return state;

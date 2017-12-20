@@ -2,6 +2,7 @@
 export const GET_REQUEST = "GET_REQUEST";
 export const GET_REQUEST_SUCCESS = "GET_REQUEST_SUCCESS";
 export const GET_REQUEST_FAILURE = "GET_REQUEST_FAILURE";
+export const SET_SHOULD_SEARCH = "SET_SHOULD_SEARCH";
 //Setters
 export const SET_COOKIE = "SET_COOKIE";
 export const SET_RECIPES = "SET_RECIPES";
@@ -26,6 +27,13 @@ export function getRequestFailure(errors) {
   return {
     type: GET_REQUEST_FAILURE,
     errors
+  };
+}
+
+export function setShouldSearch(data) {
+  return {
+    type: SET_SHOULD_SEARCH,
+    data
   };
 }
 
@@ -84,17 +92,7 @@ export function setSingleRecipeFromId(id, recipes, searchRecipes) {
     if (found) {
       dispatch(setSingleRecipe(recipes[index]));
     } else {
-      for (var j = 0; j < searchRecipes.length; j++) {
-        if (searchRecipes[j].id === id) {
-          index = j;
-          found = true;
-        }
-      }
-      if (found) {
-        dispatch(setSingleRecipe(searchRecipes[index]));
-      } else {
-        dispatch(getRecipeFromId(id));
-      }
+      dispatch(getRecipeFromId(id));
     }
   };
 }
@@ -141,11 +139,11 @@ export function getRecipes() {
   };
 }
 
-export function getRecipesSearch(searchUrl) {
+export function getRecipesSearch(searchUrl, page) {
   return dispatch => {
     dispatch(getRequest());
 
-    fetch(`/api/search${searchUrl}`)
+    fetch(`/api/search${searchUrl}&rpp=12&pg=${page}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -156,7 +154,6 @@ export function getRecipesSearch(searchUrl) {
         dispatch(setSearchRecipes(json));
       })
       .catch(error => {
-        console.log("DSDSDS");
         dispatch(
           setSearchRecipes({
             rpp: "10",

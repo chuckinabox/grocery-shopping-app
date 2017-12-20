@@ -15,7 +15,7 @@ class SearchRecipes extends Component {
       // ingredients.push(<p key={"..." + recipe.title}>...</p>);
       return (
         <div
-          className="card row"
+          className="card flex-item"
           key={recipe.title + recipe.id}
           onClick={e => {
             this.props.history.push(`/recipe/${recipe.id}`);
@@ -24,7 +24,7 @@ class SearchRecipes extends Component {
           <h4>{recipe.title}</h4>
           <small>Rating: {recipe.StarRating.toFixed(1)}</small>
           <br />
-          <div className="col-sm-4 col-xs-6">
+          <div className="">
             <img
               src={recipe.photoURL}
               alt={recipe.title}
@@ -36,7 +36,7 @@ class SearchRecipes extends Component {
       );
     });
     if (this.props.recipes.results.length) {
-      return <div className="">{listRecipes}</div>;
+      return <div className="flex-parent">{listRecipes}</div>;
     } else {
       return (
         <div className="card row">

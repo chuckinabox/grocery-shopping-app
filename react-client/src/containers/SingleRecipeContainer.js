@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setSingleRecipeFromId } from "../actions";
+import { setSingleRecipeFromId, setShouldSearch } from "../actions";
 import OneRecipe from "../components/OneRecipe";
 import Button from "../components/elements/Button";
 
@@ -11,6 +11,7 @@ class SingleContainer extends Component {
       this.props.recipes,
       this.props.searchRecipes
     );
+    this.props.setShouldSearch();
   }
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -21,10 +22,12 @@ class SingleContainer extends Component {
     } else {
       return (
         <div className="container">
-          <Button color="danger" onClick={() => this.props.history.goBack()}>
-            Go Back
-          </Button>
-          <br />
+          <div className="col-sm-12">
+            <Button color="danger" onClick={() => this.props.history.goBack()}>
+              Go Back
+            </Button>
+            <br />
+          </div>
           <OneRecipe
             recipe={this.props.singleRecipe}
             history={this.props.history}
@@ -48,6 +51,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getRecipe: (recipeId, recipes, searchRecipes) => {
       dispatch(setSingleRecipeFromId(recipeId, recipes, searchRecipes));
+    },
+    setShouldSearch: () => {
+      dispatch(setShouldSearch(false));
     }
   };
 };

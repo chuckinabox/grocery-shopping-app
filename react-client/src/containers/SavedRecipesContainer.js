@@ -1,9 +1,22 @@
 import React, { Component } from "react";
+import { setShouldSearch } from "../actions";
+import { connect } from "react-redux";
 
-class SavedRecipeContainer extends Component {
+class SavedRecipesContainer extends Component {
+  componentWillMount() {
+    this.props.setShouldSearch();
+  }
   render() {
-    return <p>SavedRecipe</p>;
+    return <p>SavedRecipes</p>;
   }
 }
 
-export default SavedRecipeContainer;
+const mapDispatchToProps = dispatch => {
+  return {
+    setShouldSearch: () => {
+      dispatch(setShouldSearch(true));
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SavedRecipesContainer);

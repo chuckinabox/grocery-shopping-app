@@ -10,7 +10,9 @@ class HeaderContainerLoggedOut extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.history.location.search) {
-      this.setState({ search: this.props.history.location.search.slice(3) });
+      this.setState({
+        search: this.props.history.location.search.slice(3).replace(/%20/g, " ")
+      });
     }
     if (!nextProps.history.location.search) {
       this.setState({ search: "" });
@@ -32,7 +34,7 @@ class HeaderContainerLoggedOut extends Component {
                 e.preventDefault();
                 if (e.target.search.value) {
                   this.props.history.push(`/search?q=${e.target.search.value}`);
-                  e.target.reset();
+                  // e.target.reset();
                 }
               }}
             >

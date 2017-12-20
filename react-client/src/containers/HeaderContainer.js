@@ -9,7 +9,9 @@ class HeaderContainer extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.history.location.search) {
-      this.setState({ search: this.props.history.location.search.slice(3) });
+      this.setState({
+        search: this.props.history.location.search.slice(3).replace(/%20/g, " ")
+      });
     }
     if (!nextProps.history.location.search) {
       this.setState({ search: "" });

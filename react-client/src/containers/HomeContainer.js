@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Recipes from "../components/Recipes";
 import { connect } from "react-redux";
-
+import { setShouldSearch } from "../actions";
 import Cookies from "js-cookie";
 
 class HomeContainer extends Component {
@@ -9,6 +9,7 @@ class HomeContainer extends Component {
     if (Cookies.get("key")) {
       console.log("GET SAVED");
     }
+    this.props.setShouldSearch();
   }
 
   componentDidMount() {
@@ -51,4 +52,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(HomeContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    setShouldSearch: () => {
+      dispatch(setShouldSearch(true));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

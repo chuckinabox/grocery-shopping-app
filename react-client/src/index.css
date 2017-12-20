@@ -13,8 +13,9 @@ body {
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-self: flex-start;
+
+  justify-content: space-around;
 }
 
 .flex-item {
@@ -41,6 +42,7 @@ body {
 }
 
 .thumbnail {
+  height: auto;
   width: 100%;
 }
 
