@@ -20,10 +20,10 @@ class BigOvenApi
 
   def search_recipes(query)
     return define_error(403, "Missing search params") unless query[:q]
-    @results = {rpp: query["rpp"] || 10,
-                pg: query["pg"] || 1
+    @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
+                pg: query[:pg] ? query[:pg].to_i : 1
                 }
-    make_single_request("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results["rpp"]}&pg=#{@results["pg"]}")
+    make_single_request("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results[:rpp]}&pg=#{@results[:pg]}")
     return if has_error?
 
     parse_search_results(JSON.parse(@request.response.body))
@@ -59,6 +59,8 @@ class BigOvenApi
       recipe["StarRating"] = r["StarRating"]
       recipe["webURL"] = r["WebURL"]
       recipe["photoURL"] = r["PhotoUrl"]
+      recipe["reviewCount"] = r["ReviewCount"]
+      recipe["servings"] = r["Servings"]
       @results[:results] << recipe
     end
   end
