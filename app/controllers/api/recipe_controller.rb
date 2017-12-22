@@ -3,7 +3,7 @@ class Api::RecipeController < ApplicationController
   def show
     @api.fetch_recipe_by_id(params[:id])
     if @api.has_error?
-      render json: {error: @api.error}, status: @api.status
+      render json: {error: @api.error}, status: @api.error[:status]
     else
       render json: @api.results
     end

@@ -16,7 +16,7 @@ describe 'Api/UserRequests' do
       end
       it 'returns an error message' do
         post api_signup_path, params: {user: {email: valid_user.email}}
-        expect(JSON.parse(response.body)["error"]).not_to be_nil
+        expect(json["error"]).not_to be_nil
       end
     end
     context 'when email is taken' do

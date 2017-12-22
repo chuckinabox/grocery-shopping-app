@@ -20,16 +20,15 @@ class BigOvenApi
 
   def search_recipes(query)
     return define_error(403, "Missing search params") unless query[:q]
-    @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
-                pg: query[:pg] ? query[:pg].to_i : 1
-                }
+    setup_results(query)
     make_single_request("#{URL}/recipes?title_kw=#{URI.encode(query["q"])}&rpp=#{@results[:rpp]}&pg=#{@results[:pg]}")
     return if has_error?
 
     parse_search_results(JSON.parse(@request.response.body))
   end
 
-  def fetch_latest_recipes
+  def fetch_latest_recipes(query)
+    setup_results(query)
     recipe_ids = get_recipe_ids
     return if has_error?
 
@@ -46,6 +45,12 @@ class BigOvenApi
   end
 
   private
+
+  def setup_results(query)
+    @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
+                pg: query[:pg] ? query[:pg].to_i : 1
+                }
+  end
 
   def parse_search_results(search_results)
     @results[:resultCount] = search_results["ResultCount"]
@@ -119,7 +124,7 @@ class BigOvenApi
   end
 
   def get_recipe_ids
-    make_single_request("#{URL}/recipes/raves?rpp=5")
+    make_single_request("#{URL}/recipes/raves?&rpp=#{@results[:rpp]}&pg=#{@results[:pg]}")
     return if has_error?
     JSON.parse(@response.body).map{ |recipe| recipe["RecipeInfo"]["RecipeID"]}
   end
