@@ -35,6 +35,27 @@ describe 'Api/SavedRecipesRequests' do
     end
   end
 
+  describe 'DELETE #destroy' do
+    context 'when user is not authenticated' do
+      it 'returns unauthorized' do
+        delete api_saved_recipe_path(recipe.recipe_id)
+        expect(response).to have_http_status :unauthorized
+      end
+    end
+    context 'when user is authenticated' do
+      before do
+        recipe
+      end
+      it 'returns ok' do
+        delete api_saved_recipe_path(recipe.recipe_id), headers: auth(user)
+        expect(response).to have_http_status :ok
+      end
+      it 'deletes the record' do
+        expect{ delete api_saved_recipe_path(recipe.recipe_id), headers: auth(user) }.to change(SavedRecipe, :count).by -1
+      end
+    end
+  end
+
   describe 'GET #index' do
     context 'when user is not authenticated' do
       it 'returns unauthorized' do

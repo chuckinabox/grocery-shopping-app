@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :latest, only: [:index]
       resources :search, only: [:index]
       resources :recipe, only:[:show]
-      resources :saved_recipes, only: [:create, :index]
+      resources :saved_recipes, only: [:create, :destroy]
     end
   end
 end

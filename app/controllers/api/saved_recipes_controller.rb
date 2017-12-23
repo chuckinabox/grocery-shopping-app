@@ -10,6 +10,18 @@ class Api::SavedRecipesController < ApplicationController
     end
   end
 
+  def destroy
+    return head :bad_request unless params[:id]
+    @saved_recipe = current_user.saved_recipes.where(recipe_id: params[:id])
+    return head :not_found unless @saved_recipe.present?
+    if @saved_recipe.first.destroy!
+      return head :ok
+    end
+  end
+
+
+
+
 
   private
 
