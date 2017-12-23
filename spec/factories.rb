@@ -8,4 +8,8 @@ FactoryBot.define do
     association :user, factory: :user
     sequence(:recipe_id) {|n| n}
   end
+  factory :make_recipe do
+    association :user, factory: :user
+    sequence(:recipe_id) {|n| n}
+  end
 end
