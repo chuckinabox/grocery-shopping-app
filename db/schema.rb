@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171223013732) do
 
   create_table "saved_recipes", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "recipe_ids", default: [], array: true
+    t.integer "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_saved_recipes_on_user_id"

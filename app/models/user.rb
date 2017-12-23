@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_one :saved_recipe
+  has_many :saved_recipes
 
   validates :email, uniqueness: true, presence: true, on: :create
   validates :password, length: {minimum: 8}, on: :create
@@ -8,12 +8,6 @@ class User < ApplicationRecord
   validates_confirmation_of :password, on: :create
 
   def saved_recipe_ids
-    return self.saved_recipe.recipe_ids if self.saved_recipe
-  end
-
-  def saved_recipe_ids=(ids)
-    if self.saved_recipe
-      return self.saved_recipe.recipe_ids = ids
-    end
+    return self.saved_recipes.map{ |recipe| recipe.recipe_id} unless self.saved_recipes.blank?
   end
 end

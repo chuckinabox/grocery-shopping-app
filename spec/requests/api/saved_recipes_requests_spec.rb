@@ -16,19 +16,21 @@ describe 'Api/SavedRecipesRequests' do
         post api_saved_recipes_path, params: {recipe_id: 9999},  headers: auth(user)
         expect(response).to have_http_status :created
       end
+      it 'creates a saved recipe record' do
+        expect{post api_saved_recipes_path, params: {recipe_id: 9999},  headers: auth(user)}.to change(SavedRecipe, :count).by 1
+      end
     end
     context 'when recipe_id is missing' do
-      it 'returns :bad_request' do
+      it 'returns :unprocessable_entity' do
         post api_saved_recipes_path, headers: auth(user)
-        expect(response).to have_http_status :bad_request
+        expect(response).to have_http_status :unprocessable_entity
       end
     end
     context 'when recipe is already saved' do
-      it 'returns :conflict' do
+      it 'returns :unprocessable_entity' do
         recipe
-        user.saved_recipe_ids = [1]
         post api_saved_recipes_path, headers: auth(user), params: {recipe_id: 1}
-        expect(response).to have_http_status :conflict
+        expect(response).to have_http_status :unprocessable_entity
       end
     end
   end
@@ -47,3 +49,4 @@ describe 'Api/SavedRecipesRequests' do
       end
     end
   end
+end
