@@ -34,6 +34,7 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryBot::Syntax::Methods
   config.include Requests::JsonHelpers
+  config.include Requests::Authentication
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

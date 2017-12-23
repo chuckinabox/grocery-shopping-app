@@ -27,7 +27,8 @@ class BigOvenApi
     parse_search_results(JSON.parse(@request.response.body))
   end
 
-  def fetch_latest_recipes(query)
+  def fetch_latest_recipes(query=nil)
+    query ||= {rpp: 10, pg: 1}
     setup_results(query)
     recipe_ids = get_recipe_ids
     return if has_error?
@@ -47,9 +48,8 @@ class BigOvenApi
   private
 
   def setup_results(query)
-    @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
-                pg: query[:pg] ? query[:pg].to_i : 1
-                }
+    @results = {rpp: query[:rpp],
+                pg: query[:pg] }
   end
 
   def parse_search_results(search_results)

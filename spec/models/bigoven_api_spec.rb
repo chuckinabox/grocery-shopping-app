@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe BigOvenApi do
   let(:api){ BigOvenApi.new}
-  let(:api_factory){ build(:big_oven_api, :with_error)}
+  let(:api_factory){ build_stubbed(:big_oven_api, :with_error)}
 
   describe '#error' do
     it 'returns an @error object' do
@@ -17,9 +17,9 @@ describe BigOvenApi do
           code.run
         end
       end
-      it 'returns 5 recipes' do
-        api.fetch_latest_recipes
-        expect(api.results.count).to eq 5
+      it 'returns 10 recipes by default' do
+        api.fetch_latest_recipes()
+        expect(api.results.count).to eq 10
       end
       it 'recipes should have the required keys' do
         keys = %w(id title description rating photoURL webURL instructions reviewCount category prepTime sourceURL ingredients)
