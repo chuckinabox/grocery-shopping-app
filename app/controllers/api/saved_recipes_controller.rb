@@ -20,9 +20,6 @@ class Api::SavedRecipesController < ApplicationController
   end
 
 
-
-
-
   private
 
   def set_user
