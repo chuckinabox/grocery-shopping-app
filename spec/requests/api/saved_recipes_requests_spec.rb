@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe 'Api/SavedRecipesRequests' do
   let(:user){ create(:user)}
-  let(:recipe){create(:saved_recipe, user: user)}
+  let(:recipe){create(:saved_recipe, recipe_id: 1, user: user)}
+  let(:recipes){ create_list(:saved_recipe, 5, user: user)}
   describe 'POST #create' do
     context 'when user is not authenticated' do
       it 'returns unauthorized' do
@@ -50,18 +51,28 @@ describe 'Api/SavedRecipesRequests' do
     end
   end
 
-  # describe 'GET #index' do
-  #   context 'when user is not authenticated' do
-  #     it 'returns unauthorized' do
-  #       get api_saved_recipes_path
-  #       expect(response).to have_http_status :unauthorized
-  #     end
-  #   end
-  #   context 'when user is authenticated' do
-  #     it 'returns the saved recipes' do
-  #       get api_saved_recipes_path, headers: auth(user)
-  #       expect(response).to have_http_status :ok
-  #     end
-  #   end
-  # end
+  describe 'GET #index' do
+    context 'when user is not authenticated' do
+      it 'returns unauthorized' do
+        get api_saved_recipes_path
+        expect(response).to have_http_status :unauthorized
+      end
+    end
+    context 'when user is authenticated' do
+      around :each do |code|
+        VCR.use_cassette 'api/saved_recipes_requests/get_index' do
+          code.run
+        end
+      end
+      it 'returns ok' do
+        get api_saved_recipes_path, headers: auth(user)
+        expect(response).to have_http_status :ok
+      end
+      it 'returns the saved recipes' do
+        recipes
+        get api_saved_recipes_path, headers: auth(user)
+        expect(json['results']).not_to be_nil
+      end
+    end
+  end
 end

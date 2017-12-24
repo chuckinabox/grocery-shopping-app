@@ -6,10 +6,10 @@ FactoryBot.define do
   end
   factory :saved_recipe do
     association :user, factory: :user
-    sequence(:recipe_id) {|n| n}
+    sequence(:recipe_id) {|n| 175913 + n}
   end
   factory :make_recipe do
     association :user, factory: :user
-    sequence(:recipe_id) {|n| n}
+    sequence(:recipe_id) { |n| 175913 + n}
   end
 end

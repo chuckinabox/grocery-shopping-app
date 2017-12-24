@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 8}, on: :create
   validates :username, presence: true, on: :create
   validates_confirmation_of :password, on: :create
+
+  def saved_recipe_ids
+    saved = self.saved_recipes.order('created_at DESC')
+    return [] if saved.ids.empty?
+    self.saved_recipes.map{ |r| r.recipe_id}
+  end
 end

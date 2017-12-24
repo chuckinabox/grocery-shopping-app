@@ -1,12 +1,11 @@
 class Api::SavedRecipesController < ApplicationController
-  before_action :authenticate_user, :set_user
+  before_action :authenticate_user
 
   def create
-    recipe_id = params[:id] ? params[:id].to_i : nil
-    @saved_recipe = SavedRecipe.new(user: @user, recipe_id: recipe_id)
+    @saved_recipe = SavedRecipe.new(user: current_user, recipe_id: params[:id])
     if @saved_recipe.save!
-      @user.reload
-      render json: {ids: @user.saved_recipes.ids}, status: :created
+      current_user.reload
+      render json: {ids: current_user.saved_recipe_ids}, status: :created
     end
   end
 
@@ -19,11 +18,41 @@ class Api::SavedRecipesController < ApplicationController
     end
   end
 
+  def index
+    @saved_recipe_ids = current_user.saved_recipe_ids
+    set_api
+    if @saved_recipe_ids.empty?
+      return render json: {results: []}, status: :ok
+    else
+      set_query
+      ids = filter_ids
+      @api.fetch_recipes_by_id(ids, @query)
+      if @api.has_error?
+        return render json: {error: @api.error}, status: @api.error[:status]
+      else
+        render json: {rpp: @query[:rpp], pg: @query[:pg],  results: @api.results}, status: :ok
+      end
+    end
+  end
+
 
   private
 
-  def set_user
-    @user = current_user
+  def set_query
+    @query = {
+      rpp: params[:rpp] ? params[:rpp].to_i : 5,
+      pg: params[:pg] ? params[:pg].to_i : 1
+    }
   end
+
+  def filter_ids
+    i = @query[:rpp]*(@query[:pg]-1)
+    @saved_recipe_ids[i...@query[:rpp]+i]
+  end
+
+  def set_api
+    @api = BigOvenApi.new
+  end
+
 
 end

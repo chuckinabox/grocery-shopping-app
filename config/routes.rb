@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :latest, only: [:index]
       resources :search, only: [:index]
       resources :recipe, only:[:show]
-      resources :saved_recipes, only: [:destroy]
+      resources :saved_recipes, only: [:destroy, :index]
       post 'saved_recipes/:id', to: 'saved_recipes#create'
       resources :make_recipes, only: [:destroy]
       post 'make_recipes/:id', to: 'make_recipes#create'

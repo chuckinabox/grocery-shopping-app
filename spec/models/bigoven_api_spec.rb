@@ -18,11 +18,11 @@ describe BigOvenApi do
         end
       end
       it 'returns 10 recipes by default' do
-        api.fetch_latest_recipes()
+        api.fetch_latest_recipes
         expect(api.results.count).to eq 10
       end
       it 'recipes should have the required keys' do
-        keys = %w(id title description rating photoURL webURL instructions reviewCount category prepTime sourceURL ingredients)
+        keys = %w(id title description rating photoURL webURL instructions reviewCount category prepTime sourceURL ingredients ingredientList)
         api.fetch_latest_recipes
         expect(api.results.first.keys.sort).to eq keys.sort
       end

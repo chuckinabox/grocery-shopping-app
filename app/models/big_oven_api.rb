@@ -11,7 +11,6 @@ class BigOvenApi
     @error = {}
     @response = []
     @hydra = Typhoeus::Hydra.hydra
-    Typhoeus::Config.cache = Typhoeus::Cache::Rails.new
   end
 
   def fetch_recipe_by_id(id)
@@ -29,7 +28,7 @@ class BigOvenApi
     parse_search_results(JSON.parse(@request.response.body))
   end
 
-  def fetch_latest_recipes(query)
+  def fetch_latest_recipes(query={})
     setup_results(query)
     recipe_ids = get_recipe_ids
     return if has_error?
@@ -41,6 +40,18 @@ class BigOvenApi
     return if has_error?
     parse_recipes(responses)
   end
+
+  def fetch_recipes_by_id(recipe_ids, query={})
+    setup_results(query)
+    bulk_request = request_recipes_by_id(recipe_ids)
+    @hydra.run
+
+    responses = make_bulk_request(bulk_request)
+    return if has_error?
+    parse_recipes(responses)
+  end
+
+
 
   def has_error?
     ! @error.empty?
@@ -74,7 +85,7 @@ class BigOvenApi
   def make_bulk_request(requests)
     requests.map do |request|
       unless request.response.success?
-        set_error(response)
+        set_error(request.response)
         break
       end
       @error = {}
@@ -106,7 +117,12 @@ class BigOvenApi
     dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
       "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
     end
-    dish["ingredientList"] = recipe["Ingredients"]
+    dish["ingredientList"] = recipe["Ingredients"].map do |ingredient|
+      {quantity: ingredient['Quantity'],
+       unit: ingredient['Unit'],
+       name: ingredient['Name']
+       }
+    end
     dish
   end
 
