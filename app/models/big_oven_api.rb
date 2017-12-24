@@ -6,10 +6,12 @@ class BigOvenApi
   API_KEY = Rails.application.secrets.bigoven_api_key
   HEADERS = {"headers": { "X-BigOven-API-Key" => API_KEY}}
 
+
   def initialize
     @error = {}
     @response = []
     @hydra = Typhoeus::Hydra.hydra
+    Typhoeus::Config.cache = Typhoeus::Cache::Rails.new
   end
 
   def fetch_recipe_by_id(id)
@@ -27,8 +29,7 @@ class BigOvenApi
     parse_search_results(JSON.parse(@request.response.body))
   end
 
-  def fetch_latest_recipes(query=nil)
-    query ||= {rpp: 10, pg: 1}
+  def fetch_latest_recipes(query)
     setup_results(query)
     recipe_ids = get_recipe_ids
     return if has_error?
@@ -48,8 +49,8 @@ class BigOvenApi
   private
 
   def setup_results(query)
-    @results = {rpp: query[:rpp],
-                pg: query[:pg] }
+    @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
+                pg: query[:pg] ? query[:pg].to_i : 1 }
   end
 
   def parse_search_results(search_results)
@@ -105,6 +106,7 @@ class BigOvenApi
     dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
       "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
     end
+    dish["ingredientList"] = recipe["Ingredients"]
     dish
   end
 
