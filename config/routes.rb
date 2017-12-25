@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post 'user_token' => 'user_token#create'
       post 'login' => 'user_token#create'
       post 'signup' => 'users#create'
+      get 'profile' => 'users#show'
       resources :latest, only: [:index]
       resources :search, only: [:index]
       resources :recipe, only:[:show]

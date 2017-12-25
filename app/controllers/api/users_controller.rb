@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :authenticate_user, only: [:show]
 
   def create
     @user = User.new(whitelisted_params)
@@ -8,7 +9,10 @@ class Api::UsersController < ApplicationController
     else
       render json: {error: @user.errors.full_messages, status: 422}, status: :unprocessable_entity
     end
+  end
 
+  def show
+    render json: {id: current_user.id, username: current_user.username}
   end
 
   private

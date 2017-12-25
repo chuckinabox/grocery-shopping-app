@@ -37,4 +37,25 @@ describe 'Api/UserRequests' do
     end
   end
 
+  describe 'GET #show' do
+    context 'when not authenticated' do
+      it 'returns unauthorized' do
+        get api_profile_path
+        expect(response).to have_http_status :unauthorized
+      end
+    end
+    context 'when authenticated' do
+      before do
+        get api_profile_path, headers: auth(user)
+      end
+      it 'returns ok' do
+        expect(response).to have_http_status :ok
+      end
+      it 'returns the user\'s id and username' do
+        expect(json['id']).to eq user.id
+        expect(json['username']).to eq user.username
+      end
+    end
+  end
+
 end
