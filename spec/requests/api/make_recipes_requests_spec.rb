@@ -49,4 +49,28 @@ describe 'Api/MakeRecipesRequests' do
       end
     end
   end
+  describe 'GET #index' do
+    context 'when user is not authenticated' do
+      it 'returns unauthorized' do
+        get api_make_recipes_path
+        expect(response).to have_http_status :unauthorized
+      end
+    end
+    context 'when user is authenticated' do
+      around :each do |code|
+        VCR.use_cassette 'api/make_recipes_requests/get_index' do
+          code.run
+        end
+      end
+      it 'returns ok' do
+        get api_make_recipes_path, headers: auth(user)
+        expect(response).to have_http_status :ok
+      end
+      it 'returns the saved recipes' do
+        recipes
+        get api_make_recipes_path, headers: auth(user)
+        expect(json['results']).not_to be_nil
+      end
+    end
+  end
 end

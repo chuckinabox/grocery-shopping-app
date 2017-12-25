@@ -13,4 +13,10 @@ class User < ApplicationRecord
     return [] if saved.ids.empty?
     self.saved_recipes.map{ |r| r.recipe_id}
   end
+
+  def make_recipe_ids
+    make = self.make_recipes
+    return [] if make.ids.empty?
+    self.make_recipes.map{ |r| r.recipe_id}
+  end
 end
