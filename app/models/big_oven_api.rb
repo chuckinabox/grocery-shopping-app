@@ -6,7 +6,6 @@ class BigOvenApi
   API_KEY = Rails.application.secrets.bigoven_api_key
   HEADERS = {"headers": { "X-BigOven-API-Key" => API_KEY}}
 
-
   def initialize
     @error = {}
     @response = []
@@ -115,12 +114,17 @@ class BigOvenApi
     dish["prepTime"] = recipe["TotalMinutes"]
     dish["sourceURL"] = recipe["BookmarkURL"]
     dish["ingredients"] = recipe["Ingredients"].map do |ingredient|
-      "#{ingredient['Quantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
+      if ingredient['Unit'] != ""
+        "#{ingredient['DisplayQuantity']} #{ingredient['Unit']} of #{ingredient['Name']}"
+      else
+        "#{ingredient['DisplayQuantity']} #{ingredient['Name']}"
+      end
     end
     dish["ingredientList"] = recipe["Ingredients"].map do |ingredient|
       {quantity: ingredient['Quantity'],
        unit: ingredient['Unit'],
-       name: ingredient['Name']
+       name: ingredient['Name'],
+       displayQuantity: ingredient['DisplayQuantity']
        }
     end
     dish

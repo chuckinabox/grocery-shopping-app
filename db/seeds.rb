@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: 'foo', password: 'password', email: 'foo@bar.com')
+5.times do |n|
+  SavedRecipe.create(user: User.first, recipe_id: 1176096 + n)
+end

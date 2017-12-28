@@ -1,4 +1,11 @@
 FactoryBot.define do
+  factory :item do
+    user nil
+    make_recipe nil
+    quantity "9.99"
+    name "MyText"
+  end
+
   factory :user do
     sequence(:username) {|n| "foo#{n}" }
     sequence(:email){|n| "foo#{n}@bar.com"}
