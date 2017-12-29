@@ -10,6 +10,7 @@ class BigOvenApi
     @error = {}
     @response = []
     @hydra = Typhoeus::Hydra.hydra
+    Typhoeus::Config.cache = Typhoeus::Cache::Rails.new
   end
 
   def fetch_recipe_by_id(id)
