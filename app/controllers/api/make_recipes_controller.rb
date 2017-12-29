@@ -6,16 +6,16 @@ class Api::MakeRecipesController < ApplicationController
     recipe_id = params[:id] ? params[:id].to_i : nil
     @make_recipe = MakeRecipe.new(user: @user, recipe_id: recipe_id)
     if @make_recipe.save!
-      if create_shopping_list_items == false
-        return head 500
-      else
-        @user.reload
-        render json: {ids: @user.make_recipes.ids}, status: :created
+      create_shopping_list_items
+      if @api.has_error?
+        @make_recipe.destroy
+        return render json: @api.error, status: @api.error[:status]
       end
-    else
-      return head 500
+      @user.reload
+      render json: {ids: @user.make_recipes.ids}, status: :created
     end
   end
+
 
   def destroy
     return head :bad_request unless params[:id]
@@ -51,18 +51,10 @@ class Api::MakeRecipesController < ApplicationController
     id = @make_recipe.id
     @api = BigOvenApi.new
     @api.fetch_recipe_by_id(@make_recipe.recipe_id)
-    if @api.has_error?
-      @make_recipe.destroy
-      return false
-    else
-      @api.results[0]['ingredientList'].each do |ingredient|
-        Item.create_or_consolidate(@make_recipe, ingredient)
-      end
-      return true
+    return if @api.has_error?
+    @api.results[0]['ingredientList'].each do |ingredient|
+      Item.create_or_consolidate(@make_recipe, ingredient)
     end
-    # create records
-    # if unsuccessful, throw error and destroy make_recipe record
-
   end
 
   def set_api
