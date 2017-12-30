@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '38'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=e900808184bee1fcdf308c0b69b896e5d4bf85ea32e99e02ae24c0a150310511;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 30 Dec 2017 07:33:41 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Message\": \"Recipe not found.\"\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/0
+  recorded_at: Sat, 30 Dec 2017 07:33:42 GMT
+recorded_with: VCR 4.0.0

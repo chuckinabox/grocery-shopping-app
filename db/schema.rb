@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20171225041849) do
   create_table "items", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "make_recipe_id"
-    t.decimal "quantity"
+    t.decimal "quantity", precision: 10, scale: 2
     t.text "name", null: false
     t.boolean "check", default: false, null: false
     t.text "units"

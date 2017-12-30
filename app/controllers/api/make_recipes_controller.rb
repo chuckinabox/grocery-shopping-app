@@ -1,18 +1,18 @@
 class Api::MakeRecipesController < ApplicationController
 
-  before_action :authenticate_user, :set_user
+  before_action :authenticate_user
+  before_action :set_api, only: [:create]
 
   def create
     recipe_id = params[:id] ? params[:id].to_i : nil
-    @make_recipe = MakeRecipe.new(user: @user, recipe_id: recipe_id)
-    if @make_recipe.save!
-      create_shopping_list_items
-      if @api.has_error?
-        @make_recipe.destroy
-        return render json: @api.error, status: @api.error[:status]
-      end
-      @user.reload
-      render json: {ids: @user.make_recipes.ids}, status: :created
+    @api.fetch_recipe_by_id(recipe_id)
+    return render json: {error: @api.error}, status: @api.error[:status] if @api.has_error?
+    @make_recipe = MakeRecipe.new(user: current_user, recipe_id: recipe_id, items_attributes: get_items)
+    if @make_recipe.save
+      current_user.reload
+      render json: {ids: current_user.make_recipes.ids}, status: :created
+    else
+      render json: {error: @make_recipe.errors.full_messages, status: 422}, status: :unprocessable_entity
     end
   end
 
@@ -46,14 +46,11 @@ class Api::MakeRecipesController < ApplicationController
 
   private
 
-  def create_shopping_list_items
-    # get recipe ingredients
-    id = @make_recipe.id
-    @api = BigOvenApi.new
-    @api.fetch_recipe_by_id(@make_recipe.recipe_id)
-    return if @api.has_error?
-    @api.results[0]['ingredientList'].each do |ingredient|
-      Item.create_or_consolidate(@make_recipe, ingredient)
+
+
+  def get_items
+    @api.results[0]['ingredientList'].map do |ingredient|
+      {user: current_user, quantity: ingredient[:quantity], name: ingredient[:name], check: false, units: ingredient[:unit]}
     end
   end
 
@@ -71,11 +68,6 @@ class Api::MakeRecipesController < ApplicationController
   def filter_ids
     i = @query[:rpp]*(@query[:pg]-1)
     @make_recipe_ids[i...@query[:rpp]+i]
-  end
-
-
-  def set_user
-    @user = current_user
   end
 
 end

@@ -12,6 +12,11 @@ describe 'Api/MakeRecipesRequests' do
     end
 
     context 'when user is authenticated' do
+      around :each do |code|
+        VCR.use_cassette 'api/make_recipes_requests/post_create' do
+          code.run
+        end
+      end
       it 'successful save returns :created' do
         post api_make_recipe_path(9999), headers: auth(user)
         expect(response).to have_http_status :created
@@ -21,10 +26,27 @@ describe 'Api/MakeRecipesRequests' do
       end
     end
     context 'when recipe is already saved' do
+      around :each do |code|
+        VCR.use_cassette 'api/make_recipes_requests/post_create_recipe_saved' do
+          code.run
+        end
+      end
       it 'returns :unprocessable_entity' do
         recipe
         post api_make_recipe_path(recipe.recipe_id), headers: auth(user)
         expect(response).to have_http_status :unprocessable_entity
+      end
+    end
+    context 'when api has error' do
+      around :each do |code|
+        VCR.use_cassette 'api/make_recipes_requests/post_create_api_error' do
+          code.run
+        end
+      end
+      it 'returns the error' do
+        post api_make_recipe_path('abcd123'), headers: auth(user)
+        expect(response).not_to have_http_status(:created)
+        expect(json['error']).not_to be_nil
       end
     end
   end

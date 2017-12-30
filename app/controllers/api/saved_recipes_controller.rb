@@ -22,7 +22,7 @@ class Api::SavedRecipesController < ApplicationController
     @saved_recipe_ids = current_user.saved_recipe_ids
     set_api
     if @saved_recipe_ids.empty?
-      return render json: {results: []}, status: :ok
+      return render json: {resultCount: @saved_recipe_ids.count, results: []}, status: :ok
     else
       set_query
       ids = filter_ids
