@@ -5,12 +5,12 @@ class BigOvenApi
   URL = 'https://api2.bigoven.com'
   API_KEY = Rails.application.secrets.bigoven_api_key
   HEADERS = {"headers": { "X-BigOven-API-Key" => API_KEY}}
+  Typhoeus::Config.cache = Typhoeus::Cache::Rails.new
 
   def initialize
     @error = {}
     @response = []
     @hydra = Typhoeus::Hydra.hydra
-    Typhoeus::Config.cache = Typhoeus::Cache::Rails.new
   end
 
   def fetch_recipe_by_id(id)

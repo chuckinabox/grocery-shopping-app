@@ -27,7 +27,6 @@ gem 'responders' #allows respond_to :json
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-gem 'httparty'
 gem 'figaro'
 gem 'typhoeus'
 
@@ -39,7 +38,6 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do

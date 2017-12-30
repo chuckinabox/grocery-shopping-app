@@ -13,7 +13,7 @@ describe 'Api/MakeRecipesRequests' do
 
     context 'when user is authenticated' do
       it 'successful save returns :created' do
-        post api_make_recipe_path(9999),   headers: auth(user)
+        post api_make_recipe_path(9999), headers: auth(user)
         expect(response).to have_http_status :created
       end
       it 'creates a saved recipe record' do
@@ -67,9 +67,14 @@ describe 'Api/MakeRecipesRequests' do
         expect(response).to have_http_status :ok
       end
       it 'returns the saved recipes' do
-        recipes
+        recipe
         get api_make_recipes_path, headers: auth(user)
         expect(json['results']).not_to be_nil
+      end
+      it 'returns the result count' do
+        recipe
+        get api_make_recipes_path, headers: auth(user)
+        expect(json['resultCount']).not_to be_nil
       end
     end
   end

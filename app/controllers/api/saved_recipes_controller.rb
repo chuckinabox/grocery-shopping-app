@@ -30,7 +30,7 @@ class Api::SavedRecipesController < ApplicationController
       if @api.has_error?
         return render json: {error: @api.error}, status: @api.error[:status]
       else
-        render json: {rpp: @query[:rpp], pg: @query[:pg],  results: @api.results}, status: :ok
+        render json: {resultCount: @saved_recipe_ids.count, rpp: @query[:rpp], pg: @query[:pg],  results: @api.results}, status: :ok
       end
     end
   end
