@@ -20,6 +20,7 @@ class Api::SavedRecipesController < ApplicationController
 
   def index
     @saved_recipe_ids = current_user.saved_recipe_ids
+    return render json: {ids: @saved_recipe_ids}, status: :ok if params[:id_only] == "true"
     set_api
     if @saved_recipe_ids.empty?
       return render json: {resultCount: @saved_recipe_ids.count, results: []}, status: :ok

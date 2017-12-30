@@ -28,6 +28,7 @@ class Api::MakeRecipesController < ApplicationController
 
   def index
     @make_recipe_ids = current_user.make_recipe_ids
+    return render json: {ids: @make_recipe_ids} if params[:id_only] == "true"
     set_api
     if @make_recipe_ids.empty?
       return render json: {results: []}, status: :ok
