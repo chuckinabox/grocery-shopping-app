@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :item do
-    user nil
-    make_recipe nil
-    quantity "9.99"
-    name "MyText"
+    association :user, factory: :user
+    association :make_recipe, factory: :make_recipe
+    sequence(:quantity){ |n| n * 0.1 }
+    sequence(:name){ |n| "ingredient#{n}"}
+    units "tbsp"
   end
 
   factory :user do

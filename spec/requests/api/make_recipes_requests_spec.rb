@@ -21,8 +21,11 @@ describe 'Api/MakeRecipesRequests' do
         post api_make_recipe_path(9999), headers: auth(user)
         expect(response).to have_http_status :created
       end
-      it 'creates a saved recipe record' do
+      it 'creates a make recipe record' do
         expect{post api_make_recipe_path(9999),  headers: auth(user)}.to change(MakeRecipe, :count).by 1
+      end
+      it 'creates items' do
+        expect{post api_make_recipe_path(9999),  headers: auth(user)}.to change(Item, :count).by 14
       end
     end
     context 'when recipe is already saved' do
