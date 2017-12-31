@@ -1,12 +1,9 @@
 class Item < ApplicationRecord
   require 'active_support/inflector'
   belongs_to :user
-  belongs_to :make_recipe
+  belongs_to :make_recipe, optional: true
 
   validates :name, presence: true
+  validates :quantity, numericality: {greater_than: 0}
 
-
-  def self.create_or_consolidate(recipe, ingredient)
-    Item.create!(make_recipe_id: recipe.id, user: recipe.user, name: ActiveSupport::Inflector.singularize(ingredient[:name]), units: ingredient[:unit], quantity: ingredient[:quantity], check: false)
-  end
 end

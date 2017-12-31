@@ -44,6 +44,9 @@ GEM
     awesome_print (1.8.0)
     bcrypt (3.1.11)
     builder (3.2.3)
+    bullet (5.7.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
@@ -213,6 +216,7 @@ GEM
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     unicode_utils (1.4.0)
+    uniform_notifier (1.10.0)
     vcr (4.0.0)
     webmock (3.1.1)
       addressable (>= 2.3.6)
@@ -228,6 +232,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bullet
   byebug
   factory_bot_rails
   figaro
