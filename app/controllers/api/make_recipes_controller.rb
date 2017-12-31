@@ -7,7 +7,7 @@ class Api::MakeRecipesController < ApplicationController
     recipe_id = params[:id] ? params[:id].to_i : nil
     @api.fetch_recipe_by_id(recipe_id)
     return render json: {error: @api.error}, status: @api.error[:status] if @api.has_error?
-    @make_recipe = MakeRecipe.new(user: current_user, recipe_id: recipe_id, items_attributes: get_items)
+    @make_recipe = current_user.make_recipes.build(recipe_id: recipe_id, items_attributes: get_items)
     if @make_recipe.save
       current_user.reload
       render json: {ids: current_user.make_recipes.ids}, status: :created
@@ -51,7 +51,7 @@ class Api::MakeRecipesController < ApplicationController
 
   def get_items
     @api.results[0]['ingredientList'].map do |ingredient|
-      {user: current_user, quantity: ingredient[:quantity], name: ingredient[:name], check: false, units: ingredient[:unit]}
+      {user: current_user, quantity: ingredient[:quantity], name: ingredient[:name], check: false, unit: ingredient[:unit]}
     end
   end
 

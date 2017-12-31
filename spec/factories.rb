@@ -4,7 +4,7 @@ FactoryBot.define do
     association :make_recipe, factory: :make_recipe
     sequence(:quantity){ |n| n * 0.1 }
     sequence(:name){ |n| "ingredient#{n}"}
-    units "tbsp"
+    unit "tbsp"
   end
 
   factory :user do

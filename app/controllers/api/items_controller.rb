@@ -29,10 +29,10 @@ class Api::ItemsController < ApplicationController
 
   def user_items
     items = Item.includes(:make_recipe).where(user: current_user)
-    items.as_json(only: [:id, :name, :make_recipe_id, :quantity, :check, :units], include: {make_recipe: {only: [:recipe_id]}})
+    items.as_json(only: [:id, :name, :make_recipe_id, :quantity, :check, :unit], include: {make_recipe: {only: [:recipe_id]}})
   end
 
   def whitelisted_params
-    params.permit(:name, :units, :quantity, :check, :make_recipe_id)
+    params.permit(:name, :unit, :quantity, :check, :make_recipe_id)
   end
 end

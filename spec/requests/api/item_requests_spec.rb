@@ -4,7 +4,7 @@ describe 'Api/ItemRequests' do
   let(:user){ create(:user)}
   let(:other_user){ create(:user)}
   let(:items){ create_list(:item, 4, user: user)}
-  let(:item_attributes){ {units: 'tbsp', quantity: 0.25, check: true, name: 'Sugar'}}
+  let(:item_attributes){ {unit: 'tbsp', quantity: 0.25, check: true, name: 'Sugar'}}
   let(:item){ create(:item, user: user)}
   describe 'GET #index' do
     context 'when not authenticated' do
