@@ -47,6 +47,7 @@ describe 'Api/ItemRequests' do
         post api_items_path, headers: auth(user), params: item_attributes
         expect(json.count).to eq 5
       end
+
     end
   end
 
@@ -87,6 +88,14 @@ describe 'Api/ItemRequests' do
         expect(response).to have_http_status :not_found
       end
     end
+    context 'when user attempts to update make_recipe_id' do
+      it 'make_recipe_id does not change' do
+        put api_item_path(item.id), headers: auth(user), params: { make_recipe_id: 1}
+        item.reload
+        expect(item.make_recipe_id).not_to eq 1
+      end
+    end
+
   end
 
   describe 'DELETE #destroy' do

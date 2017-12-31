@@ -13,7 +13,7 @@ class Api::ItemsController < ApplicationController
 
   def update
     item = Item.find_by!(id: params[:id], user: current_user)
-    if item.update!(whitelisted_params)
+    if item.update!(updatable_params)
       render json: user_items, status: :ok
     end
   end
@@ -30,6 +30,10 @@ class Api::ItemsController < ApplicationController
   def user_items
     items = Item.includes(:make_recipe).where(user: current_user)
     items.as_json(only: [:id, :name, :make_recipe_id, :quantity, :check, :unit], include: {make_recipe: {only: [:recipe_id]}})
+  end
+
+  def updatable_params
+    params.permit(:name, :unit, :quantity, :check)
   end
 
   def whitelisted_params
