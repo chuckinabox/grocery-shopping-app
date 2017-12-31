@@ -13,7 +13,8 @@ Rails.application.routes.draw do
       post 'saved_recipes/:id', to: 'saved_recipes#create'
       resources :make_recipes, only: [:destroy, :index]
       post 'make_recipes/:id', to: 'make_recipes#create'
-      resources :items, path: 'shopping_list', only: [:index, :create, :update, :destroy]
+      resources :items, path: 'shopping_list', only: [:index, :create]
+      resources :items, only:[ :update, :destroy]
     end
   end
 end
