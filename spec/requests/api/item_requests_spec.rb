@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'Api/ItemRequests' do
   let(:user){ create(:user)}
+  let(:other_user){ create(:user)}
   let(:items){ create_list(:item, 4, user: user)}
   let(:item_attributes){ {units: 'tbsp', quantity: 0.25, check: true, name: 'Sugar'}}
   let(:item){ create(:item, user: user)}
@@ -79,6 +80,37 @@ describe 'Api/ItemRequests' do
         expect(json["error"]).not_to be_nil
       end
     end
+    context 'when item does not exist' do
+      it 'returns not found' do
+        item.update(user: other_user)
+        put api_item_path(item.id), headers: auth(user), params: {name: 'blah'}
+        expect(response).to have_http_status :not_found
+      end
+    end
+  end
 
+  describe 'DELETE #destroy' do
+    context 'when not authenticated' do
+      it 'returns unauthorized' do
+        delete api_item_path(item.id)
+        expect(response).to have_http_status :unauthorized
+      end
+    end
+  end
+  context 'when authenticated' do
+    it 'returns ok for successful updates' do
+      delete api_item_path(item), headers: auth(user)
+    end
+    it 'changes a user\'s item count' do
+      item
+      expect{ delete api_item_path(item), headers: auth(user)}.to change(Item, :count).by -1
+    end
+  end
+  context 'when item not found' do
+    it 'returns not_found ' do
+      item.update(user: other_user)
+      delete api_item_path(item.id), headers: auth(user)
+      expect(response).to have_http_status :not_found
+    end
   end
 end

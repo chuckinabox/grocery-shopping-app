@@ -12,8 +12,15 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
+    item = Item.find_by!(id: params[:id], user: current_user)
     if item.update!(whitelisted_params)
+      render json: user_items, status: :ok
+    end
+  end
+
+  def destroy
+    item = Item.find_by!(id: params[:id], user: current_user)
+    if item.destroy!
       render json: user_items, status: :ok
     end
   end
