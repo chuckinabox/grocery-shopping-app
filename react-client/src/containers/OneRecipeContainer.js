@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSingleRecipeFromId, setShouldSearch } from "../actions";
 import OneRecipe from "../components/OneRecipe";
+import SaveButtons from "../components/SaveButtons";
 import Button from "../components/elements/Button";
 
 class SingleContainer extends Component {
@@ -17,24 +18,21 @@ class SingleContainer extends Component {
     window.scrollTo(0, 0);
   }
   render() {
-    if (this.props.isFetching) {
-      return <p>"Loading"</p>;
-    } else {
-      return (
-        <div className="container">
-          <div className="col-sm-12">
-            <Button color="danger" onClick={() => this.props.history.goBack()}>
-              Go Back
-            </Button>
-            <br />
-          </div>
-          <OneRecipe
-            recipe={this.props.singleRecipe}
-            history={this.props.history}
-          />
+    return (
+      <div className="container">
+        <div className="col-sm-12">
+          <Button color="danger" onClick={() => this.props.history.goBack()}>
+            Go Back
+          </Button>
+          <SaveButtons id={this.props.singleRecipe.id} />
+          <br />
         </div>
-      );
-    }
+        <OneRecipe
+          recipe={this.props.singleRecipe}
+          history={this.props.history}
+        />
+      </div>
+    );
   }
 }
 

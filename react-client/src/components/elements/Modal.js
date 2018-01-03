@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "./Button";
 
 class Modal extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class Modal extends React.Component {
       >
         <div className="modal text-left" onClick={e => e.stopPropagation()}>
           <div className="top-right text-right">
-            <button onClick={this.props.onClose}>X</button>
+            <Button onClick={this.props.onClose}>X</Button>
           </div>
           {this.props.children}
         </div>

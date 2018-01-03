@@ -3,66 +3,68 @@ import Input from "../components/elements/Input";
 import InputGroup from "../components/elements/InputGroup";
 import Button from "../components/elements/Button";
 import serialize from "form-serialize";
+import { connect } from "react-redux";
+import { getLogin } from "../actions";
 
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { errorUsername: "", errorPassword: "" };
+    this.state = { errorEmail: "", errorPassword: "" };
   }
 
-  checkUsernamePassword = e => {
+  checkEmailPassword = e => {
     e.preventDefault();
     const form = e.target;
     let data = serialize(form, { hash: true });
     // Check Password
-    if (!data.Password) {
+    if (!data.password) {
       this.setState({ errorPassword: "No Password Entered" });
-    } else if (data.Password.length < 8) {
-      data.Password = "";
+    } else if (data.password.length < 8) {
+      data.password = "";
       this.setState({
         errorPassword: "Password must be at least 8 characters long"
       });
     } else {
       this.setState({ errorPassword: "" });
     }
-    // Check Username
-    if (!data.Username) {
-      this.setState({ errorUsername: "No Username Entered" });
-    } else if (data.Username.length < 8) {
-      data.Username = "";
+    // Check Email
+    if (!data.email) {
+      this.setState({ errorEmail: "No Email Entered" });
+    } else if (data.email.length < 8) {
+      data.email = "";
       this.setState({
-        errorUsername: "Username must be at least 8 characters long"
+        errorEmail: "Email must be at least 8 characters long"
       });
     } else {
-      this.setState({ errorUsername: "" });
+      this.setState({ errorEmail: "" });
     }
     // If conditions met, send data
-    if (data.Username && data.Password) {
-      console.log("Send DAta");
+    if (data.email && data.password) {
+      this.props.getLogin(data);
     }
   };
   render() {
     return (
       <div>
         <h2>Login</h2>
-        <form onSubmit={this.checkUsernamePassword}>
-          {/* Username */}
+        <form onSubmit={this.checkEmailPassword}>
+          {/* Email */}
           <InputGroup
-            name="Username"
-            labelText="Username"
-            className={this.state.errorUsername ? "has-error has-feedback" : ""}
+            name="email"
+            labelText="Email"
+            className={this.state.errorEmail ? "has-error has-feedback" : ""}
           >
-            <Input name="Username" />
-            {this.state.errorUsername}
+            <Input name="email" type="email" autoComplete="email" />
+            {this.state.errorEmail}
           </InputGroup>
           {/* Password */}
           <InputGroup
-            name="Password"
+            name="password"
             labelText="Password"
             className={this.state.errorPassword ? "has-error has-feedback" : ""}
           >
-            <Input name="Password" type="password" />
+            <Input name="password" type="password" autoComplete="password" />
             {this.state.errorPassword}
           </InputGroup>
           <br />
@@ -80,4 +82,12 @@ class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer;
+const mapDispatchToProps = dispatch => {
+  return {
+    getLogin: form => {
+      dispatch(getLogin(form));
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LoginContainer);

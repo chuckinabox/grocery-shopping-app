@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import ModalPicture from "./elements/ModalPicture";
+import PropTypes from "prop-types";
 
 class OneRecipe extends Component {
   render() {
     //Split ingredients for formatting
     const ingredients = this.props.recipe.ingredients.map(ingred => (
-      <h6 key={ingred}>{ingred}</h6>
+      <p key={ingred}>{ingred}</p>
     ));
 
     let instructionToShow;
@@ -16,7 +18,7 @@ class OneRecipe extends Component {
       );
 
       instructionToShow = (
-        <span>
+        <p>
           {instructions[0]}
           {instructionsLink ? (
             <a target="_blank" href={instructionsLink[0]}>
@@ -25,16 +27,30 @@ class OneRecipe extends Component {
           ) : (
             ""
           )}
-        </span>
+        </p>
       );
+    } else if (
+      this.props.recipe.instructions.includes("1.") &&
+      this.props.recipe.instructions.includes("2.")
+    ) {
+      //If Instructions already Numbered
+      //Split instructions {"1. Whisk this 2. Do this..."} to {"1. Whisk this", "2. Do this..", ...}
+      let splitInstructions = this.props.recipe.instructions.split(
+        /(?=[0-9]\. )/g
+      );
+      let instructionsNumbered = splitInstructions.map(instruct => {
+        return <p key={instruct}>{instruct}</p>;
+      });
+      instructionToShow = instructionsNumbered;
     } else {
       //Number and seperate instructions
       //**Work around for lack of regex lookbehind
 
-      //Split instructions in sentences {"Blah blah balh. Too too."} with last letter missing and last letter ["Blah blah bal", "h",...]
+      //Split instructions in sentences {"Blah blah balh. Too too."} with last letter missing and last letter ["Blah blah bal", "h", "Too to", "o"...]
       let splitInstructions = this.props.recipe.instructions.split(
         /([a-z])\. (?=[A-Z])/g
       );
+
       //Incrementure for numbering
       let increm = 0;
       let instructionsSpelledOut = splitInstructions.map((instruct, index) => {
@@ -42,17 +58,17 @@ class OneRecipe extends Component {
         if (instruct.length === 1) {
           increm++;
           return (
-            <h6 key={splitInstructions[index - 1]}>
+            <p key={splitInstructions[index - 1]}>
               {increm}. {splitInstructions[index - 1]}
               {instruct}.
-            </h6>
+            </p>
           );
           //If the end
         } else if (index === splitInstructions.length - 1) {
           return (
-            <h6 key={instruct}>
+            <p key={instruct}>
               {increm + 1}. {instruct}
-            </h6>
+            </p>
           );
           //else return nothing
         } else {
@@ -66,7 +82,8 @@ class OneRecipe extends Component {
       <div className="card container">
         <div className="row">
           <div className="col-sm-12">
-            <h4>{this.props.recipe.title}</h4>
+            <h3>{this.props.recipe.title}</h3>
+
             <small>
               Rating:{" "}
               {this.props.recipe.rating
@@ -77,13 +94,11 @@ class OneRecipe extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <a href={this.props.recipe.photoURL} target="_blank">
-              <img
-                src={this.props.recipe.photoURL}
-                alt={this.props.recipe.title}
-                className="thumbnail"
-              />
-            </a>
+            <ModalPicture
+              className="thumbnail"
+              src={this.props.recipe.photoURL}
+              alt={this.props.recipe.title}
+            />
             <hr />
             <p>{this.props.recipe.description}</p>
             {this.props.recipe.description ? <hr /> : ""}
@@ -98,5 +113,9 @@ class OneRecipe extends Component {
     );
   }
 }
+
+OneRecipe.propTypes = {
+  recipe: PropTypes.object.isRequired
+};
 
 export default OneRecipe;

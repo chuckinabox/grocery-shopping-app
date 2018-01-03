@@ -16,9 +16,15 @@ class ModalButton extends Component {
     });
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.close) {
+      this.toggleModal();
+    }
+  }
+
   render() {
     return (
-      <div className="ModalButton text-right">
+      <div className="ModalButton text-center">
         <Button
           color={this.props.color ? this.props.color : "primary"}
           onClick={this.toggleModal}
@@ -37,7 +43,9 @@ class ModalButton extends Component {
 
 ModalButton.propTypes = {
   label: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  close: PropTypes.bool
+  //props.close is for closing modal outside of modal frame
 };
 
 export default ModalButton;

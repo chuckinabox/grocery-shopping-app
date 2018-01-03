@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class SearchRecipes extends Component {
   render() {
@@ -46,5 +47,10 @@ class SearchRecipes extends Component {
     }
   }
 }
+
+SearchRecipes.propTypes = {
+  recipes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
+};
 
 export default SearchRecipes;

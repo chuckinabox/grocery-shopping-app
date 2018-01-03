@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import NavBar from "../components/elements/NavBar";
-import ModalButton from "../components/elements/ModalButton";
+import NavBar from "./elements/NavBar";
+import { setShouldSearch } from "../actions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-class HeaderContainer extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { search: "" };
@@ -20,20 +22,21 @@ class HeaderContainer extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row">
+        <div className="row header">
           <div
             className="col-sm-3 col-xs-12 title"
             onClick={() => this.props.history.push("/")}
           >
-            <h4>Title here</h4>
+            <h1>Title here</h1>
           </div>
           <div className="col-sm-7 col-xs-8" id="search">
             <form
               onSubmit={e => {
                 e.preventDefault();
                 if (e.target.search.value) {
+                  this.props.shouldSearch();
                   this.props.history.push(`/search?q=${e.target.search.value}`);
-                  e.target.reset();
+                  // e.target.reset();
                 }
               }}
             >
@@ -55,12 +58,7 @@ class HeaderContainer extends Component {
             </form>
           </div>
           <div className="col-sm-2 col-xs-4" id="signup">
-            <ModalButton label="SignOut" color="danger">
-              <p>Are you Sure</p>
-              <p>
-                <span>Yes</span> <span>No</span>
-              </p>
-            </ModalButton>
+            {this.props.modal}
           </div>
         </div>
 
@@ -68,11 +66,7 @@ class HeaderContainer extends Component {
           <NavBar
             location={this.props.location}
             history={this.props.history}
-            routes={[
-              { name: "Home", path: "/" },
-              { name: "Going to Cook", path: "/goingtocook" },
-              { name: "Saved Recipes", path: "/savedrecipes" }
-            ]}
+            routes={this.props.routes}
           />
         </div>
       </div>
@@ -80,4 +74,19 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer;
+const mapDispatchToProps = dispatch => {
+  return {
+    shouldSearch: () => {
+      dispatch(setShouldSearch(true));
+    }
+  };
+};
+
+Header.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  modal: PropTypes.object.isRequired,
+  routes: PropTypes.array.isRequired
+};
+
+export default connect(null, mapDispatchToProps)(Header);

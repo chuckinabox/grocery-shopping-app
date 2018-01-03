@@ -3,6 +3,8 @@ import Button from "../components/elements/Button";
 import Input from "../components/elements/Input";
 import InputGroup from "../components/elements/InputGroup";
 import serialize from "form-serialize";
+import { connect } from "react-redux";
+import { getSignup } from "../actions";
 
 class SignupContainer extends Component {
   constructor(props) {
@@ -10,49 +12,69 @@ class SignupContainer extends Component {
 
     this.state = {
       errorUsername: "",
+      errorEmail: "",
       errorPassword: "",
       errorPasswordConfirm: ""
     };
   }
 
-  checkUsernamePassword = e => {
+  checkEmailPassword = e => {
     e.preventDefault();
     const form = e.target;
     let data = serialize(form, { hash: true });
-    // Check Password
-    if (!data.Password) {
-      this.setState({ errorPassword: "No Password Entered" });
-    } else if (data.Password.length < 8) {
-      data.Password = "";
-      this.setState({
-        errorPassword: "Password must be at least 8 characters long"
-      });
-    } else if (data.Password !== data.PasswordConfirm) {
-      data.Password = "";
-      this.setState({
-        errorPassword: "Passwords must match",
-        errorPasswordConfirm: "Passwords must match"
-      });
-    } else {
-      this.setState({ errorPassword: "", errorPasswordConfirm: "" });
-    }
+    let passwordCheck = false;
+    let emailCheck = false;
+    let usernameCheck = false;
     // Check Username
-    if (!data.Username) {
-      this.setState({ errorUsername: "No Username Entered" });
-    } else if (data.Username.length < 8) {
-      data.Username = "";
+    if (!data.username) {
+      this.setState({ errorUsername: "No Username Entered." });
+    } else if (data.username.length < 3) {
       this.setState({
-        errorUsername: "Username must be at least 8 characters long"
+        errorUsername: "Username must be at least 3 characters long."
       });
     } else {
       this.setState({ errorUsername: "" });
+      usernameCheck = true;
     }
+    // Check Email
+    if (!data.email) {
+      this.setState({ errorEmail: "No Email Entered." });
+    } else if (data.email.length < 8) {
+      this.setState({
+        errorEmail: "Email must be at least 8 characters long."
+      });
+    } else {
+      this.setState({ errorEmail: "" });
+      emailCheck = true;
+    }
+    // Check Password
+    if (!data.password) {
+      this.setState({ errorPassword: "No Password Entered" });
+    } else if (data.password.length < 8) {
+      this.setState({
+        errorPassword: "Password must be at least 8 characters long"
+      });
+    } else if (data.password !== data.password_confirmation) {
+      this.setState({
+        errorPassword: "Passwords must match.",
+        errorPasswordConfirm: "Passwords must match."
+      });
+    } else {
+      this.setState({ errorPassword: "", errorPasswordConfirm: "" });
+      passwordCheck = true;
+    }
+
     // If conditions met, send data
-    if (data.Username && data.Password) {
+    if (usernameCheck && emailCheck && passwordCheck) {
       console.log("Send DAta");
+      this.props.getSignup(data);
     }
   };
   render() {
+    //Redirect if token set
+    if (this.props.cookie) {
+      return <p>{this.props.history.goBack()}</p>;
+    }
     return (
       <div className="container ">
         <div className="row ">
@@ -71,35 +93,55 @@ class SignupContainer extends Component {
         </div>
         <div className="row">
           <h2>Signup</h2>
-          <form onSubmit={this.checkUsernamePassword}>
+          <form onSubmit={this.checkEmailPassword}>
+            {/* Username */}
             <InputGroup
-              name="Username"
+              name="username"
               labelText="Username"
               className={
                 this.state.errorUsername ? "has-error has-feedback" : ""
               }
             >
-              <Input name="Username" />
+              <Input name="username" autoComplete="username" />
               {this.state.errorUsername}
             </InputGroup>
+            {/* Email */}
             <InputGroup
-              name="Password"
+              name="email"
+              labelText="Email"
+              className={this.state.errorEmail ? "has-error has-feedback" : ""}
+            >
+              <Input name="email" type="email" autoComplete="email" />
+              {this.state.errorEmail}
+            </InputGroup>
+            {/* Password */}
+            <InputGroup
+              name="password"
               labelText="Password"
               className={
                 this.state.errorPassword ? "has-error has-feedback" : ""
               }
             >
-              <Input name="Password" type="password" />
+              <Input
+                name="password"
+                type="password"
+                autoComplete="new-password"
+              />
               {this.state.errorPassword}
             </InputGroup>
+            {/* Password Confirm */}
             <InputGroup
-              name="PasswordConfirm"
+              name="password_confirmation"
               labelText="Password Confirm"
               className={
                 this.state.errorPasswordConfirm ? "has-error has-feedback" : ""
               }
             >
-              <Input name="PasswordConfirm" type="password" />
+              <Input
+                name="password_confirmation"
+                type="password"
+                autoComplete="new-password"
+              />
               {this.state.errorPasswordConfirm}
             </InputGroup>
             <Button type="submit" color="primary">
@@ -112,4 +154,18 @@ class SignupContainer extends Component {
   }
 }
 
-export default SignupContainer;
+const mapStateToProps = state => {
+  return {
+    cookie: state.cookie
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getSignup: form => {
+      dispatch(getSignup(form));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupContainer);

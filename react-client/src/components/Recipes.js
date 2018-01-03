@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Cookies from "js-cookie";
+import SaveButtons from "./SaveButtons";
+import PropTypes from "prop-types";
 
 class Recipes extends Component {
   render() {
@@ -24,12 +25,13 @@ class Recipes extends Component {
       return (
         <div
           className="card flex-item"
-          key={recipe.title}
+          key={recipe.id}
           onClick={e => {
             this.props.history.push(`/recipe/${recipe.id}`);
           }}
         >
-          <h5>{recipe.title}</h5>
+          <SaveButtons id={recipe.id} />
+          <h4>{recipe.title}</h4>
           <small>Rating: {recipe.rating ? recipe.rating.toFixed(1) : ""}</small>
           <div className="col-sm-12">
             <img
@@ -38,26 +40,17 @@ class Recipes extends Component {
               className="thumbnail"
             />
           </div>
-          <div className="col-sm-12">
-            {description}
-            {Cookies.get("key") ? (
-              <button
-                onClick={e => {
-                  e.stopPropagation();
-                  console.log("SAVE!!");
-                }}
-              >
-                Save
-              </button>
-            ) : (
-              ""
-            )}
-          </div>
+          <div className="col-sm-12">{description}</div>
         </div>
       );
     });
     return <div className="flex-parent">{listRecipes}</div>;
   }
 }
+
+Recipes.propTypes = {
+  recipes: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired
+};
 
 export default Recipes;

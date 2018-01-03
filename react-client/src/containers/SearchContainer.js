@@ -23,6 +23,33 @@ class SearchContainer extends Component {
     }
   }
   render() {
+    let backButton = (
+      <Button
+        color="primary"
+        size="sm"
+        onClick={() => this.setState({ page: Number(this.state.page) - 1 })}
+      >
+        <span className="glyphicon glyphicon-backward" />
+      </Button>
+    );
+    let forwardButton = (
+      <Button
+        color="primary"
+        size="sm"
+        onClick={() => this.setState({ page: Number(this.state.page) + 1 })}
+      >
+        <span className="glyphicon glyphicon-forward" />
+      </Button>
+    );
+    if (this.props.searchRecipes.pg <= 1) {
+      backButton = null;
+    }
+    if (
+      this.props.searchRecipes.resultCount <=
+      this.props.searchRecipes.pg * this.props.searchRecipes.rpp
+    ) {
+      forwardButton = null;
+    }
     return (
       <div>
         <div className="container">
@@ -39,39 +66,21 @@ class SearchContainer extends Component {
                 {this.props.location.search.slice(3).replace(/%20/g, " ")}
                 <span className="pull-right">
                   {/* Showing 1-12 of 5000 */}
-                  Showing{" "}
+                  Showing
                   {1 +
                     (this.props.searchRecipes.pg - 1) *
                       this.props.searchRecipes.rpp}-{this.props.searchRecipes
-                    .rpp * this.props.searchRecipes.pg}{" "}
+                    .results.length < this.props.searchRecipes.rpp
+                    ? this.props.searchRecipes.resultCount
+                    : this.props.searchRecipes.rpp *
+                      this.props.searchRecipes.pg}{" "}
                   of {this.props.searchRecipes.resultCount}
                 </span>
               </h5>
               <br />
               {!this.props.isFetching ? (
                 <p className="pull-right">
-                  {this.props.searchRecipes.pg > 1 ? (
-                    <Button
-                      color="primary"
-                      size="sm"
-                      onClick={() =>
-                        this.setState({ page: Number(this.state.page) - 1 })
-                      }
-                    >
-                      <span className="glyphicon glyphicon-backward" />
-                    </Button>
-                  ) : (
-                    ""
-                  )}{" "}
-                  <Button
-                    color="primary"
-                    size="sm"
-                    onClick={() =>
-                      this.setState({ page: Number(this.state.page) + 1 })
-                    }
-                  >
-                    <span className="glyphicon glyphicon-forward" />
-                  </Button>
+                  {backButton} {forwardButton}
                 </p>
               ) : (
                 ""
@@ -90,28 +99,7 @@ class SearchContainer extends Component {
           )}
           {!this.props.isFetching ? (
             <p className="pull-right">
-              {this.props.searchRecipes.pg > 1 ? (
-                <Button
-                  color="primary"
-                  size="sm"
-                  onClick={() =>
-                    this.setState({ page: Number(this.state.page) - 1 })
-                  }
-                >
-                  <span className="glyphicon glyphicon-backward" />
-                </Button>
-              ) : (
-                ""
-              )}{" "}
-              <Button
-                color="primary"
-                size="sm"
-                onClick={() =>
-                  this.setState({ page: Number(this.state.page) + 1 })
-                }
-              >
-                <span className="glyphicon glyphicon-forward" />
-              </Button>
+              {backButton} {forwardButton}
             </p>
           ) : (
             ""
