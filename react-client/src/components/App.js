@@ -19,12 +19,13 @@ import {
   getSavedRecipes,
   getMakeRecipes,
   getMakeRecipesIds,
-  getSavedRecipesIds
+  getSavedRecipesIds,
+  getShoppingList
 } from "../actions";
 
 class App extends Component {
   componentWillMount() {
-    this.props.getRecipes();
+    this.props.getRecipes(1);
 
     if (!!localStorage.getItem("loginToken")) {
       //fetch here to check that it's good
@@ -50,6 +51,7 @@ class App extends Component {
         this.props.getMakeRecipes(1);
         this.props.getSavedRecipesIds();
         this.props.getMakeRecipesIds();
+        this.props.getShoppingList();
       }
       return true;
     }
@@ -119,8 +121,8 @@ const mapDispatchToProps = dispatch => {
     setCookie: cookie => {
       dispatch(setCookie(cookie));
     },
-    getRecipes: () => {
-      dispatch(getRecipes());
+    getRecipes: pageNumber => {
+      dispatch(getRecipes(pageNumber));
     },
     getSavedRecipes: () => {
       dispatch(getSavedRecipes());
@@ -133,6 +135,9 @@ const mapDispatchToProps = dispatch => {
     },
     getSavedRecipesIds: () => {
       dispatch(getSavedRecipesIds());
+    },
+    getShoppingList: () => {
+      dispatch(getShoppingList());
     }
   };
 };

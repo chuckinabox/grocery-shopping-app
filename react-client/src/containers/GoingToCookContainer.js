@@ -1,7 +1,13 @@
 import React, { Component } from "react";
-import { setShouldSearch, getMakeRecipes, getSavedRecipes } from "../actions";
+import {
+  setShouldSearch,
+  getMakeRecipes,
+  getSavedRecipes,
+  getShoppingList
+} from "../actions";
 import Recipes from "../components/Recipes";
 import Button from "../components/elements/Button";
+import ShoppingListContainer from "./ShoppingListContainer";
 import { connect } from "react-redux";
 
 class GoingToCookContainer extends Component {
@@ -10,6 +16,8 @@ class GoingToCookContainer extends Component {
     this.state = { page: this.props.menuRecipes.pg };
   }
   componentWillMount() {
+    this.props.getMakeRecipes(this.state.page);
+    this.props.getShoppingList();
     this.props.setShouldSearch();
   }
   componentDidMount() {
@@ -21,6 +29,7 @@ class GoingToCookContainer extends Component {
     }
     if (this.props.menuRecipesIds !== nextProps.menuRecipesIds) {
       nextProps.getMakeRecipes(nextState.page);
+      nextProps.getShoppingList();
     }
     if (this.props.savedRecipesIds !== nextProps.savedRecipesIds) {
       nextProps.getSavedRecipes();
@@ -67,28 +76,34 @@ class GoingToCookContainer extends Component {
     } else {
       //If not empty list
       return (
-        <div className="text-right">
-          <p className="pull-right col-sm-10 col-sm-offset-1">
-            {/* Showing 1-12 of 5000 */}
-            Showing
-            {1 +
-              (this.props.menuRecipes.pg - 1) *
-                this.props.menuRecipes.rpp}-{this.props.menuRecipes.results
-              .length < this.props.menuRecipes.rpp
-              ? this.props.menuRecipes.resultCount
-              : this.props.menuRecipes.rpp * this.props.menuRecipes.pg}{" "}
-            of {this.props.menuRecipesIds.length}
-          </p>
-          <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton}
-          </span>
-          <Recipes
-            recipes={this.props.menuRecipes.results}
-            history={this.props.history}
-          />
-          <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton}
-          </span>
+        <div>
+          <ShoppingListContainer />
+
+          <div className="text-right">
+            <p className="pull-right col-sm-10 col-sm-offset-1">
+              {/* Showing 1-12 of 5000 */}
+              Showing
+              {1 +
+                (this.props.menuRecipes.pg - 1) *
+                  this.props.menuRecipes.rpp}-{this.props.menuRecipes.results
+                .length < this.props.menuRecipes.rpp
+                ? this.props.menuRecipes.resultCount
+                : this.props.menuRecipes.rpp * this.props.menuRecipes.pg}{" "}
+              of {this.props.menuRecipesIds.length}
+            </p>
+            <span className="pull-right col-sm-10 col-sm-offset-1">
+              {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+              {forwardButton}
+            </span>
+            <Recipes
+              recipes={this.props.menuRecipes.results}
+              history={this.props.history}
+            />
+            <span className="pull-right col-sm-10 col-sm-offset-1">
+              {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+              {forwardButton}
+            </span>
+          </div>
         </div>
       );
     }
@@ -114,6 +129,9 @@ const mapDispatchToProps = dispatch => {
     },
     getSavedRecipes: () => {
       dispatch(getSavedRecipes(1));
+    },
+    getShoppingList: () => {
+      dispatch(getShoppingList());
     }
   };
 };

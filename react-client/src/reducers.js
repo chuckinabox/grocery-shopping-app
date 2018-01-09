@@ -14,6 +14,7 @@ const initailState = {
       instructions: ""
     }
   ],
+  recipesPage: 1,
   searchRecipes: {
     rpp: "10",
     pg: "1",
@@ -34,6 +35,10 @@ const initailState = {
   },
   savedRecipesIds: [],
   menuRecipesIds: [],
+  shoppingList: [],
+  shoppingListOpen: true,
+  emptyShoppingListOpen: true,
+  doneShoppingListOpen: true,
   singleRecipe: {
     title: "",
     id: "",
@@ -44,7 +49,9 @@ const initailState = {
 };
 
 export function recipesList(state = initailState, action) {
-  // console.log("Redux--", action);
+  // if (action.type !== "GET_REQUEST" && action.type !== "GET_REQUEST_SUCCESS") {
+  //   console.log("Redux--", action);
+  // }
   switch (action.type) {
     case Actions.SET_SINGLE_RECIPE:
       return {
@@ -56,6 +63,11 @@ export function recipesList(state = initailState, action) {
         ...state,
         isFetching: false,
         recipes: action.data
+      };
+    case Actions.SET_RECIPES_PAGE:
+      return {
+        ...state,
+        recipesPage: action.data
       };
     case Actions.SET_SEARCH_RECIPES:
       return {
@@ -113,6 +125,27 @@ export function recipesList(state = initailState, action) {
         ...state,
         isFetching: false,
         menuRecipesIds: action.data
+      };
+    case Actions.SET_SHOPPING_LIST:
+      return {
+        ...state,
+        isFetching: false,
+        shoppingList: action.data
+      };
+    case Actions.SET_SHOPPING_LIST_OPEN:
+      return {
+        ...state,
+        shoppingListOpen: action.data
+      };
+    case Actions.SET_EMPTY_SHOPPING_LIST_OPEN:
+      return {
+        ...state,
+        emptyShoppingListOpen: action.data
+      };
+    case Actions.SET_DONE_SHOPPING_LIST_OPEN:
+      return {
+        ...state,
+        doneShoppingListOpen: action.data
       };
     default:
       return state;

@@ -10,6 +10,7 @@ class SavedRecipesContainer extends Component {
     this.state = { page: this.props.savedRecipes.pg };
   }
   componentWillMount() {
+    this.props.getSavedRecipes(this.state.page);
     this.props.setShouldSearch();
   }
   componentDidMount() {
@@ -85,14 +86,16 @@ class SavedRecipesContainer extends Component {
             of {this.props.savedRecipesIds.length}
           </p>
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton}
+            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+            {forwardButton}
           </span>
           <Recipes
             recipes={this.props.savedRecipes.results}
             history={this.props.history}
           />
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton}
+            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+            {forwardButton}
           </span>
         </div>
       );

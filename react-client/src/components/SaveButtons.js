@@ -45,7 +45,7 @@ class SaveButton extends Component {
             color="danger"
             key={`deleteSave${this.props.id}`}
           >
-            Delete Save
+            Unsave
           </Button>
         );
       }

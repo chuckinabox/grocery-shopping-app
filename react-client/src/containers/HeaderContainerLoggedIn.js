@@ -48,7 +48,10 @@ class HeaderContainer extends Component {
         }
         routes={[
           { name: "Home", path: "/" },
-          { name: "Going to Cook", path: "/goingtocook" },
+          {
+            name: "Menu For the Week",
+            path: "/goingtocook"
+          },
           { name: "Saved Recipes", path: "/savedrecipes" }
         ]}
       />

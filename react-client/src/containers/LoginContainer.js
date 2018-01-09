@@ -55,7 +55,12 @@ class LoginContainer extends Component {
             labelText="Email"
             className={this.state.errorEmail ? "has-error has-feedback" : ""}
           >
-            <Input name="email" type="email" autoComplete="email" />
+            <Input
+              name="email"
+              type="email"
+              autoComplete="email"
+              autoFocus={true}
+            />
             {this.state.errorEmail}
           </InputGroup>
           {/* Password */}

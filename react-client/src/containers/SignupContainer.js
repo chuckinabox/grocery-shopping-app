@@ -102,7 +102,7 @@ class SignupContainer extends Component {
                 this.state.errorUsername ? "has-error has-feedback" : ""
               }
             >
-              <Input name="username" autoComplete="username" />
+              <Input name="username" autoComplete="username" autoFocus={true} />
               {this.state.errorUsername}
             </InputGroup>
             {/* Email */}

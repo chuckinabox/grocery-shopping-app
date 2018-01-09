@@ -6,12 +6,17 @@ export const SET_SHOULD_SEARCH = "SET_SHOULD_SEARCH";
 //Setters
 export const SET_COOKIE = "SET_COOKIE";
 export const SET_RECIPES = "SET_RECIPES";
+export const SET_RECIPES_PAGE = "SET_RECIPES_PAGE";
 export const SET_SINGLE_RECIPE = "SET_SINGLE_RECIPE";
 export const SET_SEARCH_RECIPES = "SET_SEARCH_RECIPES";
 export const SET_SAVED_RECIPES = "SET_SAVED_RECIPES";
 export const SET_MENU_RECIPES = "SET_MENU_RECIPES";
 export const SET_SAVED_RECIPES_IDS = "SET_SAVED_RECIPES_IDS";
 export const SET_MENU_RECIPES_IDS = "SET_MENU_RECIPES_IDS";
+export const SET_SHOPPING_LIST = "SET_SHOPPING_LIST";
+export const SET_SHOPPING_LIST_OPEN = "SET_SHOPPING_LIST_OPEN";
+export const SET_EMPTY_SHOPPING_LIST_OPEN = "SET_EMPTY_SHOPPING_LIST_OPEN";
+export const SET_DONE_SHOPPING_LIST_OPEN = "SET_DONE_SHOPPING_LIST_OPEN";
 
 //-----------------------------------
 //--Helper Functions
@@ -76,6 +81,13 @@ export function setRecipes(data) {
   };
 }
 
+export function setRecipesPage(data) {
+  return {
+    type: SET_RECIPES_PAGE,
+    data
+  };
+}
+
 export function setSingleRecipe(data) {
   return {
     type: SET_SINGLE_RECIPE,
@@ -118,6 +130,34 @@ export function setMenuRecipesIds(data) {
   };
 }
 
+export function setShoppingList(data) {
+  return {
+    type: SET_SHOPPING_LIST,
+    data
+  };
+}
+
+export function setShoppingListOpen(data) {
+  return {
+    type: SET_SHOPPING_LIST_OPEN,
+    data
+  };
+}
+
+export function setEmptyShoppingListOpen(data) {
+  return {
+    type: SET_EMPTY_SHOPPING_LIST_OPEN,
+    data
+  };
+}
+
+export function setDoneShoppingListOpen(data) {
+  return {
+    type: SET_DONE_SHOPPING_LIST_OPEN,
+    data
+  };
+}
+
 //-----------------------------------
 //--Recipes
 //-----------------------------------
@@ -142,7 +182,7 @@ export function setSingleRecipeFromId(id, recipes, searchRecipes) {
 
 export function getRecipeFromId(id) {
   return dispatch => {
-    fetch(`/api/recipe/${id}`)
+    fetch(`api/recipe/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -160,11 +200,11 @@ export function getRecipeFromId(id) {
   };
 }
 
-export function getRecipes() {
+export function getRecipes(pageNumber) {
   return dispatch => {
     dispatch(getRequest());
 
-    fetch("/api/latest?rpp=12")
+    fetch(`api/latest?rpp=12&pg=${pageNumber}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -190,7 +230,7 @@ export function getRecipesSearch(searchUrl, page) {
   return dispatch => {
     dispatch(getRequest());
 
-    fetch(`/api/search${searchUrl}&rpp=12&pg=${page}`)
+    fetch(`api/search${searchUrl}&rpp=12&pg=${page}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with api");
@@ -221,7 +261,7 @@ export function getRecipesSearch(searchUrl, page) {
 export function getSignup(formdata) {
   return dispatch => {
     dispatch(getRequest());
-    fetch("/api/signup", {
+    fetch("api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -249,7 +289,7 @@ export function getSignup(formdata) {
 export function getLogin(formdata) {
   return dispatch => {
     dispatch(getRequest());
-    fetch("/api/login", {
+    fetch("api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -296,7 +336,7 @@ export function getSavedRecipes(pageNumber) {
     }
     return dispatch => {
       dispatch(getRequest());
-      fetch(`/api/saved_recipes?rpp=12&pg=${pageNumber}`, {
+      fetch(`api/saved_recipes?rpp=12&pg=${pageNumber}`, {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -333,7 +373,7 @@ export function getSavedRecipesIds() {
   } else {
     return dispatch => {
       dispatch(getRequest());
-      fetch("/api/saved_recipes?id_only=true", {
+      fetch("api/saved_recipes?id_only=true", {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -367,7 +407,7 @@ export function addSavedRecipes(recipeid, list) {
       let newList = [...list, recipeid];
       dispatch(setSavedRecipesIds(newList));
       dispatch(getRequest());
-      fetch(`/api/saved_recipes/${recipeid}`, {
+      fetch(`api/saved_recipes/${recipeid}`, {
         method: "POST",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -398,7 +438,7 @@ export function deleteSavedRecipes(recipeid, recipeids) {
   } else {
     return dispatch => {
       dispatch(getRequest());
-      fetch(`/api/saved_recipes/${recipeid}`, {
+      fetch(`api/saved_recipes/${recipeid}`, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -437,7 +477,7 @@ export function getMakeRecipes(pageNumber) {
     }
     return dispatch => {
       dispatch(getRequest());
-      fetch(`/api/make_recipes?rpp=12&pg=${pageNumber}`, {
+      fetch(`api/make_recipes?rpp=12&pg=${pageNumber}`, {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -478,7 +518,7 @@ export function getMakeRecipesIds() {
   } else {
     return dispatch => {
       dispatch(getRequest());
-      fetch("/api/make_recipes?id_only=true", {
+      fetch("api/make_recipes?id_only=true", {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -512,7 +552,7 @@ export function addMakeRecipes(recipeid, list) {
       let newList = [...list, recipeid];
       dispatch(setMenuRecipesIds(newList));
       dispatch(getRequest());
-      fetch(`/api/make_recipes/${recipeid}`, {
+      fetch(`api/make_recipes/${recipeid}`, {
         method: "POST",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -543,7 +583,7 @@ export function deleteMakeRecipes(recipeid) {
   } else {
     return dispatch => {
       dispatch(getRequest());
-      fetch(`/api/make_recipes/${recipeid}`, {
+      fetch(`api/make_recipes/${recipeid}`, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem("loginToken")
@@ -566,6 +606,76 @@ export function deleteMakeRecipes(recipeid) {
   }
 }
 
+//-----------------------------------
+//--Shopping List
+//-----------------------------------
+
+export function getShoppingList() {
+  if (!localStorage.getItem("loginToken")) {
+    return dispatch => {
+      dispatch(getRequestFailure({ error: "Not Logged In" }));
+    };
+  } else {
+    return dispatch => {
+      dispatch(getRequest());
+      fetch(`api/shopping_list`, {
+        method: "GET",
+        headers: {
+          Authorization: localStorage.getItem("loginToken")
+        }
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Error with api");
+          }
+          return response.json();
+        })
+        .then(response => {
+          dispatch(setShoppingList(response));
+        })
+        .catch(e => {
+          console.log(e);
+          dispatch(getRequestFailure({ error: e }));
+        });
+    };
+  }
+}
+
+export function updateShoppingList(id, contents) {
+  if (!localStorage.getItem("loginToken")) {
+    return dispatch => {
+      dispatch(getRequestFailure({ error: "Not Logged In" }));
+    };
+  } else {
+    return dispatch => {
+      dispatch(getRequest());
+      fetch(`api/items/${id}?check=${contents}`, {
+        method: "PUT",
+        headers: {
+          Authorization: localStorage.getItem("loginToken")
+        }
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Error with api");
+          }
+          return response.json();
+        })
+        .then(response => {
+          dispatch(setShoppingList(response));
+        })
+        .catch(e => {
+          console.log(e);
+          dispatch(getRequestFailure({ error: e }));
+        });
+    };
+  }
+}
+
+//-----------------------------------
+//--Profile
+//-----------------------------------
+
 export function getProfile() {
   if (!localStorage.getItem("loginToken")) {
     return dispatch => {
@@ -574,7 +684,7 @@ export function getProfile() {
   } else {
     return dispatch => {
       dispatch(getRequest());
-      fetch(`/api/profile`, {
+      fetch(`api/profile`, {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("loginToken")

@@ -18,6 +18,10 @@ h2 {
 }
 
 h3 {
+  font-size: 1.2em;
+  line-height: 1.5;
+  letter-spacing: 1.08px;
+  font-weight: 450;
 }
 
 h4 {
@@ -79,6 +83,10 @@ p {
   padding: 2px;
 }
 
+.card p {
+  word-wrap: break-word;
+}
+
 #search {
   padding: 0;
 }
@@ -109,6 +117,10 @@ p {
   padding: 5%;
   display: inline;
   overflow: auto;
+}
+
+.stopScroll {
+  overflow-y: hidden;
 }
 
 .fullScreen {
