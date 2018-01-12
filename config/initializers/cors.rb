@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'https://gentle-dawn-10801.herokuapp.com', 'http://recipeshoppingapp.com', 'http://gentle-dawn-10801.herokuapp.com', 'https://recipeshoppingapp.com'
 
     resource '*',
       headers: :any,
