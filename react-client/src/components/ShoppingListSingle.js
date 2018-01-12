@@ -8,6 +8,7 @@ import Button from "./elements/Button";
 //--Api Url
 //-----------------------------------
 const API_URL = "";
+//example const API_URL= "https://myservessite.com/"
 
 class ShoppingListSingle extends Component {
   constructor(props) {

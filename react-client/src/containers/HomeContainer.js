@@ -47,7 +47,9 @@ class HomeContainer extends Component {
     let welcomeMessage =
       "Welcome to the Recipe Shopping App.  Click on any recipe to view it or search up in the top bar.  If you log in or sign up, you can save recipes for later and make your own shopping list, otherwise enjoy these top rated recipes below.";
     if (this.props.cookie) {
-      welcomeMessage = `Welcome back, ${this.props.username}.`;
+      welcomeMessage = `Welcome back, ${
+        this.props.username
+      }. Don't forget, after making your shopping list, to use the Copy To Clipboard button to take that list with you.`;
     }
     let welcomeMessageContainer = (
       <div className="container">

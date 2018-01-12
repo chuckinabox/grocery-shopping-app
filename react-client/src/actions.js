@@ -25,6 +25,7 @@ export const SET_USERNAME = "SET_USERNAME";
 //--Api Url
 //-----------------------------------
 const API_URL = "";
+//example const API_URL= "https://myservessite.com/"
 
 //-----------------------------------
 //--Helper Functions
