@@ -85,8 +85,11 @@ class SavedRecipesContainer extends Component {
               : this.props.savedRecipes.rpp * this.props.savedRecipes.pg}{" "}
             of {this.props.savedRecipesIds.length}
           </p>
+          <br />
+          <br />
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+            {backButton}
+            {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
             {forwardButton}
           </span>
           <Recipes
@@ -94,7 +97,8 @@ class SavedRecipesContainer extends Component {
             history={this.props.history}
           />
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+            {backButton}
+            {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
             {forwardButton}
           </span>
         </div>

@@ -10,7 +10,7 @@ class ErrorContainer extends Component {
             className="col-sm-3 col-xs-12 title"
             onClick={() => this.props.history.push("/")}
           >
-            <h4>Title here</h4>
+            <h1>RecipeShoppingApp</h1>
           </div>
         </div>
         <div className="row">

@@ -13,6 +13,14 @@ class HeaderContainer extends Component {
   }
 
   render() {
+    let menuCount = 0;
+    let savedCount = 0;
+    if (this.props.menuRecipesIds) {
+      menuCount = this.props.menuRecipesIds.length;
+    }
+    if (this.props.savedRecipesIds) {
+      savedCount = this.props.savedRecipesIds.length;
+    }
     return (
       <Header
         history={this.props.history}
@@ -50,14 +58,26 @@ class HeaderContainer extends Component {
           { name: "Home", path: "/" },
           {
             name: "Menu For the Week",
-            path: "/goingtocook"
+            path: "/goingtocook",
+            count: menuCount
           },
-          { name: "Saved Recipes", path: "/savedrecipes" }
+          {
+            name: "Saved Recipes",
+            path: "/savedrecipes",
+            count: savedCount
+          }
         ]}
       />
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    menuRecipesIds: state.menuRecipesIds,
+    savedRecipesIds: state.savedRecipesIds
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -67,4 +87,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateShoppingList } from "../actions";
+import { updateShoppingList, deleteIngredient } from "../actions";
 import PropTypes from "prop-types";
 import Button from "./elements/Button";
+
+//-----------------------------------
+//--Api Url
+//-----------------------------------
+const API_URL = "";
 
 class ShoppingListSingle extends Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
-      title: ""
+      title: "",
+      titleId: ""
     };
   }
 
   returnRecipeFromApi = recipeId => {
     //Get title from api
-    fetch(`api/recipe/${recipeId}`)
+    fetch(`${API_URL}api/recipe/${recipeId}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Error with recipe fetch");
@@ -30,15 +36,15 @@ class ShoppingListSingle extends Component {
 
   returnRecipe = recipeId => {
     //Get title from menu List
-    let name = "unknown";
-
+    let name = "User Added";
+    this.setState({ titleId: recipeId });
     for (var i = 0; i < this.props.menuRecipes.results.length; i++) {
       if (this.props.menuRecipes.results[i].id === recipeId) {
         name = this.props.menuRecipes.results[i].title;
         break;
       }
     }
-    if (name === "unknown") {
+    if (name === "User Added" && recipeId) {
       //If title not in menu list, call api
       this.returnRecipeFromApi(recipeId);
     } else {
@@ -46,9 +52,35 @@ class ShoppingListSingle extends Component {
     }
   };
 
-  setList = items => {
+  setListDelete = items => {
     let list = items.map(item => (
-      <div className="form-group" key={"item" + item.id}>
+      <div
+        className="form-group"
+        key={"item" + item.id + item.check + "ShowDele"}
+      >
+        <Button
+          size="sm"
+          color="danger"
+          onClick={() => this.props.deleteIngredient(item.id)}
+        >
+          <span className="glyphicon glyphicon-trash" />
+        </Button>{" "}
+        <label htmlFor={item.id}>
+          {item.quantity} {item.unit} {item.name}
+        </label>
+      </div>
+    ));
+    this.setState({ list: list });
+    if (this.props.title) {
+      this.setState({ title: this.props.title });
+    } else {
+      this.returnRecipe(this.props.titleId);
+    }
+  };
+
+  setListNotDelete = items => {
+    let list = items.map(item => (
+      <div className="form-group" key={"item" + item.id + item.check}>
         <label htmlFor={item.id}>
           <input
             type="checkbox"
@@ -65,7 +97,20 @@ class ShoppingListSingle extends Component {
       </div>
     ));
     this.setState({ list: list });
-    this.returnRecipe(this.props.titleId);
+    if (this.props.title) {
+      this.setState({ title: this.props.title });
+    } else {
+      this.returnRecipe(this.props.titleId);
+    }
+  };
+
+  setList = (items, showDelete) => {
+    this.setState({ list: [] });
+    if (showDelete) {
+      this.setListDelete(items);
+    } else {
+      this.setListNotDelete(items);
+    }
   };
 
   checkAll = checked => {
@@ -95,23 +140,31 @@ class ShoppingListSingle extends Component {
   };
 
   componentWillMount() {
-    this.setList(this.props.items);
+    this.setList(this.props.items, this.props.showDelete);
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.items.length !== nextProps.items.length) {
-      this.setList(nextProps.items);
+      this.setList(nextProps.items, this.props.showDelete);
+    }
+    if (this.props.showDelete !== nextProps.showDelete) {
+      this.setList(nextProps.items, nextProps.showDelete);
     }
   }
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h3>
           {this.state.title}
-          <span className="pull-right">{this.checkAllButton()}</span>
+          {this.props.showDelete ? (
+            ""
+          ) : (
+            <span className="">{this.checkAllButton()}</span>
+          )}
         </h3>
 
         {this.state.list}
+
         <hr />
       </div>
     );
@@ -120,7 +173,8 @@ class ShoppingListSingle extends Component {
 
 const mapStateToProps = state => {
   return {
-    menuRecipes: state.menuRecipes
+    menuRecipes: state.menuRecipes,
+    showDelete: state.showDelete
   };
 };
 
@@ -128,12 +182,16 @@ const mapDispatchToProps = dispatch => {
   return {
     updateShoppingList: (id, check) => {
       dispatch(updateShoppingList(id, check));
+    },
+    deleteIngredient: id => {
+      dispatch(deleteIngredient(id));
     }
   };
 };
 
 ShoppingListSingle.propTypes = {
-  titleId: PropTypes.number.isRequired,
+  titleId: PropTypes.node,
+  title: PropTypes.string,
   items: PropTypes.array
 };
 

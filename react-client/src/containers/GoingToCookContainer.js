@@ -68,6 +68,7 @@ class GoingToCookContainer extends Component {
     if (!this.props.menuRecipes.results.length) {
       return (
         <div className="container">
+          <ShoppingListContainer />
           <div className="card row">
             <p>Sorry, no results</p>
           </div>
@@ -91,8 +92,13 @@ class GoingToCookContainer extends Component {
                 : this.props.menuRecipes.rpp * this.props.menuRecipes.pg}{" "}
               of {this.props.menuRecipesIds.length}
             </p>
+            <br />
+            <br />
             <span className="pull-right col-sm-10 col-sm-offset-1">
-              {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+              {backButton}
+              {forwardButton || backButton
+                ? "Page " + this.state.page
+                : ""}{" "}
               {forwardButton}
             </span>
             <Recipes
@@ -100,7 +106,10 @@ class GoingToCookContainer extends Component {
               history={this.props.history}
             />
             <span className="pull-right col-sm-10 col-sm-offset-1">
-              {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
+              {backButton}
+              {forwardButton || backButton
+                ? "Page " + this.state.page
+                : ""}{" "}
               {forwardButton}
             </span>
           </div>

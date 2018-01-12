@@ -24,7 +24,13 @@ class ModalButton extends Component {
 
   render() {
     return (
-      <div className="ModalButton text-center">
+      <div
+        className={
+          this.props.modalClasses
+            ? "ModalButton" + this.props.modalClasses
+            : "ModalButton text-center"
+        }
+      >
         <Button
           color={this.props.color ? this.props.color : "primary"}
           onClick={this.toggleModal}

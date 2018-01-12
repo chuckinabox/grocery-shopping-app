@@ -3,15 +3,26 @@ import { connect } from "react-redux";
 import {
   setShoppingListOpen,
   setEmptyShoppingListOpen,
-  setDoneShoppingListOpen
+  setDoneShoppingListOpen,
+  setShowDelete
 } from "../actions";
 
 import Collapse from "../components/elements/Collapse";
-
 import ShoppingList from "../components/ShoppingList";
+import AddIngredient from "../components/AddIngredient";
+import Button from "../components/elements/Button";
 
 class ShoppingListContainer extends Component {
   render() {
+    let deleteButton = (
+      <Button
+        size="sm"
+        color={this.props.showDelete ? "danger" : "default"}
+        onClick={() => this.props.setShowDelete(!this.props.showDelete)}
+      >
+        {this.props.showDelete ? "Cancel Deleting" : "Enter Delete Mode"}
+      </Button>
+    );
     return (
       <Collapse
         defaultopenvalue={this.props.shoppingListOpen}
@@ -27,10 +38,13 @@ class ShoppingListContainer extends Component {
           >
             <div>
               <h2>Shopping List</h2>
+              {deleteButton}
               <hr />
               <ShoppingList checked={false} />
+              {this.props.showDelete ? "" : <AddIngredient check={false} />}
             </div>
           </Collapse>
+
           <Collapse
             defaultopenvalue={this.props.doneShoppingListOpen}
             setopen={this.props.setDoneShoppingListOpen}
@@ -38,8 +52,10 @@ class ShoppingListContainer extends Component {
           >
             <div>
               <h2>Already Have</h2>
+              {deleteButton}
               <hr />
               <ShoppingList checked={true} />
+              {this.props.showDelete ? "" : <AddIngredient check={true} />}
             </div>
           </Collapse>
         </div>
@@ -52,7 +68,8 @@ const mapStateToProps = state => {
   return {
     shoppingListOpen: state.shoppingListOpen,
     emptyShoppingListOpen: state.emptyShoppingListOpen,
-    doneShoppingListOpen: state.doneShoppingListOpen
+    doneShoppingListOpen: state.doneShoppingListOpen,
+    showDelete: state.showDelete
   };
 };
 
@@ -66,6 +83,9 @@ const mapDispatchToProps = dispatch => {
     },
     setDoneShoppingListOpen: data => {
       dispatch(setDoneShoppingListOpen(!!data));
+    },
+    setShowDelete: data => {
+      dispatch(setShowDelete(!!data));
     }
   };
 };

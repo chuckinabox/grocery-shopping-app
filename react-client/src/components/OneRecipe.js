@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ModalPicture from "./elements/ModalPicture";
 import PropTypes from "prop-types";
+// import ModalButton from "./elements/ModalButton";
 
 class OneRecipe extends Component {
   render() {
@@ -18,16 +19,16 @@ class OneRecipe extends Component {
       );
 
       instructionToShow = (
-        <p>
-          {instructions[0]}
-          {instructionsLink ? (
-            <a target="_blank" href={instructionsLink[0]}>
-              {instructionsLink[0]}
-            </a>
-          ) : (
-            ""
-          )}
-        </p>
+        <div>
+          <p>
+            {instructions[0]}:{" "}
+            {instructionsLink ? (
+              <a href={instructionsLink[0]}>{instructionsLink[0]}</a>
+            ) : (
+              ""
+            )}
+          </p>
+        </div>
       );
     } else if (
       this.props.recipe.instructions.includes("1.") &&
@@ -96,7 +97,11 @@ class OneRecipe extends Component {
           <div className="col-sm-6">
             <ModalPicture
               className="thumbnail"
-              src={this.props.recipe.photoURL}
+              src={
+                this.props.recipe.photoURL
+                  ? this.props.recipe.photoURL
+                  : "https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg"
+              }
               alt={this.props.recipe.title}
             />
             <hr />
@@ -104,7 +109,6 @@ class OneRecipe extends Component {
             {this.props.recipe.description ? <hr /> : ""}
           </div>
           <div className="col-sm-6">{ingredients}</div>
-          <hr />
         </div>
         <div className="row">
           <div className="col-sm-12">{instructionToShow}</div>

@@ -12,7 +12,11 @@ class SingleContainer extends Component {
       this.props.recipes,
       this.props.searchRecipes
     );
-    this.props.setShouldSearch();
+    if (this.props.searchRecipes.results.length) {
+      this.props.setShouldSearch(false);
+    } else {
+      this.props.setShouldSearch(true);
+    }
   }
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -50,8 +54,8 @@ const mapDispatchToProps = dispatch => {
     getRecipe: (recipeId, recipes, searchRecipes) => {
       dispatch(setSingleRecipeFromId(recipeId, recipes, searchRecipes));
     },
-    setShouldSearch: () => {
-      dispatch(setShouldSearch(false));
+    setShouldSearch: data => {
+      dispatch(setShouldSearch(data));
     }
   };
 };

@@ -11,6 +11,9 @@ import SignupContainer from "../containers/SignupContainer";
 import GoingToCookContainer from "../containers/GoingToCookContainer";
 import SavedRecipesContainer from "../containers/SavedRecipesContainer";
 import ErrorContainer from "../containers/ErrorContainer";
+import FooterContainer from "../containers/FooterContainer";
+//Error
+import AlertDismissable from "./elements/AlertDismissable";
 
 import { setCookie } from "../actions";
 import { connect } from "react-redux";
@@ -20,7 +23,8 @@ import {
   getMakeRecipes,
   getMakeRecipesIds,
   getSavedRecipesIds,
-  getShoppingList
+  getShoppingList,
+  getProfile
 } from "../actions";
 
 class App extends Component {
@@ -52,9 +56,14 @@ class App extends Component {
         this.props.getSavedRecipesIds();
         this.props.getMakeRecipesIds();
         this.props.getShoppingList();
+        this.props.getProfile();
       }
       return true;
     }
+    if (this.props.errors !== nextProps.errors) {
+      return true;
+    }
+    return false;
   }
 
   render() {
@@ -98,11 +107,18 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div id="AppContainer">
         <Router>
-          <div>
+          <div id="App">
+            {this.props.errors.text.length ? (
+              <AlertDismissable error={this.props.errors} />
+            ) : (
+              ""
+            )}
             <header>{headerBar}</header>
+            <br />
             {components}
+            <Route component={FooterContainer} />
           </div>
         </Router>
       </div>
@@ -112,7 +128,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    cookie: state.cookie
+    cookie: state.cookie,
+    errors: state.errors
   };
 };
 
@@ -138,6 +155,9 @@ const mapDispatchToProps = dispatch => {
     },
     getShoppingList: () => {
       dispatch(getShoppingList());
+    },
+    getProfile: () => {
+      dispatch(getProfile());
     }
   };
 };

@@ -15,7 +15,7 @@ class NavBar extends Component {
           >
             {this.props.routes.map(route => (
               <NavItem eventKey={route.path} key={route.name} href={route.path}>
-                {route.name}
+                {route.count ? route.name + " - " + route.count : route.name}
               </NavItem>
             ))}
           </Nav>

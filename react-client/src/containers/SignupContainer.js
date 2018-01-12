@@ -82,7 +82,7 @@ class SignupContainer extends Component {
             className="col-sm-3 col-xs-8 title "
             onClick={() => this.props.history.push("/")}
           >
-            <h4>Title here</h4>
+            <h1>RecipeShoppingApp</h1>
           </div>
           <div className="col-sm-2 col-sm-offset-6 col-xs-4">
             <Button color="primary" onClick={() => this.props.history.goBack()}>
@@ -145,7 +145,7 @@ class SignupContainer extends Component {
               {this.state.errorPasswordConfirm}
             </InputGroup>
             <Button type="submit" color="primary">
-              New User
+              Submit
             </Button>
           </form>
         </div>

@@ -22,14 +22,21 @@ class Header extends Component {
   render() {
     return (
       <div className="container-fluid">
+        <div className="row">
+          <NavBar
+            location={this.props.location}
+            history={this.props.history}
+            routes={this.props.routes}
+          />
+        </div>
         <div className="row header">
           <div
-            className="col-sm-3 col-xs-12 title"
+            className="col-sm-4 col-xs-12 title"
             onClick={() => this.props.history.push("/")}
           >
-            <h1>Title here</h1>
+            <h1>RecipeShoppingApp</h1>
           </div>
-          <div className="col-sm-7 col-xs-8" id="search">
+          <div className="col-sm-6 col-xs-8" id="search">
             <form
               onSubmit={e => {
                 e.preventDefault();
@@ -60,14 +67,6 @@ class Header extends Component {
           <div className="col-sm-2 col-xs-4" id="signup">
             {this.props.modal}
           </div>
-        </div>
-
-        <div className="row">
-          <NavBar
-            location={this.props.location}
-            history={this.props.history}
-            routes={this.props.routes}
-          />
         </div>
       </div>
     );

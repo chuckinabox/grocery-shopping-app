@@ -3,8 +3,9 @@ import * as Actions from "./actions";
 const initailState = {
   isFetching: false,
   shouldSearch: true,
-  errors: null,
+  errors: { title: null, text: [] },
   cookie: "",
+  username: "",
   recipes: [
     {
       title: "",
@@ -39,6 +40,7 @@ const initailState = {
   shoppingListOpen: true,
   emptyShoppingListOpen: true,
   doneShoppingListOpen: true,
+  showDelete: false,
   singleRecipe: {
     title: "",
     id: "",
@@ -68,6 +70,11 @@ export function recipesList(state = initailState, action) {
       return {
         ...state,
         recipesPage: action.data
+      };
+    case Actions.SET_ERROR:
+      return {
+        ...state,
+        errors: action.data
       };
     case Actions.SET_SEARCH_RECIPES:
       return {
@@ -146,6 +153,16 @@ export function recipesList(state = initailState, action) {
       return {
         ...state,
         doneShoppingListOpen: action.data
+      };
+    case Actions.SET_SHOW_DELETE:
+      return {
+        ...state,
+        showDelete: action.data
+      };
+    case Actions.SET_USERNAME:
+      return {
+        ...state,
+        username: action.data
       };
     default:
       return state;

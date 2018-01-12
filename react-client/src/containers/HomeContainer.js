@@ -44,25 +44,28 @@ class HomeContainer extends Component {
     if (this.state.page < 2) {
       backButton = null;
     }
-    return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12">
-              <h2>
-                App Description Lorem ipsum dolor sit amet, augue disputationi
-                an qui. In probo suavitate cotidieque qui. Atomorum suavitate ei
-                eam. Tamquam alienum nostrum est ne, ut tale nibh sit. Te agam
-                integre erroribus eam.{" "}
-              </h2>
-            </div>
+    let welcomeMessage =
+      "Welcome to the Recipe Shopping App.  Click on any recipe to view it or search up in the top bar.  If you log in or sign up, you can save recipes for later and make your own shopping list, otherwise enjoy these top rated recipes below.";
+    if (this.props.cookie) {
+      welcomeMessage = `Welcome back, ${this.props.username}.`;
+    }
+    let welcomeMessageContainer = (
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 well frontText">
+            <h2>{welcomeMessage}</h2>
           </div>
         </div>
-
+      </div>
+    );
+    return (
+      <div>
+        {this.props.recipesPage === 1 ? welcomeMessageContainer : ""}
+        <br />
         <div className="text-right">
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
-            {forwardButton}
+            {backButton} Page{" "}
+            {forwardButton || backButton ? this.state.page : ""} {forwardButton}
           </span>
           {this.props.recipes.length > 1 ? (
             <Recipes
@@ -73,8 +76,8 @@ class HomeContainer extends Component {
             "Loading..."
           )}
           <span className="pull-right col-sm-10 col-sm-offset-1">
-            {backButton} {forwardButton || backButton ? this.state.page : ""}{" "}
-            {forwardButton}
+            {backButton} Page{" "}
+            {forwardButton || backButton ? this.state.page : ""} {forwardButton}
           </span>
         </div>
       </div>
@@ -86,7 +89,9 @@ const mapStateToProps = state => {
   return {
     recipes: state.recipes,
     recipesPage: state.recipesPage,
-    isFetching: state.isFetching
+    isFetching: state.isFetching,
+    cookie: state.cookie,
+    username: state.username
   };
 };
 

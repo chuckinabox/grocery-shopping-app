@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  margin-top: 1%;
+  margin-top: 0;
   padding: 0;
+  word-break: normal;
 }
 
 h1 {
@@ -11,10 +12,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.25em;
+  font-size: 1.3em;
   line-height: 1.5;
-  letter-spacing: 1.08px;
-  font-weight: 450;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+  font-family: sans-Serif;
 }
 
 h3 {
@@ -30,6 +32,48 @@ h4 {
 p {
 }
 
+hr {
+  width: 90%;
+  padding: 0;
+  margin-left: 0;
+}
+
+.frontText {
+  margin-top: 2%;
+}
+
+#AppContainer {
+  min-height: 100vh;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: -10%;
+  height: 3em;
+  width: 100%;
+  margin-left: 0;
+  background-color: #111;
+  padding: 10px;
+
+  font-size: 16px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+footer p {
+  color: #eee;
+}
+
+footer p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.alert {
+  margin-top: -10px;
+}
+
 .header {
   padding: auto;
   margin-bottom: 5px;
@@ -37,6 +81,11 @@ p {
 
 .title {
   text-align: center;
+  padding: 0;
+  font-family: "Cursive";
+  font-size: 1.3em;
+  font-weight: bolder;
+  letter-spacing: 1.19px;
 }
 
 .flex-parent {
@@ -57,6 +106,10 @@ p {
 @media screen and (max-width: 760px) {
   .flex-item {
     width: 100%;
+  }
+  footer {
+    bottom: -6%;
+    width: 101%;
   }
 }
 
@@ -110,9 +163,9 @@ p {
   background-color: #fff;
   border-radius: 5;
   width: fit-content;
-  max-width: 75%;
+  max-width: 100%;
   height: fit-content;
-  max-height: 80%;
+  max-height: 100%;
   margin: auto;
   padding: 5%;
   display: inline;
@@ -135,6 +188,10 @@ p {
 body {
   color: #111111;
   background-color: #44d399;
+}
+
+.shoppingList {
+  margin-left: 0;
 }
 
 #navbar {

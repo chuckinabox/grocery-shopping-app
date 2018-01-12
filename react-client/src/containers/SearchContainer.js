@@ -80,7 +80,9 @@ class SearchContainer extends Component {
               <br />
               {!this.props.isFetching ? (
                 <p className="pull-right">
-                  {backButton} {forwardButton}
+                  {backButton}{" "}
+                  {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
+                  {forwardButton}
                 </p>
               ) : (
                 ""
@@ -99,7 +101,9 @@ class SearchContainer extends Component {
           )}
           {!this.props.isFetching ? (
             <p className="pull-right">
-              {backButton} {forwardButton}
+              {backButton}{" "}
+              {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
+              {forwardButton}
             </p>
           ) : (
             ""
