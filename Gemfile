@@ -19,7 +19,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
-gem 'jwt'
 gem 'responders' #allows respond_to :json
 
 # Use Capistrano for deployment

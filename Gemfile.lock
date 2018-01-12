@@ -239,7 +239,6 @@ DEPENDENCIES
   guard-rspec
   jazz_fingers
   jbuilder (~> 2.5)
-  jwt
   knock
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
