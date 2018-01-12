@@ -48,7 +48,6 @@ class Api::MakeRecipesController < ApplicationController
   private
 
 
-
   def get_items
     @api.results[0]['ingredientList'].map do |ingredient|
       {user: current_user, quantity: ingredient[:quantity], name: ingredient[:name], check: false, unit: ingredient[:unit]}

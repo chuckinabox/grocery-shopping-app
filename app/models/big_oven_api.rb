@@ -52,13 +52,13 @@ class BigOvenApi
     parse_recipes(responses)
   end
 
-
-
   def has_error?
     ! @error.empty?
   end
 
+
   private
+
 
   def setup_results(query)
     @results = {rpp: query[:rpp] ? query[:rpp].to_i : 10,
