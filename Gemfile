@@ -13,19 +13,21 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'knock'
+gem 'responders' #allows respond_to :json
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-gem 'httparty'
 gem 'figaro'
+gem 'typhoeus'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -34,6 +36,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -42,6 +45,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
+  gem 'bullet'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,0 +1,243 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '2554'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      ETag:
+      - '"653b78d6-e5af-4a23-996d-c18acf00125c"'
+      Server:
+      - Microsoft-IIS/8.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=9082249f18e3c7ae32b4865e4014bc5227ff417094f837d586cfab224ad4735b;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Wed, 20 Dec 2017 01:04:17 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"ResultCount\": 611,\r\n  \"Results\": [\r\n    {\r\n      \"RecipeID\":
+        230806,\r\n      \"Title\": \"Butter Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n
+        \     \"Category\": \"Main Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n
+        \     \"Microcategory\": \"\",\r\n      \"StarRating\": 5.0,\r\n      \"WebURL\":
+        \"https://www.bigoven.com/recipe/butter-chicken/230806\",\r\n      \"ReviewCount\":
+        1,\r\n      \"Poster\": {\r\n        \"UserName\": \"christiepercival\",\r\n
+        \       \"UserID\": 1391483,\r\n        \"FirstName\": null,\r\n        \"LastName\":
+        null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/christiepercival.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2011-12-30T22:03:37.507Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 51,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-2.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 182884,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n      \"Category\": \"Main
+        Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 3.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/182884\",\r\n
+        \     \"ReviewCount\": 1,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"TheKevinJohnson\",\r\n        \"UserID\": 578051,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/thekevinjohnson.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2010-06-17T16:39:14.000Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 4,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 563642,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": null,\r\n      \"Category\": \"Main Dish\",\r\n
+        \     \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 0.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/563642\",\r\n
+        \     \"ReviewCount\": 0,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"zara_saliba\",\r\n        \"UserID\": 2040245,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/zara_saliba.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2013-06-30T08:02:27.787Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 6,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-15.jpg\"\r\n
+        \   }\r\n  ],\r\n  \"SpellSuggest\": null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=0
+  recorded_at: Wed, 20 Dec 2017 01:04:17 GMT
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '2554'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      ETag:
+      - '"cd0744cb-705e-49c3-b000-725db507fdf7"'
+      Server:
+      - Microsoft-IIS/8.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=988f6227f4ff49b6d414793aac8490cee448176672c14c5edeaab31e14120a54;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Wed, 20 Dec 2017 01:11:18 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"ResultCount\": 611,\r\n  \"Results\": [\r\n    {\r\n      \"RecipeID\":
+        230806,\r\n      \"Title\": \"Butter Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n
+        \     \"Category\": \"Main Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n
+        \     \"Microcategory\": \"\",\r\n      \"StarRating\": 5.0,\r\n      \"WebURL\":
+        \"https://www.bigoven.com/recipe/butter-chicken/230806\",\r\n      \"ReviewCount\":
+        1,\r\n      \"Poster\": {\r\n        \"UserName\": \"christiepercival\",\r\n
+        \       \"UserID\": 1391483,\r\n        \"FirstName\": null,\r\n        \"LastName\":
+        null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/christiepercival.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2011-12-30T22:03:37.507Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 51,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-2.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 182884,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n      \"Category\": \"Main
+        Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 3.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/182884\",\r\n
+        \     \"ReviewCount\": 1,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"TheKevinJohnson\",\r\n        \"UserID\": 578051,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/thekevinjohnson.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2010-06-17T16:39:14.000Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 4,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 563642,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": null,\r\n      \"Category\": \"Main Dish\",\r\n
+        \     \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 0.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/563642\",\r\n
+        \     \"ReviewCount\": 0,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"zara_saliba\",\r\n        \"UserID\": 2040245,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/zara_saliba.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2013-06-30T08:02:27.787Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 6,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-15.jpg\"\r\n
+        \   }\r\n  ],\r\n  \"SpellSuggest\": null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=1
+  recorded_at: Wed, 20 Dec 2017 01:11:20 GMT
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '2554'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      ETag:
+      - '"ad55570c-5d18-4c86-8967-1af61d9b31c6"'
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=6bc3325630f9022175e61c79eb510b26982b7a06ff9a0bdf4e5dddf0eb47a6af;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 23 Dec 2017 02:24:38 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"ResultCount\": 612,\r\n  \"Results\": [\r\n    {\r\n      \"RecipeID\":
+        230806,\r\n      \"Title\": \"Butter Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n
+        \     \"Category\": \"Main Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n
+        \     \"Microcategory\": \"\",\r\n      \"StarRating\": 5.0,\r\n      \"WebURL\":
+        \"https://www.bigoven.com/recipe/butter-chicken/230806\",\r\n      \"ReviewCount\":
+        1,\r\n      \"Poster\": {\r\n        \"UserName\": \"christiepercival\",\r\n
+        \       \"UserID\": 1391483,\r\n        \"FirstName\": null,\r\n        \"LastName\":
+        null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/christiepercival.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2011-12-30T22:03:37.507Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 51,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-2.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 182884,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": \"Indian\",\r\n      \"Category\": \"Main
+        Dish\",\r\n      \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 3.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/182884\",\r\n
+        \     \"ReviewCount\": 1,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"TheKevinJohnson\",\r\n        \"UserID\": 578051,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/thekevinjohnson.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2010-06-17T16:39:14.000Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 4,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken.jpg\"\r\n
+        \   },\r\n    {\r\n      \"RecipeID\": 563642,\r\n      \"Title\": \"Butter
+        Chicken\",\r\n      \"Cuisine\": null,\r\n      \"Category\": \"Main Dish\",\r\n
+        \     \"Subcategory\": \"Poultry - Chicken\",\r\n      \"Microcategory\":
+        \"\",\r\n      \"StarRating\": 0.0,\r\n      \"WebURL\": \"https://www.bigoven.com/recipe/butter-chicken/563642\",\r\n
+        \     \"ReviewCount\": 0,\r\n      \"Poster\": {\r\n        \"UserName\":
+        \"zara_saliba\",\r\n        \"UserID\": 2040245,\r\n        \"FirstName\":
+        null,\r\n        \"LastName\": null,\r\n        \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/zara_saliba.jpg\"\r\n
+        \     },\r\n      \"IsPrivate\": false,\r\n      \"Servings\": 4.0,\r\n      \"CreationDate\":
+        \"2013-06-30T08:02:27.787Z\",\r\n      \"IsRecipeScan\": false,\r\n      \"IsBookmark\":
+        false,\r\n      \"TotalTries\": 6,\r\n      \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/butter-chicken-15.jpg\"\r\n
+        \   }\r\n  ],\r\n  \"SpellSuggest\": null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipes?title_kw=Butter%20Chicken&rpp=3&pg=
+  recorded_at: Sat, 23 Dec 2017 02:24:38 GMT
+recorded_with: VCR 4.0.0

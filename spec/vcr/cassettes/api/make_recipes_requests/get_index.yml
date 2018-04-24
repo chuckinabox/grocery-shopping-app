@@ -1,0 +1,782 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/175918
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '11763'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=4e717ea25eafc79aa5eb63d9643d3f833c2c1eead3055e145a29a5eecf0a1c9c;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 30 Dec 2017 03:06:30 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 175918,\r\n  \"Title\": \"Mom's Pizza\",\r\n  \"Description\":
+        \"The best pizza recipie ever!!!!! (no Mom didn't pay me to say that)\",\r\n
+        \ \"Cuisine\": \"American\",\r\n  \"Category\": \"Main Dish\",\r\n  \"Subcategory\":
+        \"Pizza and Calzones\",\r\n  \"Microcategory\": null,\r\n  \"PrimaryIngredient\":
+        \"Cheese\",\r\n  \"StarRating\": 5.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/moms-pizza/175918\",\r\n
+        \ \"ImageURL\": \"http://redirect.bigoven.com/pics/moms-pizza.jpg\",\r\n  \"ReviewCount\":
+        1,\r\n  \"MedalCount\": 0,\r\n  \"FavoriteCount\": 8,\r\n  \"Poster\": {\r\n
+        \   \"UserID\": 632001,\r\n    \"UserName\": \"Liselledeiane\",\r\n    \"PhotoUrl\":
+        \"https://photos.bigoven.com/avatar/photo/121109110846632001.jpg\",\r\n    \"IsPremium\":
+        false,\r\n    \"IsKitchenHelper\": false,\r\n    \"PremiumExpiryDate\": null,\r\n
+        \   \"MemberSince\": \"2009-11-10T11:11:00.000Z\",\r\n    \"IsUsingRecurly\":
+        false,\r\n    \"FirstName\": null,\r\n    \"LastName\": null\r\n  },\r\n  \"Ingredients\":
+        [\r\n    {\r\n      \"IngredientID\": 1801972,\r\n      \"DisplayIndex\":
+        0,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Crust \",\r\n      \"HTMLName\":
+        \"Crust \",\r\n      \"Quantity\": 4.0,\r\n      \"DisplayQuantity\": \" 4
+        \",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 4.0,\r\n      \"MetricDisplayQuantity\":
+        \" 4 \",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": true\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 1801973,\r\n      \"DisplayIndex\": 1,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Flour\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/flour\\\" class=\\\"glosslink\\\">Flour</a>\",\r\n
+        \     \"Quantity\": 2.5,\r\n      \"DisplayQuantity\": \" 2 1/2 \",\r\n      \"Unit\":
+        \"cups\",\r\n      \"MetricQuantity\": 591.0,\r\n      \"MetricDisplayQuantity\":
+        \"591\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Flour\",\r\n        \"Department\":
+        \"Baking\",\r\n        \"MasterIngredientID\": 34,\r\n        \"UsuallyOnHand\":
+        true\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1801974,\r\n      \"DisplayIndex\": 2,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"yeast \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/yeast\\\"
+        class=\\\"glosslink\\\">yeast</a> \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \" 1 \",\r\n      \"Unit\": \"tablespoon\",\r\n      \"MetricQuantity\": 15.0,\r\n
+        \     \"MetricDisplayQuantity\": \"15\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Yeast\",\r\n        \"Department\": \"Baking\",\r\n        \"MasterIngredientID\":
+        419,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801975,\r\n      \"DisplayIndex\":
+        3,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"WARM water \",\r\n
+        \     \"HTMLName\": \"WARM water \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \" 1 \",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\": 237.0,\r\n
+        \     \"MetricDisplayQuantity\": \"237\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801976,\r\n      \"DisplayIndex\":
+        4,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"oil\",\r\n      \"HTMLName\":
+        \"oil\",\r\n      \"Quantity\": 2.0,\r\n      \"DisplayQuantity\": \" 2 \",\r\n
+        \     \"Unit\": \"tablespoons\",\r\n      \"MetricQuantity\": 30.0,\r\n      \"MetricDisplayQuantity\":
+        \"30\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"olive
+        oil gives the best flavor\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Oil\",\r\n        \"Department\": \"Oils\",\r\n        \"MasterIngredientID\":
+        181,\r\n        \"UsuallyOnHand\": true\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801977,\r\n      \"DisplayIndex\":
+        5,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Salt\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/salt\\\" class=\\\"glosslink\\\">Salt</a>\",\r\n
+        \     \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\":
+        \"teaspoon\",\r\n      \"MetricQuantity\": 4.92892158321706,\r\n      \"MetricDisplayQuantity\":
+        \"5\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Salt\",\r\n        \"Department\":
+        \"Baking\",\r\n        \"MasterIngredientID\": 6,\r\n        \"UsuallyOnHand\":
+        true\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1801978,\r\n      \"DisplayIndex\": 6,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"honey \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/honey\\\"
+        class=\\\"glosslink\\\">honey</a> \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \" 1 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 4.92892158321706,\r\n
+        \     \"MetricDisplayQuantity\": \"5\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Honey\",\r\n        \"Department\": \"Condiments\",\r\n        \"MasterIngredientID\":
+        180,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801979,\r\n      \"DisplayIndex\":
+        7,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Pizza Sauce \",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/pizza\\\"
+        class=\\\"glosslink\\\">Pizza</a> Sauce \",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \"\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        0.0,\r\n      \"MetricDisplayQuantity\": \"\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Pizza sauce\",\r\n        \"Department\": \"Pasta\",\r\n        \"MasterIngredientID\":
+        630,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 1801980,\r\n      \"DisplayIndex\":
+        8,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"tomato sauce \",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/tomato%20sauce\\\"
+        class=\\\"glosslink\\\">tomato sauce</a> \",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\": \"can\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \" 1 \",\r\n      \"MetricUnit\":
+        \"can\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Tomato sauce\",\r\n        \"Department\": \"Canned
+        Goods\",\r\n        \"MasterIngredientID\": 123,\r\n        \"UsuallyOnHand\":
+        false\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1801981,\r\n      \"DisplayIndex\": 9,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"garlic powder \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/garlic\\\"
+        class=\\\"glosslink\\\">garlic</a> powder \",\r\n      \"Quantity\": 0.125,\r\n
+        \     \"DisplayQuantity\": \" 1/8 \",\r\n      \"Unit\": \"tsp\",\r\n      \"MetricQuantity\":
+        0.616115197902132,\r\n      \"MetricDisplayQuantity\": \"0.62\",\r\n      \"MetricUnit\":
+        \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Garlic\",\r\n        \"Department\": \"Spices\",\r\n
+        \       \"MasterIngredientID\": 37,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1801982,\r\n      \"DisplayIndex\": 10,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Basil\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/basil\\\"
+        class=\\\"glosslink\\\">Basil</a>\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \" 1 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 4.92892158321706,\r\n
+        \     \"MetricDisplayQuantity\": \"5\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Basil\",\r\n        \"Department\": \"Produce\",\r\n        \"MasterIngredientID\":
+        52,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801983,\r\n      \"DisplayIndex\":
+        11,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"oregano \",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/oregano\\\" class=\\\"glosslink\\\">oregano</a>
+        \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n
+        \     \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 4.92892158321706,\r\n
+        \     \"MetricDisplayQuantity\": \"5\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Oregano\",\r\n        \"Department\": \"Spices\",\r\n        \"MasterIngredientID\":
+        62,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801984,\r\n      \"DisplayIndex\":
+        12,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"marjoram \",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/marjoram\\\" class=\\\"glosslink\\\">marjoram</a>
+        \",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\": \" 1/2 \",\r\n
+        \     \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 2.46446079160853,\r\n
+        \     \"MetricDisplayQuantity\": \"2\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1801985,\r\n      \"DisplayIndex\":
+        13,\r\n      \"IsHeading\": false,\r\n      \"Name\": \" Any toppings you
+        like \",\r\n      \"HTMLName\": \" Any toppings you like \",\r\n      \"Quantity\":
+        1.0,\r\n      \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 1801986,\r\n      \"DisplayIndex\":
+        14,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"mozzerella cheese\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/mozzerella\\\"
+        class=\\\"glosslink\\\">mozzerella</a> cheese\",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \"\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        0.0,\r\n      \"MetricDisplayQuantity\": \"\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": \"enough to cover pizza\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": false\r\n    }\r\n  ],\r\n  \"Instructions\":
+        \"Mix yeast into warm water, stir well. Let sit while you mix the other ingredients
+        together. Add yeast mixture and knead together. Let sit while the oven preheats
+        to 425 degrees or about 5 minutes. The dough should rise a little. Spray and
+        coat with flour 2 pizza pans and split the dough between them. Spread the
+        dough on the pans and put in the oven for about 5 minutes. Top with sauce
+        toppings and cheese and put back in the oven for 20 minutes.\",\r\n  \"YieldNumber\":
+        8.0,\r\n  \"YieldUnit\": \"Servings\",\r\n  \"TotalMinutes\": 45,\r\n  \"ActiveMinutes\":
+        20,\r\n  \"NutritionInfo\": {\r\n    \"SingularYieldUnit\": \"Paid API plan
+        required for nutrition.\",\r\n    \"TotalCalories\": 0.0,\r\n    \"TotalFat\":
+        0.0,\r\n    \"CaloriesFromFat\": 0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\":
+        0.0,\r\n    \"SatFatPct\": 0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\":
+        0.0,\r\n    \"TransFat\": 0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\":
+        0.0,\r\n    \"Sodium\": 0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\":
+        0.0,\r\n    \"PotassiumPct\": 0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\":
+        0.0,\r\n    \"DietaryFiber\": 0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\":
+        0.0,\r\n    \"Protein\": 0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\":
+        null,\r\n  \"CreationDate\": \"2009-11-13T15:37:55.140Z\",\r\n  \"LastModified\":
+        \"2017-09-09T08:25:01.853Z\",\r\n  \"IsBookmark\": false,\r\n  \"BookmarkURL\":
+        null,\r\n  \"BookmarkSiteLogo\": \"\",\r\n  \"BookmarkImageURL\": null,\r\n
+        \ \"IsRecipeScan\": null,\r\n  \"MenuCount\": 0,\r\n  \"NotesCount\": 0,\r\n
+        \ \"AdTags\": \"simplypotatoes15\",\r\n  \"IngredientsTextBlock\": null,\r\n
+        \ \"AllCategoriesText\": \"pizza|home made|main dish|hare favorite|family
+        favorites|baked|cheese|american|vegetarian|white-meat-free|tree-nut-free|nut-free|contains-gluten|red-meat-free|shellfish-free|contains-dairy|contains-honey|pescatarian\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": 0,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": 700,\r\n  \"ImageSquares\": [\r\n    700,\r\n
+        \   640,\r\n    512,\r\n    480,\r\n    320,\r\n    256,\r\n    200,\r\n    128,\r\n
+        \   120,\r\n    64,\r\n    48,\r\n    36\r\n  ],\r\n  \"PhotoUrl\": \"https://photos.bigoven.com/recipe/hero/moms-pizza.jpg\",\r\n
+        \ \"VerifiedByClass\": null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/175918
+  recorded_at: Sat, 30 Dec 2017 03:06:31 GMT
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/175919
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '7144'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=abcec2900c60d09b8581c9f7e2439eb0263aca3dbba88f69cbc6569b79d1853e;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 30 Dec 2017 03:06:30 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 175919,\r\n  \"Title\": \"Chicken and Broccoli
+        Bake\",\r\n  \"Description\": \"This is a quick and simple dish to prepare.
+        If you don't like broccoli, feel free to substitute with any other vegetables.\",\r\n
+        \ \"Cuisine\": \"European\",\r\n  \"Category\": \"Main Dish\",\r\n  \"Subcategory\":
+        \"Casseroles\",\r\n  \"Microcategory\": null,\r\n  \"PrimaryIngredient\":
+        \"Chicken\",\r\n  \"StarRating\": 5.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/chicken-and-broccoli-bake/175919\",\r\n
+        \ \"ImageURL\": null,\r\n  \"ReviewCount\": 1,\r\n  \"MedalCount\": 0,\r\n
+        \ \"FavoriteCount\": 2,\r\n  \"Poster\": {\r\n    \"UserID\": 636254,\r\n
+        \   \"UserName\": \"arkonite\",\r\n    \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/121109050732636254.jpg\",\r\n
+        \   \"IsPremium\": false,\r\n    \"IsKitchenHelper\": false,\r\n    \"PremiumExpiryDate\":
+        null,\r\n    \"MemberSince\": \"2009-11-12T16:46:00.000Z\",\r\n    \"IsUsingRecurly\":
+        false,\r\n    \"FirstName\": null,\r\n    \"LastName\": null\r\n  },\r\n  \"Ingredients\":
+        [\r\n    {\r\n      \"IngredientID\": 1802005,\r\n      \"DisplayIndex\":
+        0,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Onion\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/onion\\\" class=\\\"glosslink\\\">Onion</a>\",\r\n
+        \     \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\":
+        \"medium\",\r\n      \"MetricQuantity\": 1.0,\r\n      \"MetricDisplayQuantity\":
+        \" 1 \",\r\n      \"MetricUnit\": \"medium\",\r\n      \"PreparationNotes\":
+        \"chopped\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Onion\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 12,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802006,\r\n      \"DisplayIndex\":
+        1,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"broccoli\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/broccoli\\\" class=\\\"glosslink\\\">broccoli</a>\",\r\n
+        \     \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\":
+        \"head \",\r\n      \"MetricQuantity\": 1.0,\r\n      \"MetricDisplayQuantity\":
+        \" 1 \",\r\n      \"MetricUnit\": \"head \",\r\n      \"PreparationNotes\":
+        \"cut into florets\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Broccoli\",\r\n        \"Department\": \"Produce\",\r\n        \"MasterIngredientID\":
+        163,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802007,\r\n      \"DisplayIndex\":
+        2,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"white sauce \",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/white%20sauce\\\"
+        class=\\\"glosslink\\\">white sauce</a> \",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\": \"pint \",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \" 1 \",\r\n      \"MetricUnit\":
+        \"pint \",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802008,\r\n      \"DisplayIndex\": 3,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"chicken breasts \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/chicken%20breast\\\"
+        class=\\\"glosslink\\\">chicken breast</a>s \",\r\n      \"Quantity\": 2.0,\r\n
+        \     \"DisplayQuantity\": \" 2 \",\r\n      \"Unit\": \"large\",\r\n      \"MetricQuantity\":
+        2.0,\r\n      \"MetricDisplayQuantity\": \" 2 \",\r\n      \"MetricUnit\":
+        \"large\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802009,\r\n      \"DisplayIndex\": 4,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"breadcrumbs \",\r\n      \"HTMLName\": \"breadcrumbs \",\r\n
+        \     \"Quantity\": 3.0,\r\n      \"DisplayQuantity\": \" 3 \",\r\n      \"Unit\":
+        \"oz\",\r\n      \"MetricQuantity\": 85.0,\r\n      \"MetricDisplayQuantity\":
+        \"85\",\r\n      \"MetricUnit\": \"g\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": true\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 1802010,\r\n      \"DisplayIndex\": 5,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"savoury cheese flavour crisps
+        \",\r\n      \"HTMLName\": \"savoury <a href=\\\"http://www.bigoven.com/glossary/cheese\\\"
+        class=\\\"glosslink\\\">cheese</a> flavour crisps \",\r\n      \"Quantity\":
+        1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\": \"bag of\",\r\n
+        \     \"MetricQuantity\": 1.0,\r\n      \"MetricDisplayQuantity\": \" 1 \",\r\n
+        \     \"MetricUnit\": \"bag of\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 1802011,\r\n      \"DisplayIndex\": 6,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Vegetable oil\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/vegetable%20oil\\\" class=\\\"glosslink\\\">Vegetable
+        oil</a>\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1
+        \",\r\n      \"Unit\": \"tablespoon\",\r\n      \"MetricQuantity\": 15.0,\r\n
+        \     \"MetricDisplayQuantity\": \"15\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Vegetable oil\",\r\n        \"Department\": \"Oils\",\r\n        \"MasterIngredientID\":
+        33,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    }\r\n  ],\r\n  \"Instructions\": \"Preheat oven to 180  degrees
+        celcius or 350 degrees farenheit\\r\\n\\r\\nChop onion and soften in oil\\r\\n\\r\\nChop
+        chicken into bite size chunks and brown off\\r\\n\\r\\nMake white sauce\\r\\n\\r\\nBoil
+        or steam broccoli to al dente texture\\r\\n\\r\\n\\r\\n\\r\\nWhen your chicken,
+        broccoli and sauce are ready, you can now assemble the dish. Place chicken
+        and broccoli in an oven-proof dish and cover in white sauce. Sprinkle with
+        breadcrumbs. Crush packet of crisps and sprinkle on top of bread crumbs. Place
+        in oven and leave for at least 30 minutes to heat through. Check dish is piping
+        hot throughout before serving.\\r\\n\\r\\nThis dish can be prepared in advance
+        and kept covered in the fridge.\\r\\n\\r\\n\",\r\n  \"YieldNumber\": 4.0,\r\n
+        \ \"YieldUnit\": \"Servings\",\r\n  \"TotalMinutes\": 60,\r\n  \"ActiveMinutes\":
+        20,\r\n  \"NutritionInfo\": {\r\n    \"SingularYieldUnit\": \"Paid API plan
+        required for nutrition.\",\r\n    \"TotalCalories\": 0.0,\r\n    \"TotalFat\":
+        0.0,\r\n    \"CaloriesFromFat\": 0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\":
+        0.0,\r\n    \"SatFatPct\": 0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\":
+        0.0,\r\n    \"TransFat\": 0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\":
+        0.0,\r\n    \"Sodium\": 0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\":
+        0.0,\r\n    \"PotassiumPct\": 0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\":
+        0.0,\r\n    \"DietaryFiber\": 0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\":
+        0.0,\r\n    \"Protein\": 0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\":
+        null,\r\n  \"CreationDate\": \"2009-11-13T16:58:28.320Z\",\r\n  \"LastModified\":
+        \"2017-09-09T08:25:03.093Z\",\r\n  \"IsBookmark\": false,\r\n  \"BookmarkURL\":
+        null,\r\n  \"BookmarkSiteLogo\": \"\",\r\n  \"BookmarkImageURL\": null,\r\n
+        \ \"IsRecipeScan\": null,\r\n  \"MenuCount\": 0,\r\n  \"NotesCount\": 0,\r\n
+        \ \"AdTags\": \"simplypotatoes15\",\r\n  \"IngredientsTextBlock\": null,\r\n
+        \ \"AllCategoriesText\": \"chicken|broccoli|quick|tasty|european|contains-white-meat|tree-nut-free|nut-free|contains-gluten|red-meat-free|shellfish-free|contains-dairy\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": null,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": null,\r\n  \"ImageSquares\": [],\r\n  \"PhotoUrl\":
+        \"https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg\",\r\n  \"VerifiedByClass\":
+        null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/175919
+  recorded_at: Sat, 30 Dec 2017 03:06:31 GMT
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/175939
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '11247'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=57ddc7e5c76fa7faea07248660fe6a44efe2ff5161c51f6abcd7e0469a04873e;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sun, 31 Dec 2017 05:13:03 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 175939,\r\n  \"Title\": \"Chinese beef and root
+        vegtables in crock pot\",\r\n  \"Description\": \"Adapted from beef and daikon
+        in clay pot\",\r\n  \"Cuisine\": \"Chinese\",\r\n  \"Category\": \"Soups,
+        Stews and Chili\",\r\n  \"Subcategory\": \"Soups and Stews - Other\",\r\n
+        \ \"Microcategory\": null,\r\n  \"PrimaryIngredient\": \"beef brisket\",\r\n
+        \ \"StarRating\": 4.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/chinese-beef-and-root-vegtables-in-crock-pot/175939\",\r\n
+        \ \"ImageURL\": null,\r\n  \"ReviewCount\": 1,\r\n  \"MedalCount\": 0,\r\n
+        \ \"FavoriteCount\": 0,\r\n  \"Poster\": {\r\n    \"UserID\": 638978,\r\n
+        \   \"UserName\": \"maanum\",\r\n    \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/avatar-default.png\",\r\n
+        \   \"IsPremium\": false,\r\n    \"IsKitchenHelper\": false,\r\n    \"PremiumExpiryDate\":
+        null,\r\n    \"MemberSince\": \"2009-11-14T11:36:00.000Z\",\r\n    \"IsUsingRecurly\":
+        false,\r\n    \"FirstName\": null,\r\n    \"LastName\": null\r\n  },\r\n  \"Ingredients\":
+        [\r\n    {\r\n      \"IngredientID\": 1802271,\r\n      \"DisplayIndex\":
+        0,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"beef brisket\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/beef\\\"
+        class=\\\"glosslink\\\">beef</a> brisket\",\r\n      \"Quantity\": 2.0,\r\n
+        \     \"DisplayQuantity\": \" 2 \",\r\n      \"Unit\": \"lb\",\r\n      \"MetricQuantity\":
+        0.90718474,\r\n      \"MetricDisplayQuantity\": \"0.91\",\r\n      \"MetricUnit\":
+        \"kg\",\r\n      \"PreparationNotes\": \"chopped into chunks\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Beef\",\r\n        \"Department\": \"Meats\",\r\n
+        \       \"MasterIngredientID\": 72,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802272,\r\n      \"DisplayIndex\": 1,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"daikon radish\",\r\n      \"HTMLName\": \"daikon <a href=\\\"http://www.bigoven.com/glossary/radish\\\"
+        class=\\\"glosslink\\\">radish</a>\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"lb\",\r\n      \"MetricQuantity\": 0.226796185,\r\n
+        \     \"MetricDisplayQuantity\": \"0.23\",\r\n      \"MetricUnit\": \"kg\",\r\n
+        \     \"PreparationNotes\": \"peeled and chopped into chunks\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802273,\r\n      \"DisplayIndex\": 2,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"carrots\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/carrots\\\"
+        class=\\\"glosslink\\\">carrots</a>\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"lb\",\r\n      \"MetricQuantity\": 0.226796185,\r\n
+        \     \"MetricDisplayQuantity\": \"0.23\",\r\n      \"MetricUnit\": \"kg\",\r\n
+        \     \"PreparationNotes\": \"peeled and chopped into chunks\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802274,\r\n      \"DisplayIndex\": 3,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"turnips\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/turnip\\\"
+        class=\\\"glosslink\\\">turnip</a>s\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"lb\",\r\n      \"MetricQuantity\": 0.226796185,\r\n
+        \     \"MetricDisplayQuantity\": \"0.23\",\r\n      \"MetricUnit\": \"kg\",\r\n
+        \     \"PreparationNotes\": \"peeled and chopped into chunks\",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802275,\r\n      \"DisplayIndex\": 4,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"ginger \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/ginger\\\"
+        class=\\\"glosslink\\\">ginger</a> \",\r\n      \"Quantity\": 8.0,\r\n      \"DisplayQuantity\":
+        \" 8 \",\r\n      \"Unit\": \"slices\",\r\n      \"MetricQuantity\": 8.0,\r\n
+        \     \"MetricDisplayQuantity\": \" 8 \",\r\n      \"MetricUnit\": \"slices\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Ginger\",\r\n        \"Department\": \"Produce\",\r\n        \"MasterIngredientID\":
+        160,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802276,\r\n      \"DisplayIndex\":
+        5,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"green onion\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/green%20onion\\\"
+        class=\\\"glosslink\\\">green onion</a>\",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \" 1 \",\r\n      \"MetricUnit\":
+        \"\",\r\n      \"PreparationNotes\": \"cut into 2-inch sections \",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Green onion\",\r\n        \"Department\": \"Produce\",\r\n
+        \       \"MasterIngredientID\": 361,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802277,\r\n      \"DisplayIndex\": 6,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Garlic\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/garlic\\\"
+        class=\\\"glosslink\\\">Garlic</a>\",\r\n      \"Quantity\": 3.0,\r\n      \"DisplayQuantity\":
+        \" 3 \",\r\n      \"Unit\": \"cloves\",\r\n      \"MetricQuantity\": 3.0,\r\n
+        \     \"MetricDisplayQuantity\": \" 3 \",\r\n      \"MetricUnit\": \"cloves\",\r\n
+        \     \"PreparationNotes\": \"crushed\",\r\n      \"IngredientInfo\": {\r\n
+        \       \"Name\": \"Garlic\",\r\n        \"Department\": \"Produce\",\r\n
+        \       \"MasterIngredientID\": 37,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802278,\r\n      \"DisplayIndex\": 7,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"hoisin sauce \",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/hoisin%20sauce\\\"
+        class=\\\"glosslink\\\">hoisin sauce</a> \",\r\n      \"Quantity\": 1.5,\r\n
+        \     \"DisplayQuantity\": \" 1 1/2 \",\r\n      \"Unit\": \"can\",\r\n      \"MetricQuantity\":
+        1.5,\r\n      \"MetricDisplayQuantity\": \" 1 1/2 \",\r\n      \"MetricUnit\":
+        \"can\",\r\n      \"PreparationNotes\": \"3 tbs\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Hoisin sauce\",\r\n        \"Department\": \"Asian\",\r\n
+        \       \"MasterIngredientID\": 158,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": false\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802279,\r\n      \"DisplayIndex\": 8,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Sugar\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/sugar\\\"
+        class=\\\"glosslink\\\">Sugar</a>\",\r\n      \"Quantity\": 2.0,\r\n      \"DisplayQuantity\":
+        \" 2 \",\r\n      \"Unit\": \"tsp\",\r\n      \"MetricQuantity\": 10.0,\r\n
+        \     \"MetricDisplayQuantity\": \"10\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Sugar\",\r\n        \"Department\": \"Baking\",\r\n        \"MasterIngredientID\":
+        10,\r\n        \"UsuallyOnHand\": true\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802280,\r\n      \"DisplayIndex\":
+        9,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Soy sauce\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/soy%20sauce\\\" class=\\\"glosslink\\\">Soy
+        sauce</a>\",\r\n      \"Quantity\": 0.25,\r\n      \"DisplayQuantity\": \"
+        1/4 \",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\": 59.0,\r\n
+        \     \"MetricDisplayQuantity\": \"59\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Soy sauce\",\r\n        \"Department\": \"Asian\",\r\n        \"MasterIngredientID\":
+        165,\r\n        \"UsuallyOnHand\": true\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802281,\r\n      \"DisplayIndex\":
+        10,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"vegetable stock\",\r\n
+        \     \"HTMLName\": \"vegetable <a href=\\\"http://www.bigoven.com/glossary/stock\\\"
+        class=\\\"glosslink\\\">stock</a>\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \"\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 0.0,\r\n      \"MetricDisplayQuantity\":
+        \"\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": \"enough
+        to cover \",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802282,\r\n      \"DisplayIndex\":
+        11,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"cinnamon  \",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/cinnamon\\\"
+        class=\\\"glosslink\\\">cinnamon</a>  \",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \" 1 \",\r\n      \"Unit\": \"stick\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \" 1 \",\r\n      \"MetricUnit\":
+        \"stick\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Cinnamon\",\r\n        \"Department\": \"Spices\",\r\n
+        \       \"MasterIngredientID\": 147,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802283,\r\n      \"DisplayIndex\": 12,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"mandarin peel \",\r\n      \"HTMLName\": \"mandarin peel
+        \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \" 1 \",\r\n
+        \     \"Unit\": \"piece \",\r\n      \"MetricQuantity\": 1.0,\r\n      \"MetricDisplayQuantity\":
+        \" 1 \",\r\n      \"MetricUnit\": \"piece \",\r\n      \"PreparationNotes\":
+        \"dried\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802284,\r\n      \"DisplayIndex\":
+        13,\r\n      \"IsHeading\": false,\r\n      \"Name\": \" cornstarch slurry\",\r\n
+        \     \"HTMLName\": \" <a href=\\\"http://www.bigoven.com/glossary/cornstarch\\\"
+        class=\\\"glosslink\\\">cornstarch</a> slurry\",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \"\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        0.0,\r\n      \"MetricDisplayQuantity\": \"\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Cornstarch\",\r\n        \"Department\": \"Baking\",\r\n        \"MasterIngredientID\":
+        476,\r\n        \"UsuallyOnHand\": true\r\n      },\r\n      \"IsLinked\":
+        false\r\n    }\r\n  ],\r\n  \"Instructions\": \"- Chop beef and vegetables
+        into large chunks.\\r\\n- Layer vegetables, ginger, onion, garlic and beef
+        in crock pot\\r\\n- Mix chu hou sauce, sugar, soy sauce, and two cups of stock
+        until sugar is disolved\\r\\n- Add sauce mixture to crock pot\\r\\n- Add enough
+        stock to cover\\r\\n- Add cinnamon and mandarin peel\\r\\n- Cook on low heat
+        for 10-12 hours\\r\\n- Thicken sauce with cornstarch slurry\",\r\n  \"YieldNumber\":
+        6.0,\r\n  \"YieldUnit\": \"Servings\",\r\n  \"TotalMinutes\": 780,\r\n  \"ActiveMinutes\":
+        20,\r\n  \"NutritionInfo\": {\r\n    \"SingularYieldUnit\": \"Paid API plan
+        required for nutrition.\",\r\n    \"TotalCalories\": 0.0,\r\n    \"TotalFat\":
+        0.0,\r\n    \"CaloriesFromFat\": 0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\":
+        0.0,\r\n    \"SatFatPct\": 0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\":
+        0.0,\r\n    \"TransFat\": 0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\":
+        0.0,\r\n    \"Sodium\": 0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\":
+        0.0,\r\n    \"PotassiumPct\": 0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\":
+        0.0,\r\n    \"DietaryFiber\": 0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\":
+        0.0,\r\n    \"Protein\": 0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\":
+        null,\r\n  \"CreationDate\": \"2009-11-14T12:09:38.400Z\",\r\n  \"LastModified\":
+        \"2017-09-09T08:25:32.057Z\",\r\n  \"IsBookmark\": false,\r\n  \"BookmarkURL\":
+        null,\r\n  \"BookmarkSiteLogo\": \"\",\r\n  \"BookmarkImageURL\": null,\r\n
+        \ \"IsRecipeScan\": null,\r\n  \"MenuCount\": 0,\r\n  \"NotesCount\": 0,\r\n
+        \ \"AdTags\": \"simplypotatoes15\",\r\n  \"IngredientsTextBlock\": null,\r\n
+        \ \"AllCategoriesText\": \"chinese|beef|crock pot|beef brisket|white-meat-free|tree-nut-free|nut-free|contains-gluten|contains-red-meat|shellfish-free|slow-cooker|dairy-free\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": null,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": null,\r\n  \"ImageSquares\": [],\r\n  \"PhotoUrl\":
+        \"https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg\",\r\n  \"VerifiedByClass\":
+        null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/175939
+  recorded_at: Sun, 31 Dec 2017 05:13:03 GMT
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/175940
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '13154'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=ca30006edf78db545d347728de692e940a29d9513b5a4ab8627508321f841d3d;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sun, 31 Dec 2017 05:13:03 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 175940,\r\n  \"Title\": \"Indian Lamb Korma\",\r\n
+        \ \"Description\": \"This is a traditional Indian lamb dish adapted for cooking
+        in a 6 quart slow cooker or crockpot. Serve with basmathi rice, cucumber raita
+        and nan or other Indian sytle breads for a complete meal.\",\r\n  \"Cuisine\":
+        \"Indian\",\r\n  \"Category\": \"Main Dish\",\r\n  \"Subcategory\": \"Slow
+        Cooker\",\r\n  \"Microcategory\": null,\r\n  \"PrimaryIngredient\": \"Lamb\",\r\n
+        \ \"StarRating\": 3.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/indian-lamb-korma/175940\",\r\n
+        \ \"ImageURL\": null,\r\n  \"ReviewCount\": 2,\r\n  \"MedalCount\": 0,\r\n
+        \ \"FavoriteCount\": 39,\r\n  \"Poster\": {\r\n    \"UserID\": 606091,\r\n
+        \   \"UserName\": \"mstombaugh\",\r\n    \"PhotoUrl\": \"https://photos.bigoven.com/avatar/photo/pjxem3zicsitcfwqlpo8.jpg\",\r\n
+        \   \"IsPremium\": false,\r\n    \"IsKitchenHelper\": false,\r\n    \"PremiumExpiryDate\":
+        \"2014-11-12T18:22:37.253Z\",\r\n    \"MemberSince\": \"2009-10-20T18:02:00.000Z\",\r\n
+        \   \"IsUsingRecurly\": false,\r\n    \"FirstName\": null,\r\n    \"LastName\":
+        null\r\n  },\r\n  \"Ingredients\": [\r\n    {\r\n      \"IngredientID\": 1802285,\r\n
+        \     \"DisplayIndex\": 0,\r\n      \"IsHeading\": false,\r\n      \"Name\":
+        \"onions\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/onion\\\"
+        class=\\\"glosslink\\\">onion</a>s\",\r\n      \"Quantity\": 4.0,\r\n      \"DisplayQuantity\":
+        \" 4 \",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 4.0,\r\n      \"MetricDisplayQuantity\":
+        \" 4 \",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": \"large,
+        chopped\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Onion\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 12,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802286,\r\n      \"DisplayIndex\":
+        1,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"ginger\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/ginger\\\" class=\\\"glosslink\\\">ginger</a>\",\r\n
+        \     \"Quantity\": 4.0,\r\n      \"DisplayQuantity\": \" 4 \",\r\n      \"Unit\":
+        \"teaspoons\",\r\n      \"MetricQuantity\": 20.0,\r\n      \"MetricDisplayQuantity\":
+        \"20\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"finely
+        grated\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Ginger\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 160,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802287,\r\n      \"DisplayIndex\":
+        2,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Garlic\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/garlic\\\" class=\\\"glosslink\\\">Garlic</a>\",\r\n
+        \     \"Quantity\": 6.0,\r\n      \"DisplayQuantity\": \" 6 \",\r\n      \"Unit\":
+        \"cloves\",\r\n      \"MetricQuantity\": 6.0,\r\n      \"MetricDisplayQuantity\":
+        \" 6 \",\r\n      \"MetricUnit\": \"cloves\",\r\n      \"PreparationNotes\":
+        \"minced\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Garlic\",\r\n
+        \       \"Department\": \"Produce\",\r\n        \"MasterIngredientID\": 37,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802288,\r\n      \"DisplayIndex\":
+        3,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"chili peppers\",\r\n
+        \     \"HTMLName\": \"chili <a href=\\\"http://www.bigoven.com/glossary/pepper\\\"
+        class=\\\"glosslink\\\">pepper</a>s\",\r\n      \"Quantity\": 4.0,\r\n      \"DisplayQuantity\":
+        \" 4 \",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 4.0,\r\n      \"MetricDisplayQuantity\":
+        \" 4 \",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": \"large,
+        dried, seeded and de-stemmed\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Chili peppers\",\r\n        \"Department\": \"Produce\",\r\n        \"MasterIngredientID\":
+        658,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802289,\r\n      \"DisplayIndex\":
+        4,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Vegetable oil\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/vegetable%20oil\\\"
+        class=\\\"glosslink\\\">Vegetable oil</a>\",\r\n      \"Quantity\": 4.0,\r\n
+        \     \"DisplayQuantity\": \" 4 \",\r\n      \"Unit\": \"tablespoons\",\r\n
+        \     \"MetricQuantity\": 59.0,\r\n      \"MetricDisplayQuantity\": \"59\",\r\n
+        \     \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Vegetable oil\",\r\n        \"Department\": \"Oils\",\r\n
+        \       \"MasterIngredientID\": 33,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802290,\r\n      \"DisplayIndex\": 5,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"ground turmeric \",\r\n      \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/turmeric\\\"
+        class=\\\"glosslink\\\">turmeric</a> \",\r\n      \"Quantity\": 1.5,\r\n      \"DisplayQuantity\":
+        \" 1 1/2 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\":
+        7.0,\r\n      \"MetricDisplayQuantity\": \"7\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Turmeric\",\r\n        \"Department\": \"Spices\",\r\n        \"MasterIngredientID\":
+        976,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802291,\r\n      \"DisplayIndex\":
+        6,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"ground cumin \",\r\n
+        \     \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/cumin\\\"
+        class=\\\"glosslink\\\">cumin</a> \",\r\n      \"Quantity\": 4.0,\r\n      \"DisplayQuantity\":
+        \" 4 \",\r\n      \"Unit\": \"teaspoons\",\r\n      \"MetricQuantity\": 20.0,\r\n
+        \     \"MetricDisplayQuantity\": \"20\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Cumin\",\r\n        \"Department\": \"Spices\",\r\n        \"MasterIngredientID\":
+        140,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802292,\r\n      \"DisplayIndex\":
+        7,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"ground coriander \",\r\n
+        \     \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/coriander\\\"
+        class=\\\"glosslink\\\">coriander</a> \",\r\n      \"Quantity\": 2.0,\r\n
+        \     \"DisplayQuantity\": \" 2 \",\r\n      \"Unit\": \"tablespoon\",\r\n
+        \     \"MetricQuantity\": 30.0,\r\n      \"MetricDisplayQuantity\": \"30\",\r\n
+        \     \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Ground coriander\",\r\n        \"Department\": \"Spices\",\r\n
+        \       \"MasterIngredientID\": 980,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802293,\r\n      \"DisplayIndex\": 8,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"lamb; boneless\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/lamb\\\"
+        class=\\\"glosslink\\\">lamb</a>; boneless\",\r\n      \"Quantity\": 3.0,\r\n
+        \     \"DisplayQuantity\": \" 3 \",\r\n      \"Unit\": \"pounds\",\r\n      \"MetricQuantity\":
+        1.36077711,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\":
+        \"kg\",\r\n      \"PreparationNotes\": \"cut into 1-inch cubes \",\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802294,\r\n      \"DisplayIndex\": 9,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"tomatoes\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/tomatoes\\\"
+        class=\\\"glosslink\\\">tomatoes</a>\",\r\n      \"Quantity\": 1.33333333333333,\r\n
+        \     \"DisplayQuantity\": \" 1 1/3 \",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\":
+        315.0,\r\n      \"MetricDisplayQuantity\": \"315\",\r\n      \"MetricUnit\":
+        \"ml\",\r\n      \"PreparationNotes\": \"fresh, chopped\",\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Tomatoes\",\r\n        \"Department\": \"Produce\",\r\n
+        \       \"MasterIngredientID\": 884,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802295,\r\n      \"DisplayIndex\": 10,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"ground cloves \",\r\n      \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/cloves\\\"
+        class=\\\"glosslink\\\">cloves</a> \",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 2.46446079160853,\r\n
+        \     \"MetricDisplayQuantity\": \"2\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802296,\r\n      \"DisplayIndex\":
+        11,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"ground cinnamon \",\r\n
+        \     \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/cinnamon\\\"
+        class=\\\"glosslink\\\">cinnamon</a> \",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \" 1 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 4.92892158321706,\r\n
+        \     \"MetricDisplayQuantity\": \"5\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Cinnamon\",\r\n        \"Department\": \"Spices\",\r\n        \"MasterIngredientID\":
+        147,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802297,\r\n      \"DisplayIndex\":
+        12,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"ground cardamom \",\r\n
+        \     \"HTMLName\": \"ground <a href=\\\"http://www.bigoven.com/glossary/cardamom\\\"
+        class=\\\"glosslink\\\">cardamom</a> \",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"teaspoon\",\r\n      \"MetricQuantity\": 2.46446079160853,\r\n
+        \     \"MetricDisplayQuantity\": \"2\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Cardamom\",\r\n        \"Department\": \"Spices\",\r\n        \"MasterIngredientID\":
+        972,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    },\r\n    {\r\n      \"IngredientID\": 1802298,\r\n      \"DisplayIndex\":
+        13,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Black Pepper\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/black%20pepper\\\"
+        class=\\\"glosslink\\\">Black Pepper</a>\",\r\n      \"Quantity\": 0.5,\r\n
+        \     \"DisplayQuantity\": \" 1/2 \",\r\n      \"Unit\": \"teaspoon\",\r\n
+        \     \"MetricQuantity\": 2.46446079160853,\r\n      \"MetricDisplayQuantity\":
+        \"2\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"freshly
+        ground\",\r\n      \"IngredientInfo\": {\r\n        \"Name\": \"Black pepper\",\r\n
+        \       \"Department\": \"Spices\",\r\n        \"MasterIngredientID\": 129,\r\n
+        \       \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\": true\r\n
+        \   },\r\n    {\r\n      \"IngredientID\": 1802299,\r\n      \"DisplayIndex\":
+        14,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Water\",\r\n      \"HTMLName\":
+        \"Water\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\": \" 1/2
+        \",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\": 118.0,\r\n      \"MetricDisplayQuantity\":
+        \"118\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Water\",\r\n        \"Department\":
+        \"Beverages\",\r\n        \"MasterIngredientID\": 27,\r\n        \"UsuallyOnHand\":
+        true\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        1802300,\r\n      \"DisplayIndex\": 15,\r\n      \"IsHeading\": false,\r\n
+        \     \"Name\": \"Heavy cream\",\r\n      \"HTMLName\": \"Heavy <a href=\\\"http://www.bigoven.com/glossary/cream\\\"
+        class=\\\"glosslink\\\">cream</a>\",\r\n      \"Quantity\": 0.5,\r\n      \"DisplayQuantity\":
+        \" 1/2 \",\r\n      \"Unit\": \"cup\",\r\n      \"MetricQuantity\": 118.0,\r\n
+        \     \"MetricDisplayQuantity\": \"118\",\r\n      \"MetricUnit\": \"ml\",\r\n
+        \     \"PreparationNotes\": \"\",\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Cream\",\r\n        \"Department\": \"Dairy\",\r\n        \"MasterIngredientID\":
+        262,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        true\r\n    }\r\n  ],\r\n  \"Instructions\": \"In large skillet saute onion,
+        ginger, garlic and chilies in the oil. Add turmeric, cumin and coriander.
+        Simmer 1 minute to flavor oil. Add the lamb and brown. Pour skillet contents
+        into crockpot.\\r\\n\\r\\nAdd remaining ingredients, except for the HEAVY
+        CREAM, to the crock pot and mix thoroughly.\\r\\n\\r\\nCover, cook on LOW
+        6-8 hours (or on HIGH 3-4 hours).\\r\\n\\r\\nStir in heavy cream and re-cover
+        30 minutes before serving.\",\r\n  \"YieldNumber\": 10.0,\r\n  \"YieldUnit\":
+        \"Servings\",\r\n  \"TotalMinutes\": 510,\r\n  \"ActiveMinutes\": 30,\r\n
+        \ \"NutritionInfo\": {\r\n    \"SingularYieldUnit\": \"Paid API plan required
+        for nutrition.\",\r\n    \"TotalCalories\": 0.0,\r\n    \"TotalFat\": 0.0,\r\n
+        \   \"CaloriesFromFat\": 0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\":
+        0.0,\r\n    \"SatFatPct\": 0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\":
+        0.0,\r\n    \"TransFat\": 0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\":
+        0.0,\r\n    \"Sodium\": 0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\":
+        0.0,\r\n    \"PotassiumPct\": 0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\":
+        0.0,\r\n    \"DietaryFiber\": 0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\":
+        0.0,\r\n    \"Protein\": 0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\":
+        null,\r\n  \"CreationDate\": \"2009-11-14T12:46:23.560Z\",\r\n  \"LastModified\":
+        \"2017-09-09T08:25:33.603Z\",\r\n  \"IsBookmark\": false,\r\n  \"BookmarkURL\":
+        null,\r\n  \"BookmarkSiteLogo\": \"\",\r\n  \"BookmarkImageURL\": null,\r\n
+        \ \"IsRecipeScan\": null,\r\n  \"MenuCount\": 0,\r\n  \"NotesCount\": 0,\r\n
+        \ \"AdTags\": \"simplypotatoes15\",\r\n  \"IngredientsTextBlock\": null,\r\n
+        \ \"AllCategoriesText\": \"indian|lamb|korma|crock pot|slow cooker|white-meat-free|tree-nut-free|nut-free|gluten-free|contains-red-meat|shellfish-free|contains-dairy|slow-cooker\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": null,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": null,\r\n  \"ImageSquares\": [],\r\n  \"PhotoUrl\":
+        \"https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg\",\r\n  \"VerifiedByClass\":
+        null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/175940
+  recorded_at: Sun, 31 Dec 2017 05:13:03 GMT
+recorded_with: VCR 4.0.0

@@ -23,6 +23,9 @@
 
 # Ignore notes
 notes/*
+<<<<<<< HEAD
 
 # Ignore node_modules
 node_modules/
+=======
+>>>>>>> c7122afd9128b50149a731bbd545995a8d98acb5

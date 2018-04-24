@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipe/9999
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '10114'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-AspNet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:17442329-11c5-43f1-84c8-f1be3b74d3f4
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=e900808184bee1fcdf308c0b69b896e5d4bf85ea32e99e02ae24c0a150310511;Path=/;HttpOnly;Domain=api2.bigoven.com
+      Date:
+      - Sat, 30 Dec 2017 06:45:54 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"RecipeID\": 9999,\r\n  \"Title\": \"Puttanesca\",\r\n  \"Description\":
+        \"\",\r\n  \"Cuisine\": \"American\",\r\n  \"Category\": \"Main Dish\",\r\n
+        \ \"Subcategory\": \"Pasta\",\r\n  \"Microcategory\": null,\r\n  \"PrimaryIngredient\":
+        \"Pasta\",\r\n  \"StarRating\": 0.0,\r\n  \"WebURL\": \"http://www.bigoven.com/recipe/puttanesca/9999\",\r\n
+        \ \"ImageURL\": null,\r\n  \"ReviewCount\": 0,\r\n  \"MedalCount\": 0,\r\n
+        \ \"FavoriteCount\": 0,\r\n  \"Poster\": null,\r\n  \"Ingredients\": [\r\n
+        \   {\r\n      \"IngredientID\": 95740,\r\n      \"DisplayIndex\": 0,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"2lb , 3 oz can Italian plum\",\r\n
+        \     \"HTMLName\": \"2lb , 3 oz can <a href=\\\"http://www.bigoven.com/glossary/italian\\\"
+        class=\\\"glosslink\\\">Italian</a> plum\",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": null,\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 95739,\r\n      \"DisplayIndex\":
+        1,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"(optional)\",\r\n      \"HTMLName\":
+        \"(optional)\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\":
+        \"\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 0.0,\r\n      \"MetricDisplayQuantity\":
+        \"\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 95744,\r\n      \"DisplayIndex\": 2,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Sliced\",\r\n      \"HTMLName\":
+        \"Sliced\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \"\",\r\n
+        \     \"Unit\": \"\",\r\n      \"MetricQuantity\": 0.0,\r\n      \"MetricDisplayQuantity\":
+        \"\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 95746,\r\n      \"DisplayIndex\": 3,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Sliced\",\r\n      \"HTMLName\":
+        \"Sliced\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \"\",\r\n
+        \     \"Unit\": \"\",\r\n      \"MetricQuantity\": 0.0,\r\n      \"MetricDisplayQuantity\":
+        \"\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 95741,\r\n      \"DisplayIndex\": 4,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Tomatoes  (4.\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/tomatoes\\\" class=\\\"glosslink\\\">Tomatoes</a>
+        \ (4.\",\r\n      \"Quantity\": 1.0,\r\n      \"DisplayQuantity\": \"\",\r\n
+        \     \"Unit\": \"\",\r\n      \"MetricQuantity\": 0.0,\r\n      \"MetricDisplayQuantity\":
+        \"\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Tomato\",\r\n        \"Department\":
+        \"Beverages\",\r\n        \"MasterIngredientID\": 228,\r\n        \"UsuallyOnHand\":
+        false\r\n      },\r\n      \"IsLinked\": false\r\n    },\r\n    {\r\n      \"IngredientID\":
+        95743,\r\n      \"DisplayIndex\": 5,\r\n      \"IsHeading\": false,\r\n      \"Name\":
+        \"Stuffed green olives --\",\r\n      \"HTMLName\": \"Stuffed green <a href=\\\"http://www.bigoven.com/glossary/olive\\\"
+        class=\\\"glosslink\\\">olive</a>s --\",\r\n      \"Quantity\": 8.0,\r\n      \"DisplayQuantity\":
+        \"8\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 8.0,\r\n      \"MetricDisplayQuantity\":
+        \"8\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 95736,\r\n      \"DisplayIndex\": 6,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Cloves garlic -- minced\",\r\n
+        \     \"HTMLName\": \"Cloves <a href=\\\"http://www.bigoven.com/glossary/garlic\\\"
+        class=\\\"glosslink\\\">garlic</a> -- minced\",\r\n      \"Quantity\": 2.0,\r\n
+        \     \"DisplayQuantity\": \"2\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        2.0,\r\n      \"MetricDisplayQuantity\": \"2\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": null,\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Garlic\",\r\n        \"Department\": \"Produce\",\r\n        \"MasterIngredientID\":
+        37,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 95735,\r\n      \"DisplayIndex\":
+        7,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"olive oil\",\r\n      \"HTMLName\":
+        \"<a href=\\\"http://www.bigoven.com/glossary/olive%20oil\\\" class=\\\"glosslink\\\">olive
+        oil</a>\",\r\n      \"Quantity\": 2.0,\r\n      \"DisplayQuantity\": \"2\",\r\n
+        \     \"Unit\": \"ts\",\r\n      \"MetricQuantity\": 10.0,\r\n      \"MetricDisplayQuantity\":
+        \"10\",\r\n      \"MetricUnit\": \"ml\",\r\n      \"PreparationNotes\": \"\",\r\n
+        \     \"IngredientInfo\": {\r\n        \"Name\": \"Olive oil\",\r\n        \"Department\":
+        \"Oils\",\r\n        \"MasterIngredientID\": 23,\r\n        \"UsuallyOnHand\":
+        true\r\n      },\r\n      \"IsLinked\": true\r\n    },\r\n    {\r\n      \"IngredientID\":
+        95737,\r\n      \"DisplayIndex\": 8,\r\n      \"IsHeading\": false,\r\n      \"Name\":
+        \"Celery rib,minced\",\r\n      \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/celery\\\"
+        class=\\\"glosslink\\\">Celery</a> rib,minced\",\r\n      \"Quantity\": 1.0,\r\n
+        \     \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": null,\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Celery\",\r\n        \"Department\": \"Meats\",\r\n        \"MasterIngredientID\":
+        3,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 95747,\r\n      \"DisplayIndex\":
+        9,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Capers1 teaspoons  basil\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/capers\\\"
+        class=\\\"glosslink\\\">Capers</a>1 teaspoons  basil\",\r\n      \"Quantity\":
+        1.0,\r\n      \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"ts\",\r\n      \"MetricQuantity\":
+        4.92892158321706,\r\n      \"MetricDisplayQuantity\": \"5\",\r\n      \"MetricUnit\":
+        \"ml\",\r\n      \"PreparationNotes\": null,\r\n      \"IngredientInfo\":
+        null,\r\n      \"IsLinked\": false\r\n    },\r\n    {\r\n      \"IngredientID\":
+        95745,\r\n      \"DisplayIndex\": 10,\r\n      \"IsHeading\": false,\r\n      \"Name\":
+        \"Pitted black olives --\",\r\n      \"HTMLName\": \"Pitted black <a href=\\\"http://www.bigoven.com/glossary/olive\\\"
+        class=\\\"glosslink\\\">olive</a>s --\",\r\n      \"Quantity\": 8.0,\r\n      \"DisplayQuantity\":
+        \"8\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\": 8.0,\r\n      \"MetricDisplayQuantity\":
+        \"8\",\r\n      \"MetricUnit\": \"\",\r\n      \"PreparationNotes\": null,\r\n
+        \     \"IngredientInfo\": null,\r\n      \"IsLinked\": false\r\n    },\r\n
+        \   {\r\n      \"IngredientID\": 95738,\r\n      \"DisplayIndex\": 11,\r\n
+        \     \"IsHeading\": false,\r\n      \"Name\": \"Sweet red pepper -- minced\",\r\n
+        \     \"HTMLName\": \"Sweet <a href=\\\"http://www.bigoven.com/glossary/red%20pepper\\\"
+        class=\\\"glosslink\\\">red pepper</a> -- minced\",\r\n      \"Quantity\":
+        1.0,\r\n      \"DisplayQuantity\": \"1\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        1.0,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": null,\r\n      \"IngredientInfo\": null,\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 95742,\r\n      \"DisplayIndex\":
+        12,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Anchovies, chopped\",\r\n
+        \     \"HTMLName\": \"<a href=\\\"http://www.bigoven.com/glossary/anchovies\\\"
+        class=\\\"glosslink\\\">Anchovies</a>, chopped\",\r\n      \"Quantity\": 8.0,\r\n
+        \     \"DisplayQuantity\": \"8\",\r\n      \"Unit\": \"\",\r\n      \"MetricQuantity\":
+        8.0,\r\n      \"MetricDisplayQuantity\": \"8\",\r\n      \"MetricUnit\": \"\",\r\n
+        \     \"PreparationNotes\": null,\r\n      \"IngredientInfo\": {\r\n        \"Name\":
+        \"Anchovies\",\r\n        \"Department\": \"Canned Goods\",\r\n        \"MasterIngredientID\":
+        182,\r\n        \"UsuallyOnHand\": false\r\n      },\r\n      \"IsLinked\":
+        false\r\n    },\r\n    {\r\n      \"IngredientID\": 95748,\r\n      \"DisplayIndex\":
+        13,\r\n      \"IsHeading\": false,\r\n      \"Name\": \"Dried red pepper\",\r\n
+        \     \"HTMLName\": \"Dried <a href=\\\"http://www.bigoven.com/glossary/red%20pepper\\\"
+        class=\\\"glosslink\\\">red pepper</a>\",\r\n      \"Quantity\": 0.25,\r\n
+        \     \"DisplayQuantity\": \"1/4\",\r\n      \"Unit\": \"ts\",\r\n      \"MetricQuantity\":
+        1.23223039580426,\r\n      \"MetricDisplayQuantity\": \"1\",\r\n      \"MetricUnit\":
+        \"ml\",\r\n      \"PreparationNotes\": null,\r\n      \"IngredientInfo\":
+        {\r\n        \"Name\": \"Dried red pepper\",\r\n        \"Department\": \"Spices\",\r\n
+        \       \"MasterIngredientID\": 1014,\r\n        \"UsuallyOnHand\": false\r\n
+        \     },\r\n      \"IsLinked\": true\r\n    }\r\n  ],\r\n  \"Instructions\":
+        \"Heat olive oil in a large skillet. Saute garlic, celery, and sweet red  pepper
+        until soft. Press tomatoes thru a food mill and add to skillet along  with
+        anchovies. Simmer for 10 minutes. Stir in olives, capers, basil, and  dried
+        red pepper. Simmer, uncovered for 20 minutes. Serve with hot pasta  tossed
+        with butter.    Recipe By     : Ted.Taylor@p4214.f104.n109.z1.FidoNet.Org
+        (Ted Taylor)    \",\r\n  \"YieldNumber\": 1.0,\r\n  \"YieldUnit\": \"Serving\",\r\n
+        \ \"TotalMinutes\": 30,\r\n  \"ActiveMinutes\": 30,\r\n  \"NutritionInfo\":
+        {\r\n    \"SingularYieldUnit\": \"Paid API plan required for nutrition.\",\r\n
+        \   \"TotalCalories\": 0.0,\r\n    \"TotalFat\": 0.0,\r\n    \"CaloriesFromFat\":
+        0.0,\r\n    \"TotalFatPct\": 0.0,\r\n    \"SatFat\": 0.0,\r\n    \"SatFatPct\":
+        0.0,\r\n    \"MonoFat\": 0.0,\r\n    \"PolyFat\": 0.0,\r\n    \"TransFat\":
+        0.0,\r\n    \"Cholesterol\": 0.0,\r\n    \"CholesterolPct\": 0.0,\r\n    \"Sodium\":
+        0.0,\r\n    \"SodiumPct\": 0.0,\r\n    \"Potassium\": 0.0,\r\n    \"PotassiumPct\":
+        0.0,\r\n    \"TotalCarbs\": 0.0,\r\n    \"TotalCarbsPct\": 0.0,\r\n    \"DietaryFiber\":
+        0.0,\r\n    \"DietaryFiberPct\": 0.0,\r\n    \"Sugar\": 0.0,\r\n    \"Protein\":
+        0.0,\r\n    \"ProteinPct\": 0.0\r\n  },\r\n  \"IsPrivate\": null,\r\n  \"CreationDate\":
+        \"2004-01-01T00:00:00.000Z\",\r\n  \"LastModified\": \"2017-09-06T19:17:16.760Z\",\r\n
+        \ \"IsBookmark\": false,\r\n  \"BookmarkURL\": null,\r\n  \"BookmarkSiteLogo\":
+        \"\",\r\n  \"BookmarkImageURL\": null,\r\n  \"IsRecipeScan\": null,\r\n  \"MenuCount\":
+        0,\r\n  \"NotesCount\": 0,\r\n  \"AdTags\": null,\r\n  \"IngredientsTextBlock\":
+        null,\r\n  \"AllCategoriesText\": \"pasta|celery|anchovies|basil|garlic|olive
+        oil|tomato|white-meat-free|tree-nut-free|nut-free|gluten-free|red-meat-free|contains-fish|shellfish-free|dairy-free|pescatarian\",\r\n
+        \ \"IsSponsored\": false,\r\n  \"VariantOfRecipeID\": null,\r\n  \"Collection\":
+        \"\",\r\n  \"CollectionID\": null,\r\n  \"AdminBoost\": null,\r\n  \"VerifiedDateTime\":
+        null,\r\n  \"MaxImageSquare\": null,\r\n  \"ImageSquares\": [],\r\n  \"PhotoUrl\":
+        \"https://photos.bigoven.com/recipe/hero/recipe-no-image.jpg\",\r\n  \"VerifiedByClass\":
+        null\r\n}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipe/9999
+  recorded_at: Sat, 30 Dec 2017 06:45:55 GMT
+recorded_with: VCR 4.0.0

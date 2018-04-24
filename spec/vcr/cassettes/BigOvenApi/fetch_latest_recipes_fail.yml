@@ -1,0 +1,28 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api2.bigoven.com/recipes/raves?&rpp=10&pg=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      X-BigOven-API-Key:
+      - 5d0PA2CPR5SEg3843If18k0JI12hHn7g
+      Expect:
+      - ''
+  response:
+    status:
+      code: 0
+      message: 
+    headers: {}
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+    adapter_metadata:
+      effective_url: https://api2.bigoven.com/recipes/raves?&rpp=10&pg=1
+  recorded_at: Sat, 23 Dec 2017 01:28:12 GMT
+recorded_with: VCR 4.0.0
