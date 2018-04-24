@@ -234,3 +234,16 @@ button.btn.btn-primary {
 .navbar-default .navbar-toggle {
   background-color: #3a74d7;
 }
+
+.large {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+#large {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+}

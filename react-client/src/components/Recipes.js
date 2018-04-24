@@ -1,9 +1,25 @@
 import React, { Component } from "react";
 import SaveButtons from "./SaveButtons";
 import PropTypes from "prop-types";
+import Spinner from "react-spinkit";
 
 class Recipes extends Component {
   render() {
+    if (this.props.isFetching) {
+      return (
+        <div className="flex-parent">
+          <div className="card flex-item large">
+            <Spinner name="chasing-dots" id="large" color="black" />
+          </div>
+          <div className="card flex-item large">
+            <Spinner name="chasing-dots" id="large" color="black" />
+          </div>
+          <div className="card flex-item large">
+            <Spinner name="chasing-dots" id="large" color="black" />
+          </div>
+        </div>
+      );
+    }
     //Split ingredients for formatting
 
     let listRecipes = this.props.recipes.map(recipe => {

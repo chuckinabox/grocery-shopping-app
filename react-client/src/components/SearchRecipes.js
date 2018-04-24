@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Spinner from "react-spinkit";
 
 class SearchRecipes extends Component {
   render() {
+    if (this.props.isFetching) {
+      return (
+        <div className="card row large">
+          <Spinner name="chasing-dots" id="large" color="black" />
+        </div>
+      );
+    }
     //Split ingredients for formatting
     let listRecipes = this.props.recipes.results.map(recipe => {
-      // let ingredients = [
-      //   <p key={recipe.ingredients[0]}>-{recipe.ingredients[0]}</p>
-      // ];
-      // for (var i = 1; i < 5 && i < recipe.ingredients.length; i++) {
-      //   ingredients.push(
-      //     <p key={recipe.ingredients[i]}>-{recipe.ingredients[i]}</p>
-      //   );
-      // }
-      // ingredients.push(<p key={"..." + recipe.title}>...</p>);
       return (
         <div
           className="card flex-item"
@@ -32,10 +31,10 @@ class SearchRecipes extends Component {
               className="thumbnail"
             />
           </div>
-          {/* <div className="col-sm-8 col-xs-6">{ingredients}</div> */}
         </div>
       );
     });
+
     if (this.props.recipes.results.length) {
       return <div className="flex-parent">{listRecipes}</div>;
     } else {

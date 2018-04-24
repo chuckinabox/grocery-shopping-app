@@ -69,45 +69,36 @@ class SearchContainer extends Component {
                   Showing
                   {1 +
                     (this.props.searchRecipes.pg - 1) *
-                      this.props.searchRecipes.rpp}-{this.props.searchRecipes
+                  this.props.searchRecipes.rpp}-{this.props.searchRecipes
                     .results.length < this.props.searchRecipes.rpp
-                    ? this.props.searchRecipes.resultCount
-                    : this.props.searchRecipes.rpp *
-                      this.props.searchRecipes.pg}{" "}
+                      ? this.props.searchRecipes.resultCount
+                      : this.props.searchRecipes.rpp *
+                  this.props.searchRecipes.pg}{" "}
                   of {this.props.searchRecipes.resultCount}
                 </span>
               </h5>
               <br />
-              {!this.props.isFetching ? (
-                <p className="pull-right">
-                  {backButton}{" "}
-                  {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
-                  {forwardButton}
-                </p>
-              ) : (
-                ""
-              )}
+
+              <p className="pull-right">
+                {backButton}{" "}
+                {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
+                {forwardButton}
+              </p>
             </div>
           </div>
         </div>
         <div className="container">
-          {this.props.isFetching ? (
-            "Loading..."
-          ) : (
-            <SearchRecipes
-              recipes={this.props.searchRecipes}
-              history={this.props.history}
-            />
-          )}
-          {!this.props.isFetching ? (
-            <p className="pull-right">
-              {backButton}{" "}
-              {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
-              {forwardButton}
-            </p>
-          ) : (
-            ""
-          )}
+          <SearchRecipes
+            recipes={this.props.searchRecipes}
+            history={this.props.history}
+            isFetching={this.props.isFetching}
+          />
+
+          <p className="pull-right">
+            {backButton}{" "}
+            {forwardButton || backButton ? "Page " + this.state.page : ""}{" "}
+            {forwardButton}
+          </p>
         </div>
       </div>
     );

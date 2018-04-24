@@ -73,9 +73,10 @@ class HomeContainer extends Component {
             <Recipes
               recipes={this.props.recipes}
               history={this.props.history}
+              isFetching={this.props.isFetching}
             />
           ) : (
-            "Loading..."
+            "No Recipes"
           )}
           <span className="pull-right col-sm-10 col-sm-offset-1">
             {backButton} Page{" "}

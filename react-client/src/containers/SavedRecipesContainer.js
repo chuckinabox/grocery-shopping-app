@@ -79,10 +79,10 @@ class SavedRecipesContainer extends Component {
             Showing
             {1 +
               (this.props.savedRecipes.pg - 1) *
-                this.props.savedRecipes.rpp}-{this.props.savedRecipes.results
+            this.props.savedRecipes.rpp}-{this.props.savedRecipes.results
               .length < this.props.savedRecipes.rpp
-              ? this.props.savedRecipes.resultCount
-              : this.props.savedRecipes.rpp * this.props.savedRecipes.pg}{" "}
+                ? this.props.savedRecipes.resultCount
+                : this.props.savedRecipes.rpp * this.props.savedRecipes.pg}{" "}
             of {this.props.savedRecipesIds.length}
           </p>
           <br />
@@ -95,6 +95,7 @@ class SavedRecipesContainer extends Component {
           <Recipes
             recipes={this.props.savedRecipes.results}
             history={this.props.history}
+            isFetching={this.props.isFetching}
           />
           <span className="pull-right col-sm-10 col-sm-offset-1">
             {backButton}

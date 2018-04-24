@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import ModalPicture from "./elements/ModalPicture";
 import PropTypes from "prop-types";
-// import ModalButton from "./elements/ModalButton";
+import Spinner from "react-spinkit";
 
 class OneRecipe extends Component {
   render() {
+    if (this.props.isFetching) {
+      return (
+        <div className="card container">
+          <div className="row">
+            <div className="col-sm-12 large">
+              <Spinner name="chasing-dots" id="large" color="black" />
+            </div>
+          </div>
+        </div>
+      );
+    }
     //Split ingredients for formatting
     const ingredients = this.props.recipe.ingredients.map(ingred => (
       <p key={ingred}>{ingred}</p>

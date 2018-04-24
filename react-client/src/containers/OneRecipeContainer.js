@@ -34,6 +34,7 @@ class SingleContainer extends Component {
         <OneRecipe
           recipe={this.props.singleRecipe}
           history={this.props.history}
+          isFetching={this.props.isFetching}
         />
       </div>
     );
