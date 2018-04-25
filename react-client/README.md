@@ -1,25 +1,56 @@
-##Final project
+* # 🛒 Recipe Shopping App
 
-* This App
+Search for, save and turn recipes into shopping lists.
 
-  RecipeShoppingApp is a single page app that supports searching and saving recipes. With saved recipes, the app will pull out the ingredients out of the recipes to make a shopping list.
+## Introduction
 
-* Why
+The Recipe Shopping App is a single-page web application that uses React/Redux on the front end, and Rails on the back end.
 
-  This is my final project completing Viking Code School Bootcamp. This is the client viewed side, made with React, Redux and Bootstrap that connected to the Rails backend, one directory up this project.
+(Visit [https://github.com/yxlau/grocery-shopping-app](https://github.com/yxlau/grocery-shopping-app) for the back end Rails stuff.)
 
-* Live Demo
+## Getting Started
 
-  _http://www.RecipeShoppingApp.com_
+How to get the React page up and running on your machine.
 
-* installation - development
+### Live Demo
 
-  * `npm install`
-  * Change package.json 's `proxy:"http://localhost:3000/"` to server address
-  * `npm start`
+_http://www.RecipeShoppingApp.com_
 
-* installation - production
+### Pre-Requisites
 
-  * `npm install`
-  * Add your api's url to API_URL at the beginning of './src/actions.js' and './src/components/ShoppingListSingle.js'
-  * `npm start`
+* npm
+* node.js
+
+### Installation
+
+First, clone this repository.
+
+```
+git clone https://github.com/chuckinabox/grocery-shopping-app.git
+```
+
+Change to `react-client` folder
+
+```
+cd react-client/
+```
+
+Then, install the necessary packages
+
+```
+npm install
+```
+
+#### In Development
+
+* Change package.json 's `proxy:"http://localhost:3000/"` to server address
+
+#### In Production
+
+* Add your api's url to API_URL at the beginning of './react-client/src/actions.js' and './react-client/src/components/ShoppingListSingle.js'
+
+And finally, run a server to serve the React!
+
+```
+npm start
+```
